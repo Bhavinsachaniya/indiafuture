@@ -8,7 +8,7 @@ export const Impact = React.memo(function Impact() {
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Sticky Header */}
-          <div className="lg:col-span-5 lg:sticky lg:top-40 shrink-0">
+          <div className="lg:col-span-5 lg:sticky lg:top-40 shrink-0 py-8 md:py-14 flex flex-col justify-center">
             <p className="text-xs uppercase tracking-[0.2em] text-brand">The Impact</p>
             <h2 className="mt-4 font-display text-5xl md:text-6xl leading-[1.05]">
               Real <em className="italic text-brand-soft">Growth</em> <br className="hidden lg:block"/>
