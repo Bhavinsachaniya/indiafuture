@@ -14,7 +14,7 @@ import { CurriculumTimeline } from "@/components/programs/CurriculumTimeline";
 import { LiveProjects } from "@/components/programs/LiveProjects";
 import { LearningExperience } from "@/components/programs/LearningExperience";
 import { ProgramOutcomes } from "@/components/programs/ProgramOutcomes";
-import { ProgramTestimonials } from "@/components/programs/ProgramTestimonials";
+import { Testimonials } from "@/components/site/Testimonials";
 import { ProgramFAQ } from "@/components/programs/ProgramFAQ";
 import { ProgramCTA } from "@/components/programs/ProgramCTA";
 
@@ -38,7 +38,7 @@ function MasterclassesPage() {
         <LiveProjects data={data} />
         <LearningExperience data={data} />
         <ProgramOutcomes data={data} />
-        <ProgramTestimonials data={data} />
+        <Testimonials />
         <ProgramFAQ data={data} />
         <ProgramCTA data={data} />
       </main>

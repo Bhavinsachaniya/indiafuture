@@ -15,6 +15,7 @@ import { FinalCTA } from "@/components/programs/upskilling/FinalCTA";
 
 import { WhyProgramExists } from "@/components/programs/WhyProgramExists";
 import { WhatYouWillLearn } from "@/components/programs/WhatYouWillLearn";
+import { Testimonials } from "@/components/site/Testimonials";
 
 export const Route = createFileRoute("/programs/ai-upskilling")({
   component: AIUpskillingPage,
@@ -38,6 +39,7 @@ function AIUpskillingPage() {
           <ExperienceAndOutcomes />
           <CareerAndMentors />
           <CertificateAndFAQ />
+          <Testimonials />
           <FinalCTA />
         </div>
       </main>
