@@ -8,7 +8,7 @@ export const Impact = React.memo(function Impact() {
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Sticky Header */}
-          <div className="lg:col-span-5 lg:sticky lg:top-40 shrink-0 pt-8 pb-24 md:pt-14 md:pb-32 flex flex-col justify-center">
+          <div className="lg:col-span-5 lg:sticky lg:top-40 shrink-0 pt-8 pb-24 md:pt-14 md:pb-64 flex flex-col justify-center">
             <p className="text-xs uppercase tracking-[0.2em] text-brand">The Impact</p>
             <h2 className="mt-4 font-display text-5xl md:text-6xl leading-[1.05]">
               Real <em className="italic text-brand-soft">Growth</em>{" "}
@@ -47,7 +47,7 @@ export const Impact = React.memo(function Impact() {
                     <Zap className="w-8 h-8 text-brand" />
                   </div>
                   <h4 className="text-xl font-medium text-cream mb-3">Productivity Boost</h4>
-                  <p className="text-cream/60 leading-relaxed">
+                  <p className="text-cream/70 font-display text-lg leading-relaxed tracking-wide">
                     Employees automate repetitive tasks to focus purely on high-value creative
                     problem solving and strategy.
                   </p>
@@ -58,7 +58,7 @@ export const Impact = React.memo(function Impact() {
                     <TrendingUp className="w-8 h-8 text-brand" />
                   </div>
                   <h4 className="text-xl font-medium text-cream mb-3">Career Increment</h4>
-                  <p className="text-cream/60 leading-relaxed">
+                  <p className="text-cream/70 font-display text-lg leading-relaxed tracking-wide">
                     AI-skilled professionals command massive premiums in the market as highly
                     leverageable assets.
                   </p>
@@ -88,14 +88,14 @@ export const Impact = React.memo(function Impact() {
               <div className="grid gap-10 relative z-10 mt-8">
                 <div className="border-l-2 border-brand pl-6">
                   <h4 className="text-2xl font-medium text-cream mb-3">Exponential Scaling</h4>
-                  <p className="text-cream/60 text-lg leading-relaxed">
+                  <p className="text-cream/70 font-display text-xl leading-relaxed tracking-wide">
                     Scale operations infinitely without scaling headcount. Serve millions of
                     customers with the overhead of a startup.
                   </p>
                 </div>
                 <div className="border-l-2 border-brand/40 pl-6">
                   <h4 className="text-2xl font-medium text-cream mb-3">Operational Agility</h4>
-                  <p className="text-cream/60 text-lg leading-relaxed">
+                  <p className="text-cream/70 font-display text-xl leading-relaxed tracking-wide">
                     Adapt to market changes instantly with automated insights, predictive
                     intelligence, and rapid workflow generation.
                   </p>
