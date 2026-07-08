@@ -29,8 +29,8 @@ export function WhatYouWillLearn({ data }: { data: ProgramData }) {
               className="bg-white rounded-[2rem] p-8 md:p-10 transition-all duration-300 flex flex-col group border border-ink/5 hover:border-transparent hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-full border border-ink/10 flex items-center justify-center mb-8 bg-transparent">
-                <item.icon className="w-5 h-5 text-ink" strokeWidth={1} />
+              <div className="w-12 h-12 rounded-full border border-ink/10 group-hover:border-brand/30 flex items-center justify-center mb-8 bg-transparent group-hover:bg-brand/10 transition-colors duration-300">
+                <item.icon className="w-5 h-5 text-ink group-hover:text-brand transition-colors duration-300" strokeWidth={1} />
               </div>
 
               {/* Content */}

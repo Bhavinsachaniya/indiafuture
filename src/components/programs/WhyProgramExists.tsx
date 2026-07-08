@@ -39,8 +39,8 @@ export function WhyProgramExists({ data }: { data: ProgramData }) {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="bg-white rounded-[2rem] p-8 md:p-10 transition-all duration-300 flex flex-col group border border-ink/5 hover:border-transparent hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
             >
-              <div className="w-12 h-12 rounded-full bg-[#111111] flex items-center justify-center mb-8 transition-transform duration-300 group-hover:scale-110">
-                <reason.icon className="w-[1.2rem] h-[1.2rem] text-white" strokeWidth={1.2} />
+              <div className="w-12 h-12 rounded-full bg-[#111111] group-hover:bg-brand/10 group-hover:border group-hover:border-brand/30 flex items-center justify-center mb-8 transition-all duration-300 group-hover:scale-110">
+                <reason.icon className="w-[1.2rem] h-[1.2rem] text-white group-hover:text-brand transition-colors duration-300" strokeWidth={1.2} />
               </div>
               <h3 className="font-display text-[1.4rem] text-ink mb-3 transition-colors duration-300 group-hover:text-brand">
                 {reason.title}

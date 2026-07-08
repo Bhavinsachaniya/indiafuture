@@ -63,8 +63,8 @@ export const Studios = React.memo(function Studios() {
               className="group relative rounded-3xl border border-border bg-card p-8 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.2)] transition-all duration-500"
             >
               <div className="flex items-start justify-between">
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-secondary text-ink group-hover:bg-ink group-hover:text-cream transition-colors">
-                  <s.icon className="h-5 w-5" />
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-secondary text-ink group-hover:bg-brand/10 border border-transparent group-hover:border-brand/30 transition-all duration-300">
+                  <s.icon className="h-5 w-5 group-hover:text-brand transition-colors duration-300" />
                 </div>
                 <span className="text-xs text-ink-soft border border-border rounded-full px-3 py-1">
                   {s.weeks}
