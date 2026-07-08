@@ -1,6 +1,7 @@
 "use client";
 import { clsx } from "clsx";
 import { motion } from "framer-motion";
+import { fadeUpVariant, defaultViewport } from "@/lib/motion";
 import { LineChart, MapPin, Sparkles, Users, Zap } from "lucide-react";
 
 export default function FUIBentoGrid() {
@@ -83,10 +84,10 @@ export function BentoCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      variants={fadeUpVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={defaultViewport}
       className={clsx(
         "group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[0_1px_0_0_rgba(0,0,0,0.03),0_20px_60px_-30px_rgba(0,0,0,0.15)]",
         className,

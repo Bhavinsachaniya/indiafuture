@@ -27,6 +27,7 @@ export function MethodCard({ n, t, d, i, totalCards, progress }: MethodCardProps
           filter,
           transformOrigin: "top center",
           perspective: 1000,
+          willChange: "transform, opacity, filter",
         }}
         className="flex flex-col md:flex-row md:items-center gap-6 p-8 md:p-10 w-full max-w-4xl rounded-[32px] md:rounded-[40px] border border-cream/10 bg-[#161413] shadow-[0_30px_80px_rgba(0,0,0,0.8)] overflow-hidden"
       >

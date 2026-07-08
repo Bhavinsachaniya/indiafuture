@@ -1,57 +1,57 @@
+import React from "react";
 import { Cpu, Workflow, LineChart, ShieldCheck } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 const studios = [
   {
     icon: Cpu,
-    tag: "Foundations",
-    title: "AI Systems Studio",
-    desc: "Build the mental model. Ship your first evaluated agent, retrieval pipeline, and structured output workflow.",
-    weeks: "6 weeks",
-  },
-  {
-    icon: Workflow,
-    tag: "Applied",
-    title: "Implementation Studio",
-    desc: "Bring your own product surface. Ship AI features into a real codebase with reviews from senior engineers.",
+    tag: "Upskilling",
+    title: "AI Upskilling Programs",
+    desc: "A comprehensive hands-on AI program designed to help students become AI-ready with practical skills.",
     weeks: "8 weeks",
   },
   {
+    icon: Workflow,
+    tag: "Masterclasses",
+    title: "Masterclasses & Certifications",
+    desc: "Customized AI masterclasses for schools, colleges, working professionals, and MSMEs to use AI workflows immediately.",
+    weeks: "Live",
+  },
+  {
     icon: LineChart,
-    tag: "Growth",
-    title: "AI for Operators",
-    desc: "For founders, PMs and operators. Design internal AI workflows that compound without a growing team.",
-    weeks: "4 weeks",
+    tag: "Workshops",
+    title: "Hands-on Automation Labs",
+    desc: "AI Labs and productivity training for educators and teams to automate repetitive tasks and build workflows.",
+    weeks: "Custom",
   },
   {
     icon: ShieldCheck,
-    tag: "Enterprise",
-    title: "Team Deployments",
-    desc: "Cohort-based rollouts for engineering orgs. Governance, evals, and adoption — end to end.",
+    tag: "Custom",
+    title: "Customized AI Programs",
+    desc: "Exclusive AI learning and certification programs designed for organizations and communities based on specific objectives.",
     weeks: "Bespoke",
   },
 ];
 
-export function Studios() {
+export const Studios = React.memo(function Studios() {
   return (
     <section id="studios" className="py-28">
       <div className="container-x">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand">The studios</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-brand">The Programs</p>
           <h2 className="mt-3 font-display text-5xl md:text-6xl leading-[1.05] text-balance">
-            Four studios. One <em className="italic">outcome</em> —
+            Four paths. One <em className="italic">outcome</em> —
             <span className="relative inline-block border border-brand bg-brand/5 text-ink px-3 py-1 ml-2 align-middle">
               <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
               <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
               <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
               <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-              you ship
+              practical skills
             </span>
             .
           </h2>
           <p className="mt-4 text-ink-soft text-lg max-w-xl mx-auto">
-            Pick the studio that matches where you are. Each runs live, in cohorts, with real
-            reviews and a repo you can point to.
+            Pick the program that matches where you are. We conduct customized AI masterclasses and certification programs for every audience.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export function Studios() {
                 to="/contact"
                 className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-ink group-hover:text-brand transition-colors"
               >
-                Explore studio{" "}
+                Explore program{" "}
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>
               </Link>
             </article>
@@ -85,4 +85,4 @@ export function Studios() {
       </div>
     </section>
   );
-}
+});

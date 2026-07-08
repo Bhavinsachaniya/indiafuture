@@ -1,3 +1,4 @@
+import React from "react";
 import { Users, MessageSquare, Briefcase } from "lucide-react";
 
 const blocks = [
@@ -6,7 +7,7 @@ const blocks = [
   { icon: Briefcase, t: "Jobs & intros", d: "Curated roles, warm intros to the teams building AI you actually want to work with." },
 ];
 
-export function Community() {
+export const Community = React.memo(function Community() {
   return (
     <section id="community" className="py-28 bg-surface">
       <div className="container-x">
@@ -30,4 +31,4 @@ export function Community() {
       </div>
     </section>
   );
-}
+});

@@ -1,6 +1,7 @@
+import React from "react";
 import { Link } from "@tanstack/react-router";
 
-export function Footer() {
+export const Footer = React.memo(function Footer() {
   return (
     <footer className="border-t border-border bg-ink text-cream">
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -8,10 +9,10 @@ export function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-2">
               <span className="grid h-8 w-8 place-items-center rounded-lg bg-cream text-ink font-display text-lg font-bold">I</span>
-              <span className="font-display text-2xl tracking-tight">Indiafuture</span>
+              <span className="font-display text-2xl tracking-tight">IndiaFutureAI</span>
             </div>
             <p className="mt-6 text-sm text-cream/60 leading-relaxed">
-              An AI learning and implementation studio for people who build. We don't just teach AI, we help you ship it to production.
+              India's Practical AI Upskilling Partner. We believe AI should not just be understood—it should be used.
             </p>
           </div>
           
@@ -37,9 +38,9 @@ export function Footer() {
         </div>
         
         <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-cream/10 pt-8 text-xs text-cream/40">
-          <p>© {new Date().getFullYear()} Indiafuture Studios. Built by practitioners.</p>
+          <p>© {new Date().getFullYear()} IndiaFutureAI. India's Practical AI Upskilling Partner.</p>
         </div>
       </div>
     </footer>
   );
-}
+});

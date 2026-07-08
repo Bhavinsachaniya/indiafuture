@@ -58,21 +58,21 @@ export function HeroSection() {
           </p>
 
           <h1 className="mt-8 font-display font-normal text-ink text-[clamp(2.5rem,4vw,5rem)] leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto">
-            Become The AI Builder That{" "}
+            India's Practical AI Upskilling{" "}
             <br className="hidden md:block" />
             <span className="relative inline-block border border-brand bg-brand/5 text-ink px-3 py-1 mx-2 align-middle overflow-visible">
               <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
               <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
               <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
               <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-              Teams
+              Partner
             </span>{" "}
-            Want To Hire!
+            For The Future.
           </h1>
 
           {/* Subtitle */}
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            Join a working studio of practitioners implementing real AI workflows at Indiafuture.
+            Empowering students, educators, and organizations with practical AI skills. We believe AI should not just be understood—it should be used.
           </p>
 
           {/* Avatars + count */}
@@ -93,8 +93,8 @@ export function HeroSection() {
               ))}
             </div>
             <p className="text-sm text-ink">
-              <span className="font-semibold text-brand">2,400+</span>{" "}
-              <span className="text-ink-soft">builders shipping in Indiafuture cohorts</span>
+              <span className="font-semibold text-brand">500+</span>{" "}
+              <span className="text-ink-soft">Students in the ongoing 8-Week AI Upskilling Program</span>
             </p>
           </div>
 

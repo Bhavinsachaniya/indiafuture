@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
+import { fadeUpVariant, strictViewport } from "@/lib/motion";
 
 const weeks = [
   {
@@ -100,8 +101,7 @@ export function UpskillingProgram() {
             </h2>
             
             <p className="text-lg md:text-xl text-ink-soft leading-relaxed max-w-xl mx-auto">
-              A structured journey for students — from your first AI assistant to a shipped, showcase-ready project. 
-              Each week builds on the last; by week eight, you have a working portfolio, not a folder of notes.
+              A comprehensive hands-on AI program designed to help students become AI-ready with practical skills they can immediately apply in academics, careers, freelancing, entrepreneurship, and daily productivity.
             </p>
           </div>
           
@@ -123,9 +123,10 @@ export function UpskillingProgram() {
           {weeks.map((week, idx) => (
             <motion.div
               key={week.week}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              variants={fadeUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={strictViewport}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className="group relative flex flex-col p-6 rounded-2xl border border-border/50 bg-white shadow-sm hover:shadow-md transition-all duration-300"
@@ -174,7 +175,7 @@ export function UpskillingProgram() {
         <div className="mt-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8 border-t border-border/40">
           <div className="flex items-center gap-2 text-sm text-ink-soft">
             <span className="flex items-center justify-center w-5 h-5 rounded-full border border-ink-soft/50 text-[10px]">i</span>
-            <p>The 8-week program is one of Indiafuture's student offerings — explore institutional and corporate tracks above.</p>
+            <p>The 8-week program is one of IndiaFutureAI's flagship student offerings — explore masterclasses and corporate tracks above.</p>
           </div>
           
           <a href="#programs" className="text-sm font-medium text-ink flex items-center gap-2 hover:text-orange-600 transition-colors group">

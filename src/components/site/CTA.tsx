@@ -1,7 +1,8 @@
+import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
-export function CTA() {
+export const CTA = React.memo(function CTA() {
   return (
     <section className="py-24">
       <div className="container-x">
@@ -22,4 +23,4 @@ export function CTA() {
       </div>
     </section>
   );
-}
+});

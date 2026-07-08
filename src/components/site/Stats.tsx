@@ -1,11 +1,13 @@
+import React from "react";
+
 const stats = [
-  { k: "2,400+", l: "practitioners in the network" },
-  { k: "97%", l: "ship a working AI feature by week 4" },
-  { k: "40+", l: "enterprise teams onboarded" },
-  { k: "4.9", l: "average cohort rating" },
+  { k: "500+", l: "Students in ongoing cohort" },
+  { k: "100%", l: "Practical AI Training" },
+  { k: "Custom", l: "Masterclasses & AI Labs" },
+  { k: "Real", l: "World implementation" },
 ];
 
-export function Stats() {
+export const Stats = React.memo(function Stats() {
   return (
     <section className="py-24">
       <div className="container-x">
@@ -20,4 +22,4 @@ export function Stats() {
       </div>
     </section>
   );
-}
+});

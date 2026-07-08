@@ -15,7 +15,7 @@ function Contact() {
 
   return (
     <div className="min-h-screen bg-ink text-cream font-sans flex flex-col selection:bg-brand selection:text-white">
-      <Nav />
+      <Nav theme="dark" />
       <main className="flex-1 flex flex-col items-center justify-center pt-32 pb-24 px-4 relative overflow-hidden">
         
         {/* Background Accents */}
@@ -34,7 +34,7 @@ function Contact() {
               <span className="italic text-brand-soft">something real.</span>
             </h1>
             <p className="text-cream/70 text-lg md:text-xl max-w-md mb-8">
-              Whether you want to join the next cohort, deploy AI in your team, or just talk shop—we're here.
+              Whether you want to join the next upskilling cohort, curate a masterclass for your school, or deploy AI in your team—we're here.
             </p>
 
             <div className="flex items-center gap-4 p-4 rounded-2xl bg-[#161413] border border-cream/10 max-w-sm">
@@ -73,9 +73,9 @@ function Contact() {
                 <label htmlFor="interest" className="text-sm font-medium text-cream/90">I'm interested in...</label>
                 <select id="interest" required className="w-full bg-ink border border-cream/10 rounded-xl px-4 py-3 text-cream focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all appearance-none cursor-pointer">
                   <option value="" disabled selected>Select an option</option>
-                  <option value="cohort">Joining the next Cohort</option>
-                  <option value="team">Team Training</option>
-                  <option value="consulting">Implementation / Consulting</option>
+                  <option value="cohort">8-Week AI Upskilling Program</option>
+                  <option value="masterclass">Masterclasses & Certification</option>
+                  <option value="team">Customized AI Programs for Orgs</option>
                   <option value="other">Other</option>
                 </select>
               </div>

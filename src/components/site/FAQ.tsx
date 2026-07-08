@@ -1,15 +1,14 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Plus } from "lucide-react";
 
 const faqs = [
-  { q: "Is this a course or a program?", a: "Neither, really. It's a working studio — every week you ship a real deliverable, reviewed by senior practitioners. Closer to a residency than a course." },
-  { q: "Do I need to know AI already?", a: "No. The Foundations studio assumes solid engineering fundamentals but no prior AI experience. Applied and Implementation studios expect Foundations-level fluency." },
-  { q: "How much time per week?", a: "Plan for 6–8 focused hours: two live sessions, review time, and your build. It's the most honest number we can give you." },
-  { q: "What if it's not for me?", a: "Full refund within the first two weeks, no questions. We'd rather you leave than stay in the wrong room." },
-  { q: "Do you work with teams?", a: "Yes. We run private cohorts for engineering orgs, with a bespoke curriculum and a dedicated success lead. Talk to us." },
+  { q: "Is this a course or a program?", a: "It's a practical upskilling program. We believe AI should not just be understood—it should be used. Every week you ship a real deliverable." },
+  { q: "Do I need to know AI already?", a: "No. Our flagship 8-Week AI Upskilling Program is designed for students to start from the fundamentals and become AI-ready." },
+  { q: "Who receives certificates?", a: "Participants may receive industry-recognized certificates of participation or completion based on program structure, attendance, assessments, or project completion." },
+  { q: "Do you work with organizations?", a: "Yes. We design exclusive AI learning, certification programs, and masterclasses for institutions, MSMEs, and professional communities based on specific objectives." },
 ];
 
-export function FAQ() {
+export const FAQ = React.memo(function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section id="faq" className="py-28">
@@ -44,4 +43,4 @@ export function FAQ() {
       </div>
     </section>
   );
-}
+});
