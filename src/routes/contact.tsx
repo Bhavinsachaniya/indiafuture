@@ -58,7 +58,7 @@ function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-cream/50 uppercase tracking-wider mb-1">WhatsApp & Phone</p>
-                  <a href="https://wa.me/917011596808" target="_blank" rel="noreferrer" className="text-cream hover:text-[#25D366] transition-colors font-medium">
+                  <a href="https://wa.me/917011596808?text=Hey,%20I%20need%20more%20info%20about%20IndiafutureAI" target="_blank" rel="noreferrer" className="text-cream hover:text-[#25D366] transition-colors font-medium">
                     +91 70115 96808
                   </a>
                 </div>
