@@ -3,6 +3,7 @@ import { clsx } from "clsx";
 import { motion } from "framer-motion";
 import { fadeUpVariant, defaultViewport } from "@/lib/motion";
 import { LineChart, MapPin, Sparkles, Users, Zap } from "lucide-react";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export default function FUIBentoGrid() {
   return (
@@ -13,13 +14,9 @@ export default function FUIBentoGrid() {
         </h2>
         <p className="mx-auto mt-4 max-w-4xl text-center font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-tight text-ink text-balance">
           Know more about your{" "}
-          <span className="relative inline-block border border-brand bg-brand/5 text-ink px-3 py-1 mx-2 align-middle overflow-visible">
-            <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-            <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-            <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-            <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+          <HighlightText className="text-ink tracking-normal">
             customers
-          </span>{" "}
+          </HighlightText>{" "}
           than they do.
         </p>
 

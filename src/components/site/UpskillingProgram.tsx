@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { fadeUpVariant, strictViewport } from "@/lib/motion";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 const weeks = [
   {
@@ -104,13 +105,9 @@ export function UpskillingProgram() {
 
             <h2 className="text-[clamp(2.5rem,4vw,4rem)] md:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-6 text-balance max-w-4xl mx-auto leading-[1.1]">
               The{" "}
-              <span className="relative inline-block border border-brand bg-brand/5 text-ink px-3 py-1 mx-2 align-middle not-italic overflow-visible">
-                <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-                <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-                <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+              <HighlightText className="text-ink not-italic tracking-normal">
                 8-Week
-              </span>{" "}
+              </HighlightText>{" "}
               AI Upskilling Program.
             </h2>
 

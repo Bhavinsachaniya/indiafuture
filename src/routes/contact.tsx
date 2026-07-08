@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { ArrowRight, Mail, MessageSquare } from "lucide-react";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export const Route = createFileRoute("/contact")({
   component: Contact,
@@ -29,13 +30,9 @@ function Contact() {
             </p>
             <h1 className="font-display text-5xl md:text-7xl mb-6 leading-[1.1]">
               Let's build <br />
-              <span className="relative inline-block border border-brand bg-brand/10 text-black px-3 py-1 mx-2 align-middle overflow-visible">
-                <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-                <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-                <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+              <HighlightText className="text-black tracking-normal">
                 something real.
-              </span>
+              </HighlightText>
             </h1>
             <p className="text-ink-soft text-lg md:text-xl max-w-md mb-8">
               Whether you want to join the next upskilling cohort, curate a masterclass for your

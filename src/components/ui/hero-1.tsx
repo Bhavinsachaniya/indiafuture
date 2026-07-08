@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { LogoCloud } from "@/components/ui/logo-cloud-3";
 import { Link } from "@tanstack/react-router";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export function HeroSection() {
   return (
@@ -60,13 +61,9 @@ export function HeroSection() {
           <h1 className="mt-8 font-display font-normal text-ink text-[clamp(2.5rem,4vw,5rem)] leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto">
             India's Practical AI Upskilling{" "}
             <br className="hidden md:block" />
-            <span className="relative inline-block border border-brand bg-brand/5 text-ink px-3 py-1 mx-2 align-middle overflow-visible">
-              <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+            <HighlightText className="text-ink font-normal tracking-normal">
               Partner
-            </span>{" "}
+            </HighlightText>{" "}
             For The Future.
           </h1>
 

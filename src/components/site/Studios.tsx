@@ -1,6 +1,7 @@
 import React from "react";
 import { Cpu, Workflow, LineChart, ShieldCheck } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 const studios = [
   {
@@ -45,13 +46,9 @@ export const Studios = React.memo(function Studios() {
           <p className="text-xs uppercase tracking-[0.2em] text-brand">The Programs</p>
           <h2 className="mt-3 font-display text-5xl md:text-6xl leading-[1.05] text-balance">
             Four paths. One <em className="italic">outcome</em> —
-            <span className="relative inline-block border border-brand bg-brand/5 text-ink px-3 py-1 ml-2 align-middle">
-              <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+            <HighlightText className="text-ink ml-2 tracking-normal">
               practical skills
-            </span>
+            </HighlightText>
             .
           </h2>
           <p className="mt-4 text-ink-soft text-lg max-w-xl mx-auto">

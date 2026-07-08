@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 const testimonials = [
   {
@@ -133,21 +134,13 @@ export const Testimonials = React.memo(function Testimonials() {
 
           <h2 className="text-4xl md:text-5xl lg:text-[3.5rem]  text-ink tracking-tight leading-[1.1] mb-6 font-display">
             Loved by{" "}
-            <span className="relative inline-block border border-brand  bg-brand/5 text-brand px-3 py-1 mx-2 align-middle overflow-visible">
-              <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+            <HighlightText className="text-brand tracking-normal">
               Innovators.
-            </span>{" "}
+            </HighlightText>{" "}
             Trusted by{" "}
-            <span className="relative inline-block border border-brand bg-brand/5 text-brand px-3 py-1 mx-2 align-middle overflow-visible">
-              <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-              <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+            <HighlightText className="text-brand tracking-normal">
               Leaders.
-            </span>
+            </HighlightText>
           </h2>
 
           <p className="text-ink-soft text-lg md:text-xl max-w-2xl mx-auto">

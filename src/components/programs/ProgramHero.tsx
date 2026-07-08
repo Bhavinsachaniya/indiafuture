@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import type { ProgramData } from "@/config/programs";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export function ProgramHero({ data }: { data: ProgramData }) {
   return (
@@ -50,13 +51,9 @@ export function ProgramHero({ data }: { data: ProgramData }) {
               data.title.split(new RegExp(`(${data.highlightWord})`, 'gi')).map((part, i) => {
                 if (part.toLowerCase() === data.highlightWord!.toLowerCase()) {
                   return (
-                    <span key={i} className="relative inline-block border border-brand bg-brand/5 text-ink px-4 py-1 mx-2 align-middle overflow-visible font-light">
-                      <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-                      <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
-                      <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
-                      <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+                    <HighlightText key={i} className="font-light">
                       {part}
-                    </span>
+                    </HighlightText>
                   );
                 }
                 return part;
