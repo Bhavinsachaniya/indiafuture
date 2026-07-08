@@ -1,0 +1,152 @@
+
+    /* =========================================
+       BASE & CONTAINER STYLING
+       ========================================= */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #110e13; /* Deep elegant dark background to make the peach pop */
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    .bento-wrapper {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      perspective: 1000px;
+    }
+
+    /* Ambient continuous levitation */
+    .bento-svg {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.5)) drop-shadow(0 10px 15px rgba(255, 185, 112, 0.1));
+      animation: floatMenu 7s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    /* =========================================
+       SVG INTERNAL STYLING
+       ========================================= */
+    .cls-0 {fill:#FFB970;}
+    .cls-1 {fill:#FCCFA6;}
+    .cls-2 {fill:#FFE4C8;}
+    .cls-3 {fill:#1a1a1a1E2;}
+    .cls-4 {fill:#F7A446;}
+    .cls-5 {fill:none;stroke:#EA9D43;stroke-width:0.4462;stroke-linecap:round;stroke-miterlimit:10;}
+    .cls-6 {fill:none;stroke:#1a1a1a;stroke-width:0.4462;stroke-linecap:round;stroke-miterlimit:10;}
+    .cls-7 {fill:#E6631E; transition: fill 0.3s ease;}
+    .cls-8 {fill:#1a1a1a;}
+    .cls-9 {fill:#12090B;}
+    .cls-10 {fill:none;stroke:#F7A446;stroke-width:0.5506;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+    .cls-11 {fill:none;stroke:#1a1a1a;stroke-width:0.8041;stroke-linecap:round;stroke-miterlimit:10;}
+    .cls-12 {fill-rule:evenodd;clip-rule:evenodd;fill:#1a1a1a;}
+
+    /* Override SVG Fonts to ensure cross-platform beauty */
+    text {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 500;
+      transition: fill 0.2s ease;
+    }
+
+    /* =========================================
+       HARDWARE ACCELERATED MICRO-ANIMATIONS 
+       (GPU Composite Layer - O(1) Main Thread)
+       ========================================= */
+    
+    /* Hide everything initially for the observer */
+    .ui-base, .ui-header, .ui-row, .ui-footer {
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+
+    .ui-base {
+      transform: scale(0.9) translateY(15px);
+      transform-origin: center center;
+    }
+
+    .ui-header {
+      transform: translateY(-5px);
+    }
+
+    .ui-row, .ui-footer {
+      transform: translateX(-10px);
+    }
+
+    /* -----------------------------------------
+       ACTIVE STATE TRIGGERS
+       ----------------------------------------- */
+    .is-active .ui-base {
+      /* Snappy elastic bezier for base modal */
+      animation: popModal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    .is-active .ui-header {
+      animation: slideDown 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.15s;
+    }
+
+    .is-active .ui-row {
+      animation: slideRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .is-active .ui-footer {
+      animation: slideRight 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.75s;
+    }
+
+    /* Staggered Timings for visual hierarchy */
+    .is-active .delay-1 { animation-delay: 0.2s; }
+    .is-active .delay-2 { animation-delay: 0.25s; }
+    .is-active .delay-3 { animation-delay: 0.3s; }
+    .is-active .delay-4 { animation-delay: 0.35s; }
+    .is-active .delay-5 { animation-delay: 0.4s; }
+    .is-active .delay-6 { animation-delay: 0.45s; }
+    .is-active .delay-7 { animation-delay: 0.5s; }
+    .is-active .delay-8 { animation-delay: 0.55s; }
+    .is-active .delay-9 { animation-delay: 0.6s; }
+
+    /* =========================================
+       INTERACTIVE HOVER STATES (Product Feel)
+       ========================================= */
+    .ui-row { cursor: pointer; }
+    
+    /* Inactive rows hover */
+    .ui-row:not(.ui-active):hover text {
+      fill: #EA9D43; /* Brand Orange */
+    }
+    .ui-row:not(.ui-active):hover .cls-4 {
+      transform: scale(1.15);
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    /* Active Green row hover */
+    .ui-active:hover .cls-7 {
+      fill: #CC5517; /* Darker green */
+    }
+
+    /* =========================================
+       KEYFRAMES
+       ========================================= */
+    @keyframes floatMenu {
+      0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+      50% { transform: translateY(-8px) rotateX(2deg) rotateY(-1deg); }
+    }
+
+    @keyframes popModal {
+      to { transform: scale(1) translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideRight {
+      to { transform: translateX(0); opacity: 1; }
+    }
+  

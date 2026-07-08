@@ -1,0 +1,235 @@
+import { useEffect, useRef, useState } from 'react';
+import './Card4.css';
+
+export function Card4() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsActive(true);
+        } else {
+          setIsActive(false);
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={`bento-wrapper ${isActive ? 'is-active' : ''}`}>
+      <svg className="radial-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 251">
+      
+      {/*  DEFS: Gradients Preserved  */}
+      <defs>
+        <linearGradient id="SVGID_1_" x1="120.8" x2="128.7" y1="208.2" y2="208.2" gradientTransform="matrix(1 0 0 -1 0 252)" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#8E4620" offset="0"/>
+          <stop stopColor="#FDAE33" offset="1"/>
+        </linearGradient>
+        <linearGradient id="SVGID_2_" x1="119.7" x2="129.6" y1="70.95" y2="70.95" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#8E4620" offset="0"/>
+          <stop stopColor="#FFAA29" offset="1"/>
+        </linearGradient>
+        <linearGradient id="SVGID_3_" x1="119.7" x2="129.6" y1="180.6" y2="186.2" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#8E4620" offset="0"/>
+          <stop stopColor="#FCAB33" offset="1"/>
+        </linearGradient>
+        <linearGradient id="SVGID_4_" x1="65.26" x2="75.89" y1="125.4" y2="125.4" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#8E4620" offset="0"/>
+          <stop stopColor="#FBAD30" offset="1"/>
+        </linearGradient>
+        <linearGradient id="SVGID_5_" x1="174.1" x2="184.9" y1="125.4" y2="125.4" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#8E4620" offset="0"/>
+          <stop stopColor="#FBB136" offset="1"/>
+        </linearGradient>
+      </defs>
+
+      {/*  GROUP 1: Background Corner Dots  */}
+      <g className="corner-dots">
+        <circle className="cls-11" cx="23" cy="18.7" r=".2"/>
+        <circle className="cls-11" cx="22.2" cy="30.8" r=".4"/>
+        <circle className="cls-11" cx="22.1" cy="36.1" r=".4"/>
+        <circle className="cls-11" cx="27.6" cy="30.4" r=".4"/>
+        <circle className="cls-11" cx="23" cy="48.5" r=".4"/>
+        <circle className="cls-11" cx="28.1" cy="36.1" r=".4"/>
+        <circle className="cls-11" cx="22.1" cy="24.9" r=".4"/>
+        <circle className="cls-11" cx="36.4" cy="24.9" r=".4"/>
+        <circle className="cls-11" cx="36.4" cy="35.9" r=".4"/>
+        <circle className="cls-11" cx="48.8" cy="24.7" r=".4"/>
+        <circle className="cls-11" cx="22.1" cy="227.3" r=".4"/>
+        <circle className="cls-11" cx="22.3" cy="216.7" r=".4"/>
+        <circle className="cls-11" cx="27.9" cy="221" r=".4"/>
+        <circle className="cls-11" cx="36.4" cy="227.5" r=".4"/>
+        <circle className="cls-11" cx="36.4" cy="216.5" r=".4"/>
+        <circle className="cls-11" cx="48.7" cy="227.6" r=".4"/>
+        <circle className="cls-11" cx="228.1" cy="18.8" r=".2"/>
+        <circle className="cls-11" cx="227.9" cy="24.9" r=".4"/>
+        <circle className="cls-11" cx="222.4" cy="30.4" r=".4"/>
+        <circle className="cls-11" cx="227.9" cy="36" r=".4"/>
+        <circle className="cls-11" cx="222.8" cy="36" r=".4"/>
+        <circle className="cls-11" cx="213.7" cy="24.7" r=".4"/>
+        <circle className="cls-11" cx="201.1" cy="24.6" r=".4"/>
+        <circle className="cls-11" cx="227.9" cy="48.7" r=".4"/>
+        <circle className="cls-11" cx="213.9" cy="35.9" r=".4"/>
+        <circle className="cls-11" cx="228.1" cy="227.2" r=".3"/>
+        <circle className="cls-11" cx="227.9" cy="216.7" r=".4"/>
+        <circle className="cls-11" cx="222.4" cy="221.1" r=".4"/>
+        <circle className="cls-11" cx="213.8" cy="227.6" r=".4"/>
+        <circle className="cls-11" cx="227.9" cy="211.1" r=".4"/>
+        <circle className="cls-11" cx="213.9" cy="216.7" r=".4"/>
+      </g>
+
+      {/*  GROUP 2: Orbital Rings  */}
+      <g className="bg-rings">
+        <circle className="cls-1" cx="125" cy="125.4" r="40"/>
+        <circle className="cls-4" cx="124.9" cy="125.4" r="50.6"/>
+        <circle className="cls-1" cx="125.1" cy="125.4" r="62.3"/>
+        <circle className="cls-1" cx="125" cy="125.4" r="101.9"/>
+        <circle className="cls-4" cx="124.9" cy="125.4" r="105"/>
+        <circle className="cls-4" cx="124.8" cy="125.7" r="105"/>
+        <path className="cls-1" d="m239.7 125c0-62-47.7-114-114.3-114s-115.1 52-115.1 114 48.1 115.4 114.7 115.1c66.6-0.2 114.7-53 114.7-115.1z"/>
+      </g>
+
+      {/*  GROUP 3: Network Connection Lines  */}
+      <g className="network-lines">
+        <circle className="cls-5" cx="124.8" cy="125.6" r="16.9"/>
+        <path className="cls-6" d="m124.8 107c-1-5.3-7-14.5-16.1-17.9m-1.5-0.8c-3.8-1.9-11.2-4-16.2-4l-2.6 2.7c-9.4 9.3-15.8 22.1-17.4 32"/>
+        <path className="cls-2" d="m121.3 44.2c-13.2 0.5-28.6 4.2-47.1 17.8"/>
+        <path className="cls-2" d="m121.2 44.6c-7 1.9-17.4 8.3-23.4 18.4"/>
+        <path className="cls-2" d="m73.9 62.6c16.4-3.2 27.1-0.2 44.1 8.1"/>
+        <path className="cls-2" d="m128.6 44.1c15.9 0 32.2 5.4 46.4 16l2.5 1.9"/>
+        <path className="cls-2" d="m130.5 70.6c12.1-7.9 26.6-13.3 45.3-9"/>
+        <path className="cls-2" d="m130.5 70.6c10.3 0.9 19.7 4.7 29.1 11.3"/>
+        <path className="cls-2" d="m91 82.6c8.2-6.3 17.7-10.6 28.1-12"/>
+        <path className="cls-2" d="m90 81.8c1.8-6.3 4.5-12.8 7.8-18.2"/>
+        <path className="cls-2" d="m70.1 65.5c-6.5 11.8-6.9 28.9 0.9 52.8"/>
+        <path className="cls-2" d="m43.7 122c0.8-22.3 11.3-42 26.1-56.6"/>
+        <path className="cls-2" d="m86.1 88c-13.2 4.3-34.1 14-42.2 33.6"/>
+        <path className="cls-2" d="m86.4 179.4"/>
+        <path className="cls-2" d="m43.8 128.9c0.4 16.5 7.4 38.4 26.1 56.5"/>
+        <path className="cls-2" d="m43.9 128.8c4.5 12.2 17.6 22.9 34 27.7l4.1 1.3"/>
+        <path className="cls-2" d="m70 185.5c-5.9-9.6-7.4-29.1-1.1-46.7l2.1-5.7"/>
+        <path className="cls-2" d="m73.9 189c10.7 8.6 25.7 17.2 47.5 17.8"/>
+        <path className="cls-2" d="m74.2 188.8c14.3 4.1 28.7 1.6 44.5-9.2"/>
+        <path className="cls-2" d="m176.6 188.7c-13.2 10.2-29.8 17.7-48.1 18.2"/>
+        <path className="cls-2" d="m128.6 206.8c12-3.9 25.1-14.9 31.7-40"/>
+        <path className="cls-2" d="m151 187.6c7 1.9 16.7 2.8 25.2 0.9"/>
+        <path className="cls-2" d="m179.8 186.1c7-11.6 6.3-31.2-0.5-51.8"/>
+        <path className="cls-2" d="m206.3 129c-0.1 14.3-6.7 38.2-26.3 56.7"/>
+        <path className="cls-2" d="m165.2 161c14.4-4.4 34.1-13.5 41-32"/>
+        <path className="cls-2" d="m206.3 121.8c-1.5-23.4-12.6-44.4-26.1-56.5"/>
+        <path className="cls-2" d="m178.9 63.1c4.8 6 10.2 18 7.6 34.5"/>
+        <path className="cls-2" d="m186.4 97.8c9.6 5.8 16.6 13.7 19.7 23.7"/>
+        <path className="cls-2" d="m179.7 65.7"/>
+        <path className="cls-2" d="m91 166.5c5.4 5 15.6 11.6 28 13.1"/>
+        <path className="cls-2" d="m82 157.8c1.9 1.3 3.3 3 5 4.7"/>
+        <path className="cls-2" d="m70.8 131.5c0.8 8.2 5.3 18.7 11.7 26.3"/>
+        <path className="cls-2" d="m131.9 179.5c5.3 2.7 13.4 6.5 19.5 7.7"/>
+        <path className="cls-2" d="m131.9 179.5c9-1.2 17.4-4.2 27.7-12.4"/>
+        <path className="cls-2" d="m164.9 161.3c4.9-4.4 12.9-16.4 14.6-30.2"/>
+        <path className="cls-2" d="m179.8 119.7c2.6-4.7 6.1-15.5 6.7-21.5"/>
+        <path className="cls-2" d="m163.9 87.1c6.4 6.2 14 18 15.9 32.6"/>
+        <path className="cls-2" d="m164 87.3c5.4 1.5 15.7 5.9 21.7 10.4"/>
+        <ellipse className="cls-2" cx="89" cy="93" rx="0" ry="8.8"/>
+        <path className="cls-2" d="m88.6 87.6c-1.6 8.9 0.7 29 18.1 37.9"/>
+        <path className="cls-2" d="m89.6 142.1c-4-8.2-6.3-19.4 0.1-34"/>
+        <path className="cls-2" d="m105.6 159.3c-5 0.7-14.5 2-24.5-1.4"/>
+        <path className="cls-2" d="m87.3 162.1c-1.4-8-0.1-15.1 2.1-18.7"/>
+        <path className="cls-2" d="m89.6 143c4 8.1 13.2 20.3 34.4 21.6"/>
+        <path className="cls-2" d="m107 159.9c6.6-1.5 15.2-6 17.9-16"/>
+        <path className="cls-2" d="m89.9 142.5c2.5-7.4 10.2-15.4 16.6-17"/>
+        <path className="cls-2" d="m90.5 106.2c4-6.7 9.4-12.5 17-16.8"/>
+        <path className="cls-2" d="m124.8 84.6c-4.4 0-11.6 1.1-15.8 3.6"/>
+        <path className="cls-2" d="m124.8 106.9c0.7-8 10.1-25 34.1-24.8"/>
+        <path className="cls-2" d="m110.1 88.4c8.1 3.5 13.6 10.7 14.7 18.5"/>
+        <path className="cls-2" d="m125.9 84.6c9.3 0.2 24.1 3.1 34.3 21.6"/>
+        <path className="cls-2" d="m163.2 86.9c1.6 5.6 0.6 13.1-2.2 20.6"/>
+        <path className="cls-2" d="m143.7 125.5c6.7-1.9 13.9-7.7 17.3-17.1"/>
+        <path className="cls-2" d="m159.9 143.4c-3.5 7.2-11.3 14.5-17.9 16.5"/>
+        <path className="cls-2" d="m124.9 143.8c2.6 8.1 10.7 15.1 16.7 17"/>
+        <path className="cls-2" d="m126.1 164.6c5 0 11.4-1.6 15.9-3.8"/>
+        <path className="cls-2" d="m162.1 162.1c1-5 0.5-14.4-1.5-18.7"/>
+        <path className="cls-2" d="m160.9 164.9c-3.3 1-11.8 0-18.3-3"/>
+        <path className="cls-2" d="m161 108.6c2.5 5.5 5.6 16.5-0.1 33.6"/>
+        <path className="cls-2" d="m144 125.6c6 1.4 12.9 8 16.1 16.8"/>
+      </g>
+
+      {/*  GROUP 4: Nodes and Orbs  */}
+      <g className="network-nodes">
+        <circle className="cls-3 gradient-node" cx="124.7" cy="43.8" r="3.5"/>
+        <circle className="cls-7 gradient-node" cx="124.7" cy="180" r="5"/>
+        <circle className="cls-8 gradient-node" cx="124.8" cy="70.4" r="5.1"/>
+        <circle cx="70.6" cy="125.4" r="5.3" fill="url(#SVGID_4_)" stroke="#ECBC81" strokeMiterlimit="10" strokeWidth=".5" className="gradient-node"/>
+        <circle cx="179.5" cy="125.4" r="5.1" fill="url(#SVGID_5_)" stroke="#EDA973" strokeMiterlimit="10" strokeWidth=".5" className="gradient-node"/>
+
+        <circle className="cls-4" cx="124.9" cy="70.4" r="4.5"/>
+        <circle className="cls-4" cx="124.9" cy="206.9" r="3.4"/>
+        <circle className="cls-4" cx="70.9" cy="187.6" r="3"/>
+        <circle className="cls-4" cx="71.7" cy="63.6" r="3.1"/>
+        <circle className="cls-4" cx="178.4" cy="63.5" r="2.9"/>
+        <circle className="cls-4" cx="70.9" cy="125.4" r="4.9"/>
+        <circle className="cls-4" cx="179.4" cy="125.4" r="4.7"/>
+        <circle className="cls-4" cx="43.4" cy="125.1" r="3.3"/>
+        <circle className="cls-4" cx="206.5" cy="125.3" r="3.4"/>
+        
+        <g fill="url(#SVGID_1_)" strokeMiterlimit="10" strokeWidth=".5">
+          <circle cx="43.3" cy="125.2" r="3.3" stroke="#ECBC81"/>
+          <circle cx="71.8" cy="63.6" r="2.8" stroke="#ECBC81"/>
+          <circle cx="178.4" cy="63.5" r="2.7" stroke="#ECBC81"/>
+          <circle cx="206.5" cy="125.3" r="3.2" stroke="#ECBC81"/>
+          <circle cx="178.3" cy="187.6" r="2.8" stroke="#ECBC81"/>
+          <circle cx="124.9" cy="206.9" r="3.4" stroke="#ECBC81"/>
+          <circle cx="71.7" cy="187.7" r="2.8" stroke="#ECBC81"/>
+          <circle cx="88.7" cy="164.9" r="2.9" stroke="#ECBC81"/>
+          <circle cx="88.8" cy="84.7" r="2.8" stroke="#EBB058"/>
+          <circle cx="161.7" cy="84.7" r="2.9" stroke="#ECBC81"/>
+          <circle cx="161.6" cy="164.9" r="2.9" stroke="#ECBC81"/>
+        </g>
+
+        <g fill="#824822" stroke="#DEAA77" strokeMiterlimit="10" strokeWidth=".5">
+          <circle cx="99.9" cy="48.2" r="1.5"/>
+          <circle cx="97.9" cy="63" r="1.1"/>
+          <circle cx="108.2" cy="88.4" r="1.4"/>
+          <circle cx="108" cy="125.4" r="1.3"/>
+          <circle cx="89.9" cy="143.6" r="1.5"/>
+          <circle cx="106.7" cy="160.1" r="1.5"/>
+          <circle cx="125" cy="164.6" r="1.5"/>
+          <circle cx="142.4" cy="161" r="1.4"/>
+          <circle cx="125" cy="142.4" r="1.4"/>
+          <circle cx="142" cy="125.3" r="1.4"/>
+          <circle cx="124.8" cy="108.4" r="1.4"/>
+          <circle cx="124.8" cy="84.6" r="1.4"/>
+          <circle cx="160.7" cy="143.7" r="1.5"/>
+          <circle cx="164.9" cy="125.3" r="1.5"/>
+          <circle cx="160.7" cy="107.3" r="1.5"/>
+          <circle cx="142.6" cy="88.9" r=".9"/>
+          <circle cx="186.3" cy="98.5" r="1.1"/>
+          <circle cx="197.7" cy="88" r="1.6"/>
+          <circle cx="198" cy="160.2" r="1.5"/>
+          <circle cx="151.9" cy="187.8" r="1.2"/>
+          <circle cx="96.7" cy="201.8" r="1.6"/>
+          <circle cx="52.3" cy="161.1" r="1.7"/>
+          <circle cx="51.6" cy="89.8" r="1.6"/>
+          <circle cx="65.5" cy="151.6" r="1.2"/>
+          <circle cx="85.5" cy="125.3" r="1.4"/>
+          <circle cx="89.8" cy="107.3" r="1.5"/>
+        </g>
+      </g>
+
+      {/*  GROUP 5: Center User Icon  */}
+      <g className="center-core">
+        <path className="cls-9" d="m131.5 133.4h-13.5v-1.7c0-4 3.2-5.9 6.7-5.9s6.8 1.9 6.8 5.9v1.7z"/>
+        <circle className="cls-10" cx="124.9" cy="120.5" r="3.6"/>
+      </g>
+
+    </svg>
+    </div>
+  );
+}
