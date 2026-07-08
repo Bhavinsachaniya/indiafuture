@@ -5,6 +5,8 @@ import FUIBentoGrid from "@/components/ui/bento";
 import { Studios } from "@/components/site/Studios";
 import { Method } from "@/components/site/method/Method";
 import { UpskillingProgram } from "@/components/site/UpskillingProgram";
+import { AISolutions } from "@/components/site/AISolutions";
+import { Impact } from "@/components/site/Impact";
 import { Stats } from "@/components/site/Stats";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Community } from "@/components/site/Community";
@@ -28,6 +30,8 @@ function Index() {
         <FUIBentoGrid />
         <Method />
         <UpskillingProgram />
+        <AISolutions />
+        <Impact />
         <Stats />
         <Testimonials />
         <Community />
