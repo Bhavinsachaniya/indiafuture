@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     id: 2,
-    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=faces",
+    avatar: "/Testimonials/KEshav Singla.png",
     stars: 5,
     text: (
       <>
@@ -42,7 +42,7 @@ const testimonials = [
   },
   {
     id: 3,
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
+    avatar: "/Testimonials/harsh Mittal.png",
     stars: 5,
     text: (
       <>
@@ -61,7 +61,7 @@ const testimonials = [
   },
   {
     id: 4,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces",
+    avatar: "/Testimonials/Shrey Saxena.png",
     stars: 5,
     text: (
       <>
