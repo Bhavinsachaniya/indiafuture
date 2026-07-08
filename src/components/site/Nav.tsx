@@ -26,10 +26,10 @@ export function Nav() {
       }`}
     >
       <div className={`mx-auto flex items-center justify-between transition-all duration-500 ${scrolled ? "h-14 px-6" : "h-20 container-x"}`}>
-        <a href="#" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-ink text-cream font-display text-lg">I</span>
           <span className="font-display text-xl">Indiafuture</span>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-ink-soft">
           {links.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-ink transition-colors">

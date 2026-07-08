@@ -15,9 +15,14 @@ export function Method() {
   return (
     <section id="method" className="bg-ink text-cream relative pt-24">
       <main ref={container} className="relative w-full">
-        <MethodHeader />
+        {/* Absolute wrapper matches main's height, allowing synchronized sticky un-sticking */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <div className="sticky top-[12vh] h-[143vh] md:h-[148vh] w-full">
+            <MethodHeader />
+          </div>
+        </div>
 
-        <div className="mt-16">
+        <div className="relative w-full pt-[35vh]">
           {steps.map((step, i) => (
           <MethodCard
             key={`step_${i}`}
@@ -29,7 +34,6 @@ export function Method() {
             progress={scrollYProgress}
           />
         ))}
-
         </div>
       </main>
     </section>
