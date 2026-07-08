@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, Share2, Search, CheckCircle } from "lucide-react";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { ShieldCheck, Share2, Search, CheckCircle, Plus } from "lucide-react";
 
 export function CertificateAndFAQ() {
+  const [open, setOpen] = useState<number | null>(0);
   const faqs = [
     { q: "Who can join?", a: "This program is designed for beginners and intermediate learners. No advanced coding experience is required, though a basic understanding of logic is helpful." },
     { q: "How much time is needed each week?", a: "You should dedicate 8-10 hours per week. This includes 3 hours of live sessions and 5-7 hours for assignments and projects." },
@@ -83,32 +83,34 @@ export function CertificateAndFAQ() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 md:py-32 bg-surface relative overflow-hidden">
-        <div className="container-x">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-4 lg:sticky lg:top-32">
-              <h2 className="font-display text-4xl md:text-5xl text-ink leading-[1.05] mb-6">
-                Frequently <br /> Asked <span className="italic text-brand-soft">Questions</span>
-              </h2>
-              <p className="text-ink-soft text-lg leading-relaxed">
-                Got a question? We've got answers. If you need more specific details, feel free to contact admissions.
-              </p>
-            </div>
-
-            <div className="lg:col-span-8">
-              <Accordion type="single" collapsible className="w-full space-y-4">
-                {faqs.map((faq, idx) => (
-                  <AccordionItem key={idx} value={`item-${idx}`} className="bg-white border border-ink/5 rounded-2xl px-6 py-2 shadow-sm data-[state=open]:border-brand/20 transition-all">
-                    <AccordionTrigger className="font-display text-xl text-ink hover:text-brand hover:no-underline py-4 text-left">
-                      {faq.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-lg text-ink-soft leading-relaxed pb-6">
-                      {faq.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
+      <section id="faq" className="py-28 bg-[#fdfaf5]">
+        <div className="container-x max-w-3xl">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand">Questions</p>
+            <h2 className="mt-3 font-display text-5xl md:text-6xl leading-[1.05] text-ink">
+              Frequently asked.
+            </h2>
+          </div>
+          <div className="mt-12 divide-y divide-border border-y border-border">
+            {faqs.map((faq, i) => {
+              const isOpen = open === i;
+              return (
+                <div key={i} className="py-2">
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-6 py-5 text-left group"
+                  >
+                    <span className="font-display text-2xl text-ink">{faq.q}</span>
+                    <Plus className={`h-5 w-5 shrink-0 text-ink-soft transition-transform duration-300 ${isOpen ? "rotate-45 text-brand" : ""}`} />
+                  </button>
+                  <div className={`grid transition-all duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`}>
+                    <div className="overflow-hidden">
+                      <p className="text-ink-soft leading-relaxed max-w-2xl">{faq.a}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

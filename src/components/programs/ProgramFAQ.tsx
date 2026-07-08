@@ -1,44 +1,41 @@
-import React from "react";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import React, { useState } from "react";
+import { Plus } from "lucide-react";
 import type { ProgramData } from "@/config/programs";
 
 export function ProgramFAQ({ data }: { data: ProgramData }) {
+  const [open, setOpen] = useState<number | null>(0);
+
   if (!data.faqs || data.faqs.length === 0) return null;
 
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
-      <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
-          
-          {/* Left: Copy */}
-          <div className="lg:col-span-4 lg:sticky lg:top-32">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-              Got Questions?
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl text-ink leading-[1.05] mb-6">
-              Frequently <br /> Asked <span className="italic text-brand-soft">Questions</span>
-            </h2>
-            <p className="text-ink-soft text-lg leading-relaxed">
-              Everything you need to know about the {data.title}. Can't find the answer you're looking for? Reach out to our team.
-            </p>
-          </div>
-
-          {/* Right: Accordion */}
-          <div className="lg:col-span-8">
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {data.faqs.map((faq, idx) => (
-                <AccordionItem key={idx} value={`item-${idx}`} className="bg-surface border border-ink/5 rounded-2xl px-6 py-2 overflow-hidden shadow-sm data-[state=open]:bg-white data-[state=open]:border-brand/20 transition-all">
-                  <AccordionTrigger className="font-display text-xl text-ink hover:text-brand hover:no-underline py-4 text-left">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-lg text-ink-soft leading-relaxed pb-6">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-          
+    <section id="faq" className="py-28 bg-[#fdfaf5]">
+      <div className="container-x max-w-3xl">
+        <div className="text-center">
+          <p className="text-xs uppercase tracking-[0.2em] text-brand">Questions</p>
+          <h2 className="mt-3 font-display text-5xl md:text-6xl leading-[1.05]">
+            Frequently asked.
+          </h2>
+        </div>
+        <div className="mt-12 divide-y divide-border border-y border-border">
+          {data.faqs.map((faq, i) => {
+            const isOpen = open === i;
+            return (
+              <div key={i} className="py-2">
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="w-full flex items-center justify-between gap-6 py-5 text-left group"
+                >
+                  <span className="font-display text-2xl">{faq.question}</span>
+                  <Plus className={`h-5 w-5 shrink-0 text-ink-soft transition-transform duration-300 ${isOpen ? "rotate-45 text-brand" : ""}`} />
+                </button>
+                <div className={`grid transition-all duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`}>
+                  <div className="overflow-hidden">
+                    <p className="text-ink-soft leading-relaxed max-w-2xl">{faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
