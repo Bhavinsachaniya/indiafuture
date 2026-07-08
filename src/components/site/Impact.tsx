@@ -5,9 +5,9 @@ export const Impact = React.memo(function Impact() {
   return (
     <section className="bg-ink text-cream relative pt-24 pb-12" id="impact">
       <div className="container-x">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-8 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Sticky Header */}
-          <div className="lg:w-1/3 lg:sticky lg:top-40 shrink-0">
+          <div className="lg:col-span-5 lg:sticky lg:top-40 shrink-0">
             <p className="text-xs uppercase tracking-[0.2em] text-brand">The Impact</p>
             <h2 className="mt-4 font-display text-5xl md:text-6xl leading-[1.05]">
               Real <em className="italic text-brand-soft">Growth</em> <br className="hidden lg:block"/>
@@ -19,7 +19,7 @@ export const Impact = React.memo(function Impact() {
           </div>
           
           {/* Right Scrolling Cards */}
-          <div className="lg:w-2/3 flex flex-col gap-12 md:gap-24 pb-12">
+          <div className="lg:col-span-7 flex flex-col gap-12 md:gap-24 pb-12">
             
             {/* Personal Impact Card */}
             <div className="bg-[#161413] border border-cream/10 rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden group hover:border-brand/30 transition-colors duration-500">
