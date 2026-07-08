@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import {
   Workflow,
   MessageSquare,
   TrendingUp,
   BarChart3,
   Cpu,
-  CheckCircle2
+  ArrowRight
 } from "lucide-react";
 
 const solutions = [
@@ -14,159 +14,112 @@ const solutions = [
     id: "process",
     title: "AI Process Automation",
     icon: Workflow,
-    description: "Streamline operations and eliminate manual repetitive tasks across your entire organization.",
-    items: [
-      "Workflow Automation",
-      "Document Processing",
-      "Invoice Automation",
-      "Approval Workflows",
-      "Business Process Optimization",
-    ],
+    description: "Streamline operations and eliminate manual repetitive tasks across your entire organization with intelligent workflows.",
+    className: "md:col-span-2 md:row-span-2",
+    items: ["Workflow Automation", "Document Processing", "Invoice Automation", "Approval Workflows", "Business Process Optimization"],
   },
   {
     id: "customer",
-    title: "AI Customer Engagement",
+    title: "Customer Engagement",
     icon: MessageSquare,
-    description: "Deliver instant, personalized support and scale your customer interactions infinitely.",
-    items: [
-      "AI Chatbots",
-      "WhatsApp Automation",
-      "Voice AI Agents",
-      "Customer Support Automation",
-      "CRM Integration",
-    ],
+    description: "Deliver instant, personalized support at infinite scale.",
+    className: "md:col-span-1",
+    items: ["AI Chatbots", "Voice Agents", "CRM Sync"],
   },
   {
     id: "sales",
-    title: "AI Sales & Marketing",
+    title: "Sales & Marketing",
     icon: TrendingUp,
-    description: "Accelerate revenue growth with intelligent lead generation and hyper-personalized outreach.",
-    items: [
-      "Lead Capture & Qualification",
-      "Automated Follow-ups",
-      "Email Automation",
-      "Proposal Generation",
-      "Marketing Campaign Automation",
-    ],
+    description: "Accelerate revenue growth with hyper-personalized outreach.",
+    className: "md:col-span-1",
+    items: ["Lead Qualification", "Auto Follow-ups", "Email AI"],
   },
   {
     id: "operations",
-    title: "AI Operations & Analytics",
+    title: "Operations & Analytics",
     icon: BarChart3,
     description: "Transform raw data into actionable insights with predictive modeling and real-time monitoring.",
-    items: [
-      "Real-time Dashboards",
-      "Business Intelligence",
-      "KPI Monitoring",
-      "Predictive Analytics",
-      "Automated Reports",
-    ],
+    className: "md:col-span-2",
+    items: ["Real-time Dashboards", "Predictive Analytics", "KPI Monitoring"],
   },
   {
     id: "custom",
-    title: "Custom AI Solutions",
+    title: "Custom AI",
     icon: Cpu,
-    description: "Bespoke AI architectures designed specifically for your unique enterprise challenges.",
-    items: [
-      "AI Agents",
-      "Custom LLM Applications",
-      "API Integrations",
-      "Enterprise AI Solutions",
-      "AI Consulting & Deployment",
-    ],
+    description: "Bespoke AI architectures designed for unique enterprise challenges.",
+    className: "md:col-span-1",
+    items: ["Custom LLMs", "AI Agents", "API Integrations"],
   },
 ];
 
 export const AISolutions = React.memo(function AISolutions() {
-  const [activeTab, setActiveTab] = useState(solutions[0].id);
-
-  const activeContent = solutions.find((s) => s.id === activeTab)!;
-
   return (
-    <section className="py-28 bg-surface relative overflow-hidden" id="solutions">
-      {/* Background elements */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
+    <section className="py-28 bg-ink relative font-sans selection:bg-brand/20 selection:text-brand border-t border-cream/5" id="solutions">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-brand/5 rounded-full blur-[150px] pointer-events-none translate-x-1/3 translate-y-1/3" />
       
-      <div className="container-x relative z-10">
-        <div className="max-w-3xl mb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand">Solutions</p>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl leading-[1.1]">
-            Comprehensive AI Implementation for <em className="italic text-brand-soft">Every Department.</em>
+      <div className="container-x relative z-0">
+        
+        {/* Header */}
+        <div className="max-w-3xl mb-16 relative z-10">
+          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center gap-2">
+            <span className="w-8 h-[1px] bg-brand/50" /> Solutions
+          </p>
+          <h2 className="font-display text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-cream tracking-tight">
+            Comprehensive AI <br />
+            for <em className="italic text-brand-soft">Every Department.</em>
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
-          {/* Tabs Sidebar */}
-          <div className="lg:col-span-5 flex flex-col gap-2">
-            {solutions.map((solution) => {
-              const isActive = activeTab === solution.id;
-              const Icon = solution.icon;
-              return (
-                <button
-                  key={solution.id}
-                  onClick={() => setActiveTab(solution.id)}
-                  className={`flex items-center gap-4 p-5 rounded-2xl text-left transition-all duration-300 border ${
-                    isActive
-                      ? "bg-ink text-cream border-ink shadow-lg scale-[1.02]"
-                      : "bg-transparent text-ink hover:bg-white border-transparent hover:border-border"
-                  }`}
-                >
-                  <div
-                    className={`flex items-center justify-center w-12 h-12 rounded-full shrink-0 transition-colors ${
-                      isActive ? "bg-cream text-ink" : "bg-card text-ink-soft border border-border"
-                    }`}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg sm:text-xl">{solution.title}</h3>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)] relative z-10">
+          {solutions.map((solution, idx) => (
+            <motion.div
+              key={solution.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className={`group relative bg-[#161413] border border-cream/10 rounded-[2rem] p-8 overflow-hidden hover:border-brand/30 transition-colors duration-500 flex flex-col justify-between ${solution.className}`}
+            >
+              {/* Hover Gradient Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              
+              {/* Content Header */}
+              <div className="relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-ink transition-all duration-500">
+                  <solution.icon className="w-7 h-7" />
+                </div>
+                <h3 className="font-display text-3xl text-cream mb-4">{solution.title}</h3>
+                <p className="text-cream/60 text-lg leading-relaxed max-w-md">
+                  {solution.description}
+                </p>
+              </div>
 
-          {/* Content Area */}
-          <div className="lg:col-span-7">
-            <div className="bg-card border border-border rounded-[2rem] p-8 md:p-12 h-full shadow-sm relative overflow-hidden flex flex-col justify-center min-h-[400px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-brand/10 text-brand flex items-center justify-center shrink-0">
-                      <activeContent.icon className="w-8 h-8" />
-                    </div>
-                    <h3 className="font-display text-3xl md:text-4xl text-ink">{activeContent.title}</h3>
-                  </div>
-                  
-                  <p className="text-ink-soft text-lg mb-10 max-w-lg leading-relaxed">
-                    {activeContent.description}
-                  </p>
+              {/* Sub-items (Pills) */}
+              <div className="relative z-10 mt-8">
+                <div className="flex flex-wrap gap-2">
+                  {solution.items.map((item, itemIdx) => (
+                    <span 
+                      key={itemIdx}
+                      className="px-3 py-1.5 rounded-lg bg-ink text-cream/70 text-sm border border-cream/5 group-hover:border-brand/20 group-hover:text-cream transition-colors duration-300"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-                  <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
-                    {activeContent.items.map((item, idx) => (
-                      <motion.div
-                        key={item}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: idx * 0.1 + 0.2, duration: 0.4 }}
-                        className="flex items-center gap-3"
-                      >
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
-                        <span className="text-ink font-medium">{item}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
+              {/* Decorative corner arrow */}
+              <div className="absolute bottom-8 right-8 opacity-0 translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500 ease-out text-brand">
+                <ArrowRight className="w-6 h-6 -rotate-45" />
+              </div>
+
+            </motion.div>
+          ))}
         </div>
+
       </div>
     </section>
   );
