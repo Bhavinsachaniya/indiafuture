@@ -54,7 +54,7 @@ const solutions = [
 
 export const AISolutions = React.memo(function AISolutions() {
   return (
-    <section className="py-28 bg-ink relative font-sans selection:bg-brand/20 selection:text-brand border-t border-cream/5" id="solutions">
+    <section className="py-28 bg-surface relative font-sans selection:bg-brand/20 selection:text-brand border-t border-ink/5" id="solutions">
       {/* Background Glows */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-brand/5 rounded-full blur-[150px] pointer-events-none translate-x-1/3 translate-y-1/3" />
@@ -66,9 +66,9 @@ export const AISolutions = React.memo(function AISolutions() {
           <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-brand/50" /> Solutions
           </p>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-cream tracking-tight">
+          <h2 className="font-display text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-ink tracking-tight">
             Comprehensive AI <br />
-            for <em className="italic text-brand-soft">Every Department.</em>
+            for <em className="italic text-brand">Every Department.</em>
           </h2>
         </div>
 
@@ -81,18 +81,18 @@ export const AISolutions = React.memo(function AISolutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className={`group relative bg-[#161413] border border-cream/10 rounded-[2rem] p-8 overflow-hidden hover:border-brand/30 transition-colors duration-500 flex flex-col justify-between ${solution.className}`}
+              className={`group relative bg-cream border border-ink/5 rounded-[2rem] p-8 overflow-hidden hover:border-brand/30 hover:shadow-[0_8px_30px_-12px_rgba(255,107,0,0.15)] shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)] transition-all duration-500 flex flex-col justify-between ${solution.className}`}
             >
               {/* Hover Gradient Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
               {/* Content Header */}
               <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-ink transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-cream transition-all duration-500">
                   <solution.icon className="w-7 h-7" />
                 </div>
-                <h3 className="font-display text-3xl text-cream mb-4">{solution.title}</h3>
-                <p className="text-cream/60 text-lg leading-relaxed max-w-md">
+                <h3 className="font-display text-3xl text-ink mb-4">{solution.title}</h3>
+                <p className="text-ink-soft text-lg leading-relaxed max-w-md">
                   {solution.description}
                 </p>
               </div>
@@ -103,7 +103,7 @@ export const AISolutions = React.memo(function AISolutions() {
                   {solution.items.map((item, itemIdx) => (
                     <span 
                       key={itemIdx}
-                      className="px-3 py-1.5 rounded-lg bg-ink text-cream/70 text-sm border border-cream/5 group-hover:border-brand/20 group-hover:text-cream transition-colors duration-300"
+                      className="px-3 py-1.5 rounded-lg bg-surface text-ink-soft text-sm border border-ink/5 group-hover:border-brand/20 group-hover:text-ink transition-colors duration-300 shadow-sm"
                     >
                       {item}
                     </span>

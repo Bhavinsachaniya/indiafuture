@@ -4,42 +4,41 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces", // Placeholder avatar
     stars: 5,
     text: (
       <>
-        "The automation reduced our manual work by <span className="font-semibold text-brand">72%</span> and saved us <span className="font-semibold text-brand">200+ hours</span> every month. The ROI was visible within the first month."
+        "I run Oakcraft, a ₹100 cr ARR furniture business. A lot of my operations & processes at the factory and client dealing had been manual. <span className="font-semibold text-brand">India Future AI helped me automate these processes saving ₹1 cr+ every year.</span>"
       </>
     ),
-    name: "Rahul Sharma",
-    role: "Founder & CEO",
-    company: "ABC Manufacturing",
+    name: "Vishu Mittal",
+    role: "Founder",
+    linkedin: "https://www.linkedin.com/in/vishuoakcraft/",
     companyLogo: (
       <div className="flex flex-col items-start leading-none">
-        <span className="font-bold text-ink tracking-tight text-lg">ABC</span>
-        <span className="text-[0.6rem] font-bold text-brand uppercase tracking-widest">Manufacturing</span>
+        <span className="font-bold text-ink tracking-tight text-lg">Oakcraft</span>
       </div>
     ),
-    companyNameText: "ABC Manufacturing Pvt. Ltd."
+    companyNameText: "Oakcraft"
   },
   {
     id: 2,
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=faces",
     stars: 5,
     text: (
       <>
-        "Their AI solution streamlined our entire workflow. <span className="font-semibold text-brand">Productivity has never been this high.</span> Exceptional support from day one!"
+        "I am blown away with the ease of process automations that India Future AI set up for my business. What was otherwise direct cost of ₹3 lac/pm is now <span className="font-semibold text-brand">reduced to ₹4,000/mo</span> leading to direct savings for the company."
       </>
     ),
-    name: "Priya Mehta",
-    role: "COO",
-    company: "TechNova",
+    name: "Keshav Singla",
+    role: "Founder CEO",
+    linkedin: "https://www.linkedin.com/in/keshav-singla-gow/",
     companyLogo: (
-      <div className="font-bold text-ink tracking-tight text-xl">
-        Tech<span className="text-brand">Nova</span>
+      <div className="font-bold text-ink tracking-tight text-lg leading-tight">
+        Grocery<br/><span className="text-brand">on Wheels</span>
       </div>
     ),
-    companyNameText: "TechNova Solutions"
+    companyNameText: "Grocery on Wheels"
   },
   {
     id: 3,
@@ -47,24 +46,37 @@ const testimonials = [
     stars: 5,
     text: (
       <>
-        "Exceptional team, <span className="font-semibold text-brand">seamless execution</span>, and <span className="font-semibold text-brand">outstanding results</span>. Highly recommended for any organization looking to scale with AI."
+        "I run a Proptech business that runs on traditional methods of outreach. I had an idea on how AI can automate lot of my marketing outreach but <span className="font-semibold text-brand">it is only through India Future AI that I could see the magic of it happening.</span>"
       </>
     ),
-    name: "Ankit Verma",
-    role: "CTO",
-    company: "VERMA LOGISTICS",
+    name: "Harsh Mittal",
+    role: "Director",
     companyLogo: (
       <div className="flex items-center gap-1.5">
-        <div className="w-6 h-6 bg-ink rounded-full flex items-center justify-center">
-          <div className="w-4 h-2 border-b-2 border-l-2 border-cream -rotate-45 -mt-1" />
-        </div>
-        <div className="flex flex-col leading-[0.8]">
-          <span className="font-bold text-ink text-[0.65rem] tracking-widest">VERMA</span>
-          <span className="text-ink-soft text-[0.5rem] tracking-widest">LOGISTICS</span>
-        </div>
+        <span className="font-bold text-ink text-lg tracking-tight">Golden</span>
+        <span className="font-bold text-brand text-lg tracking-tight">Key</span>
       </div>
     ),
-    companyNameText: "Verma Logistics Pvt. Ltd."
+    companyNameText: "GoldenKey"
+  },
+  {
+    id: 4,
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces",
+    stars: 5,
+    text: (
+      <>
+        "India Future AI has cracked ease of execution with their automations. <span className="font-semibold text-brand">A lot of our processes are now running automated without external intervention.</span> Away from costs it save, it gets us direct business."
+      </>
+    ),
+    name: "Shrey Saxena",
+    role: "Director",
+    linkedin: "https://www.linkedin.com/in/shrenewable",
+    companyLogo: (
+      <div className="flex items-center gap-1.5">
+        <span className="font-bold text-ink text-lg tracking-tight">Growdiesel</span>
+      </div>
+    ),
+    companyNameText: "Growdiesel"
   }
 ];
 
@@ -103,19 +115,14 @@ export const Testimonials = React.memo(function Testimonials() {
           </p>
         </div>
 
-        {/* Carousel / Grid Area */}
-        <div className="relative flex items-center justify-center">
+        {/* Grid Area */}
+        <div className="relative flex justify-center">
           
-          {/* Left Arrow */}
-          <button className="hidden xl:flex absolute -left-6 z-20 w-12 h-12 bg-cream rounded-full items-center justify-center hover:scale-105 transition-transform text-ink-soft hover:text-brand border border-ink/5 hover:border-brand/30 shadow-lg">
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full">
             {testimonials.map((t, idx) => (
               <div 
                 key={t.id} 
-                className="bg-cream rounded-[2rem] p-8 lg:p-10 border border-ink/5 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 hover:border-brand/30 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_-12px_rgba(255,107,0,0.15)]"
+                className="bg-cream rounded-[2rem] p-8 lg:p-10 border border-ink/5 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 hover:border-brand/30 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_-12px_rgba(255,107,0,0.15)] flex flex-col"
               >
                 {/* Large Background Quote */}
                 <Quote className="absolute top-8 right-8 w-24 h-24 text-ink/5 opacity-50 rotate-12" fill="currentColor" />
@@ -124,16 +131,18 @@ export const Testimonials = React.memo(function Testimonials() {
                 <div className="relative z-10 flex flex-col h-full">
                   
                   {/* Header: Avatar */}
-                  <div className="mb-6">
-                    <div className="w-20 h-20 rounded-full p-1 bg-cream shadow-lg shadow-brand/10 mb-4 inline-block relative overflow-hidden group-hover:shadow-brand/20 transition-shadow">
-                      <img src={t.avatar} alt={t.name} className="w-full h-full object-cover rounded-full" />
-                    </div>
-                    
-                    {/* Stars */}
-                    <div className="flex items-center gap-1">
-                      {[...Array(t.stars)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-brand fill-brand" />
-                      ))}
+                  <div className="mb-6 flex justify-between items-start">
+                    <div>
+                      <div className="w-20 h-20 rounded-full p-1 bg-cream shadow-lg shadow-brand/10 mb-4 inline-block relative overflow-hidden group-hover:shadow-brand/20 transition-shadow">
+                        <img src={t.avatar} alt={t.name} className="w-full h-full object-cover rounded-full" />
+                      </div>
+                      
+                      {/* Stars */}
+                      <div className="flex items-center gap-1">
+                        {[...Array(t.stars)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 text-brand fill-brand" />
+                        ))}
+                      </div>
                     </div>
                   </div>
 
@@ -146,26 +155,25 @@ export const Testimonials = React.memo(function Testimonials() {
                   <div className="h-[1px] w-full bg-gradient-to-r from-ink/10 via-ink/10 to-transparent mb-6" />
 
                   {/* Footer: Author & Company */}
-                  <div className="flex flex-col gap-5 mt-auto pt-2">
-                    {/* Author */}
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mt-auto pt-2">
                     <div>
-                      <h4 className="font-bold text-ink text-[1.1rem] leading-none mb-1.5">{t.name}</h4>
+                      <h4 className="font-bold text-ink text-[1.1rem] leading-none mb-1.5 flex items-center gap-2">
+                        {t.name}
+                        {t.linkedin && (
+                          <a href={t.linkedin} target="_blank" rel="noreferrer" className="text-[#0A66C2] hover:opacity-80 transition-opacity" title="LinkedIn Profile">
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                          </a>
+                        )}
+                      </h4>
                       <p className="text-ink-soft text-[0.85rem]">{t.role}</p>
                     </div>
                     
                     {/* Company */}
                     <div className="flex items-center gap-4">
-                      {/* Logo Area */}
                       <div className="flex-shrink-0 flex items-center h-8">
                         {t.companyLogo}
-                      </div>
-                      
-                      {/* Vertical divider line */}
-                      <div className="h-6 w-[1px] bg-ink/10" />
-                      
-                      {/* Company Name Text */}
-                      <div className="text-[0.7rem] text-ink-soft font-medium">
-                        {t.companyNameText}
                       </div>
                     </div>
                   </div>
@@ -174,27 +182,6 @@ export const Testimonials = React.memo(function Testimonials() {
               </div>
             ))}
           </div>
-
-          {/* Right Arrow */}
-          <button className="hidden xl:flex absolute -right-6 z-20 w-12 h-12 bg-cream rounded-full items-center justify-center hover:scale-105 transition-transform text-ink-soft hover:text-brand border border-ink/5 hover:border-brand/30 shadow-lg">
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Carousel Dots */}
-        <div className="flex items-center justify-center gap-3 mt-14">
-          {[0, 1, 2].map((dot, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              className={`rounded-full transition-all duration-300 ${
-                i === activeIndex
-                  ? "w-3 h-3 bg-brand"
-                  : "w-2.5 h-2.5 bg-ink/20 hover:bg-ink/40"
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
         </div>
 
       </div>
