@@ -5,9 +5,9 @@ import type { ProgramData } from "@/config/programs";
 
 export function WhyProgramExists({ data }: { data: ProgramData }) {
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-[#fdfaf5] relative overflow-hidden">
       <div className="container-x">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -17,54 +17,39 @@ export function WhyProgramExists({ data }: { data: ProgramData }) {
             className="mb-16"
           >
             <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-              The Motivation
+              Why this program exists
             </p>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-tight">
-              Why this program <br className="hidden md:block" />
-              <span className="italic text-ink-soft">exists right now.</span>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-6">
+              {data.whyExists.title}
             </h2>
+            <p className="text-lg text-ink-soft leading-relaxed">
+              {data.whyExists.description}
+            </p>
           </motion.div>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-12 md:gap-24 relative">
-            {/* Connecting Line (Desktop) */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-brand/20 via-brand/10 to-transparent -translate-x-1/2" />
-
-            {/* The Problem */}
+        {/* Grid of Reasons */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {data.whyExists.reasons?.map((reason, idx) => (
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-white border border-ink/5 rounded-[2rem] p-8 hover:shadow-xl hover:border-ink/10 transition-all duration-300 flex flex-col group"
             >
-              <div className="text-6xl text-brand/20 font-display absolute -top-8 -left-4 pointer-events-none">
-                <Quote className="w-16 h-16 fill-brand/10 stroke-brand/10" />
+              <div className="w-12 h-12 rounded-full bg-ink flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                <reason.icon className="w-5 h-5 text-white" strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-display text-ink mb-6 relative z-10">
-                The Gap
+              <h3 className="font-display text-2xl text-ink mb-3 group-hover:text-brand transition-colors duration-300">
+                {reason.title}
               </h3>
-              <p className="text-lg text-ink-soft leading-relaxed relative z-10">
-                {data.whyExists.problem}
+              <p className="text-ink-soft text-sm leading-relaxed">
+                {reason.description}
               </p>
             </motion.div>
-
-            {/* The Solution */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative mt-8 md:mt-24"
-            >
-              <div className="w-12 h-[1px] bg-brand/40 mb-8 md:hidden" />
-              <h3 className="text-2xl font-display text-brand mb-6">
-                Our Solution
-              </h3>
-              <p className="text-lg text-ink leading-relaxed font-medium bg-brand/5 p-6 rounded-2xl border border-brand/10 shadow-sm">
-                {data.whyExists.solution}
-              </p>
-            </motion.div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

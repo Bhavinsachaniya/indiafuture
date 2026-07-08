@@ -1,4 +1,4 @@
-import { type LucideIcon, Cpu, Workflow, LineChart, ShieldCheck, Code, Bot, TrendingUp, Users, Presentation, Database, Laptop, Settings, MessageSquare, Zap, Globe, Lock, BrainCircuit, BarChart, Server, Layers } from "lucide-react";
+import { type LucideIcon, Cpu, Workflow, LineChart, ShieldCheck, Code, Bot, TrendingUp, Users, Presentation, Database, Laptop, Settings, MessageSquare, Zap, Globe, Lock, BrainCircuit, BarChart, Server, Layers, Target, Rocket, Shield } from "lucide-react";
 
 export type ProgramData = {
   id: string;
@@ -11,8 +11,13 @@ export type ProgramData = {
   stats: { label: string; value: string }[];
   audience: string[];
   whyExists: {
-    problem: string;
-    solution: string;
+    title: string;
+    description: string;
+    reasons: {
+      title: string;
+      description: string;
+      icon: LucideIcon;
+    }[];
   };
   learnings: {
     title: string;
@@ -73,36 +78,55 @@ export const programsConfig: Record<string, ProgramData> = {
     ],
     audience: ["Students", "Fresh Graduates", "Job Seekers"],
     whyExists: {
-      problem: "The traditional education system is struggling to keep pace with the exponential growth of artificial intelligence. Students are graduating without the practical, hands-on experience required by modern tech companies.",
-      solution: "We bridge the gap by providing immersive, hands-on training that transforms theoretical knowledge into applied, real-world AI engineering skills. We don't just teach theory; we build builders.",
+      title: "The AI skill gap is closing fast — and courses aren't keeping up.",
+      description: "Every team is hiring for AI fluency, but tutorials leave people stuck at 'hello world'. Vertex was built to close that gap: you learn by shipping evaluated systems into real codebases, week after week.",
+      reasons: [
+        { title: "Real hiring signal", description: "Recruiters recognise Vertex graduates because the repos are inspectable.", icon: Target },
+        { title: "Compounding output", description: "Every week produces a shippable artefact — not a certificate of attendance.", icon: Rocket },
+        { title: "Senior review", description: "Practitioners with production AI experience review your code, not TAs.", icon: Shield }
+      ]
     },
     learnings: [
       {
-        title: "AI Foundations",
-        description: "Understand the core mechanics of machine learning, neural networks, and how modern AI systems actually work.",
+        title: "AI foundations",
+        description: "Tokens, embeddings, evals, and the honest limits of LLMs.",
         icon: BrainCircuit,
-        duration: "2 Weeks",
+        duration: "6h",
         difficulty: "Beginner",
       },
       {
-        title: "Prompt Engineering",
-        description: "Master advanced prompting techniques to extract high-quality, reliable outputs from Large Language Models.",
+        title: "Prompt engineering",
+        description: "Structured outputs, tool use, and prompt-driven pipelines.",
         icon: MessageSquare,
-        duration: "1 Week",
+        duration: "8h",
+        difficulty: "Beginner",
+      },
+      {
+        title: "Agents",
+        description: "Design agents that use tools, retry, and know when to stop.",
+        icon: Bot,
+        duration: "12h",
         difficulty: "Intermediate",
       },
       {
-        title: "Automation Workflows",
-        description: "Connect APIs and build automated pipelines that turn complex manual tasks into background processes.",
+        title: "Retrieval (RAG)",
+        description: "Chunking, embeddings, hybrid search, reranking, evaluation.",
+        icon: Database,
+        duration: "10h",
+        difficulty: "Intermediate",
+      },
+      {
+        title: "Evals",
+        description: "Build the eval harness first — then the feature.",
+        icon: BarChart,
+        duration: "8h",
+        difficulty: "Intermediate",
+      },
+      {
+        title: "Shipping",
+        description: "Deploy to real users, add observability, iterate on data.",
         icon: Zap,
-        duration: "2 Weeks",
-        difficulty: "Intermediate",
-      },
-      {
-        title: "AI Tools & APIs",
-        description: "Integrate powerful third-party AI APIs directly into your custom applications.",
-        icon: Code,
-        duration: "1 Week",
+        duration: "10h",
         difficulty: "Advanced",
       },
     ],
@@ -185,8 +209,13 @@ export const programsConfig: Record<string, ProgramData> = {
     ],
     audience: ["Working professionals", "College students", "Faculty", "Corporate teams"],
     whyExists: {
-      problem: "Professionals don't have months to learn new tools. They need immediate, actionable knowledge to stay relevant in a rapidly shifting landscape.",
-      solution: "Our masterclasses distill complex AI concepts into hyper-focused, weekend-long intensive sessions that yield immediate productivity gains.",
+      title: "Master AI workflows in a weekend — because you don't have months to learn.",
+      description: "Professionals need immediate, actionable knowledge to stay relevant. Our masterclasses distill complex AI concepts into hyper-focused, weekend-long intensive sessions that yield immediate productivity gains.",
+      reasons: [
+        { title: "Immediate ROI", description: "Apply what you learn on Monday morning.", icon: Target },
+        { title: "Hyper-focused", description: "No fluff, just the tools and techniques that matter.", icon: Rocket },
+        { title: "Expert led", description: "Taught by industry veterans who use AI daily.", icon: Shield }
+      ]
     },
     learnings: [
       {
@@ -276,8 +305,13 @@ export const programsConfig: Record<string, ProgramData> = {
     ],
     audience: ["Developers", "Businesses", "Operations Teams", "Students"],
     whyExists: {
-      problem: "Organizations lose thousands of hours annually to repetitive manual data entry, routing, and communication tasks.",
-      solution: "We teach teams how to wire their disparate systems together using AI-powered middleware, entirely eliminating grunt work.",
+      title: "Stop losing thousands of hours to repetitive manual tasks.",
+      description: "Organizations lose thousands of hours annually to repetitive manual data entry, routing, and communication tasks. We teach teams how to wire their disparate systems together using AI-powered middleware, entirely eliminating grunt work.",
+      reasons: [
+        { title: "No-code automation", description: "Build complex workflows without writing a single line of code.", icon: Target },
+        { title: "System integration", description: "Make all your tools talk to each other seamlessly.", icon: Rocket },
+        { title: "Time reclaimed", description: "Free your team to focus on high-leverage strategic work.", icon: Shield }
+      ]
     },
     learnings: [
       {
@@ -369,8 +403,13 @@ export const programsConfig: Record<string, ProgramData> = {
     ],
     audience: ["Schools", "Universities", "Companies", "MSMEs", "Government"],
     whyExists: {
-      problem: "Off-the-shelf AI training often fails to address the unique security, compliance, and specific workflow needs of large organizations.",
-      solution: "We embed with your team to design bespoke curricula that directly solve your proprietary challenges while adhering to enterprise standards.",
+      title: "Off-the-shelf AI training fails large organizations.",
+      description: "Generic training often fails to address the unique security, compliance, and specific workflow needs of large organizations. We embed with your team to design bespoke curricula that directly solve your proprietary challenges.",
+      reasons: [
+        { title: "Proprietary models", description: "Learn to build on top of your own secure, private data.", icon: Target },
+        { title: "Enterprise security", description: "Compliance, SOC2, and data privacy baked into the curriculum.", icon: Shield },
+        { title: "Bespoke curriculum", description: "Content generated specifically for your industry's exact use-cases.", icon: Rocket }
+      ]
     },
     learnings: [
       {

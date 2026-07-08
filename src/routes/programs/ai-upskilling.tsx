@@ -13,6 +13,9 @@ import { CareerAndMentors } from "@/components/programs/upskilling/CareerAndMent
 import { CertificateAndFAQ } from "@/components/programs/upskilling/CertificateAndFAQ";
 import { FinalCTA } from "@/components/programs/upskilling/FinalCTA";
 
+import { WhyProgramExists } from "@/components/programs/WhyProgramExists";
+import { WhatYouWillLearn } from "@/components/programs/WhatYouWillLearn";
+
 export const Route = createFileRoute("/programs/ai-upskilling")({
   component: AIUpskillingPage,
 });
@@ -28,6 +31,8 @@ function AIUpskillingPage() {
         <ProgramHero data={data} />
         
         <div className="relative">
+          <WhyProgramExists data={data} />
+          <WhatYouWillLearn data={data} />
           <OverviewAndCurriculum />
           <ProjectsAndTools />
           <ExperienceAndOutcomes />
