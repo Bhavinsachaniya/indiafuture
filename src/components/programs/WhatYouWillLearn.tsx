@@ -26,27 +26,27 @@ export function WhatYouWillLearn({ data }: { data: ProgramData }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white border border-ink/5 rounded-[2rem] p-8 hover:shadow-xl hover:border-ink/10 transition-all duration-300 flex flex-col group"
+              className="bg-white rounded-[2rem] p-8 md:p-10 transition-all duration-300 flex flex-col group border border-ink/5 hover:border-transparent hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
             >
               {/* Icon */}
-              <div className="w-10 h-10 rounded-full bg-surface border border-ink/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <item.icon className="w-4 h-4 text-ink" strokeWidth={1.5} />
+              <div className="w-12 h-12 rounded-full border border-ink/10 flex items-center justify-center mb-8 bg-transparent">
+                <item.icon className="w-5 h-5 text-ink" strokeWidth={1} />
               </div>
 
               {/* Content */}
-              <h3 className="font-display text-2xl text-ink mb-3 group-hover:text-brand transition-colors duration-300">
+              <h3 className="font-display text-[1.4rem] text-ink mb-3 group-hover:text-brand transition-colors duration-300">
                 {item.title}
               </h3>
-              <p className="text-ink-soft text-sm leading-relaxed mb-8 flex-grow">
+              <p className="text-ink-soft/80 text-[0.95rem] leading-relaxed mb-10 flex-grow font-light">
                 {item.description}
               </p>
 
               {/* Metadata Pills */}
               <div className="flex flex-wrap gap-2 mt-auto">
-                <div className="px-3 py-1 rounded-full border border-ink/10 text-[10px] text-ink-soft tracking-wide">
+                <div className="px-4 py-1.5 rounded-full border border-ink/10 text-[0.65rem] tracking-wider text-ink-soft/70 font-medium">
                   {item.difficulty}
                 </div>
-                <div className="px-3 py-1 rounded-full border border-ink/10 text-[10px] text-ink-soft tracking-wide">
+                <div className="px-4 py-1.5 rounded-full border border-ink/10 text-[0.65rem] tracking-wider text-ink-soft/70 font-medium">
                   {item.duration}
                 </div>
               </div>

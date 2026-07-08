@@ -37,15 +37,15 @@ export function WhyProgramExists({ data }: { data: ProgramData }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white border border-ink/5 rounded-[2rem] p-8 hover:shadow-xl hover:border-ink/10 transition-all duration-300 flex flex-col group"
+              className="bg-white rounded-[2rem] p-8 md:p-10 transition-all duration-300 flex flex-col group border border-ink/5 hover:border-transparent hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
             >
-              <div className="w-12 h-12 rounded-full bg-ink flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                <reason.icon className="w-5 h-5 text-white" strokeWidth={1.5} />
+              <div className="w-12 h-12 rounded-full bg-[#111111] flex items-center justify-center mb-8 transition-transform duration-300 group-hover:scale-110">
+                <reason.icon className="w-[1.2rem] h-[1.2rem] text-white" strokeWidth={1.2} />
               </div>
-              <h3 className="font-display text-2xl text-ink mb-3 group-hover:text-brand transition-colors duration-300">
+              <h3 className="font-display text-[1.4rem] text-ink mb-3 transition-colors duration-300 group-hover:text-brand">
                 {reason.title}
               </h3>
-              <p className="text-ink-soft text-sm leading-relaxed">
+              <p className="text-ink-soft/80 text-[0.95rem] leading-relaxed font-light">
                 {reason.description}
               </p>
             </motion.div>
