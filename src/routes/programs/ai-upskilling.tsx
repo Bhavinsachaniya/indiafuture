@@ -9,7 +9,7 @@ import { ProjectsAndTools } from "@/components/programs/upskilling/ProjectsAndTo
 import { ExperienceAndOutcomes } from "@/components/programs/upskilling/ExperienceAndOutcomes";
 import { CareerAndMentors } from "@/components/programs/upskilling/CareerAndMentors";
 import { CertificateAndFAQ } from "@/components/programs/upskilling/CertificateAndFAQ";
-import { FinalCTA, StickyWidget } from "@/components/programs/upskilling/FinalCTA";
+import { FinalCTA } from "@/components/programs/upskilling/FinalCTA";
 
 export const Route = createFileRoute("/programs/ai-upskilling")({
   component: AIUpskillingPage,
@@ -23,26 +23,12 @@ function AIUpskillingPage() {
       <main className="flex-1 flex flex-col pt-20">
         <HeroAndSnapshot />
         
-        {/* Main Content Area */}
         <div className="relative">
-          
-          {/* 
-            The Sticky Widget floats on the right side of the viewport on large screens. 
-            We position it absolutely/fixed relative to the page. 
-          */}
-          <div className="hidden xl:block fixed top-32 right-8 2xl:right-[calc(50%-700px)] z-50">
-            <StickyWidget />
-          </div>
-          
-          {/* Full-width sections */}
-          <div className="xl:pr-[360px] max-w-[1600px] mx-auto">
-            <OverviewAndCurriculum />
-            <ProjectsAndTools />
-            <ExperienceAndOutcomes />
-            <CareerAndMentors />
-            <CertificateAndFAQ />
-          </div>
-          
+          <OverviewAndCurriculum />
+          <ProjectsAndTools />
+          <ExperienceAndOutcomes />
+          <CareerAndMentors />
+          <CertificateAndFAQ />
           <FinalCTA />
         </div>
       </main>
