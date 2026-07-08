@@ -2,8 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 
+import { ProgramHero } from "@/components/programs/ProgramHero";
+import { programsConfig } from "@/config/programs";
+
 // Custom Upskilling Components
-import { HeroAndSnapshot } from "@/components/programs/upskilling/HeroAndSnapshot";
 import { OverviewAndCurriculum } from "@/components/programs/upskilling/OverviewAndCurriculum";
 import { ProjectsAndTools } from "@/components/programs/upskilling/ProjectsAndTools";
 import { ExperienceAndOutcomes } from "@/components/programs/upskilling/ExperienceAndOutcomes";
@@ -16,12 +18,14 @@ export const Route = createFileRoute("/programs/ai-upskilling")({
 });
 
 function AIUpskillingPage() {
+  const data = programsConfig.upskilling;
+
   return (
     <div className="min-h-screen bg-surface text-ink font-sans flex flex-col selection:bg-brand/20 selection:text-brand">
       <Nav theme="light" />
       
       <main className="flex-1 flex flex-col pt-20">
-        <HeroAndSnapshot />
+        <ProgramHero data={data} />
         
         <div className="relative">
           <OverviewAndCurriculum />
