@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const tiers = [
   {
@@ -73,14 +74,14 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#apply"
+              <Link
+                to="/contact"
                 className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-all hover:-translate-y-0.5 ${
                   t.featured ? "bg-cream text-ink hover:bg-white" : "bg-ink text-cream hover:opacity-90"
                 }`}
               >
                 {t.cta}
-              </a>
+              </Link>
             </div>
           ))}
         </div>

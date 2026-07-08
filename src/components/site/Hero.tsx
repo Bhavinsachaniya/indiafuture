@@ -1,4 +1,5 @@
 import { ArrowRight, Sparkles, Cpu, GitBranch, Zap, LineChart, Users, Terminal, Play } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function Hero() {
   return (
@@ -17,10 +18,10 @@ export function Hero() {
             Indiafuture isn't a course. It's a working studio — you implement production AI workflows alongside senior practitioners.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a href="#pricing" className="group inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-3 text-sm font-medium hover:-translate-y-0.5 transition-all shadow-[0_10px_30px_-10px_rgba(0,0,0,0.35)]">
+            <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-3 text-sm font-medium hover:-translate-y-0.5 transition-all shadow-[0_10px_30px_-10px_rgba(0,0,0,0.35)]">
               Join the next cohort
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </Link>
             <a href="#method" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-medium hover:bg-secondary transition-colors">
               <Play className="h-3.5 w-3.5" /> How it works
             </a>
@@ -160,10 +161,10 @@ export function Hero() {
                 <p className="text-xs uppercase tracking-widest text-brand">Next cohort · Aug 12</p>
                 <h3 className="mt-1 font-display text-2xl md:text-3xl">Seats capped at 40 — so reviews stay real.</h3>
               </div>
-              <a href="#pricing" className="group inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-3 text-sm font-medium shrink-0 hover:-translate-y-0.5 transition-all">
+              <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-3 text-sm font-medium shrink-0 hover:-translate-y-0.5 transition-all">
                 Apply now
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
+              </Link>
             </div>
 
           </div>

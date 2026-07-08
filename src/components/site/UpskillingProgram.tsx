@@ -11,6 +11,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "@tanstack/react-router";
 
 const weeks = [
   {
@@ -110,8 +111,8 @@ export function UpskillingProgram() {
             </div>
             <div className="flex items-center justify-center gap-4">
               <span className="text-lg font-medium text-ink">February 2025</span>
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-md px-8">
-                Apply now
+              <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-md px-8" asChild>
+                <Link to="/contact">Apply now</Link>
               </Button>
             </div>
           </div>

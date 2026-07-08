@@ -1,4 +1,5 @@
 import { Cpu, Workflow, LineChart, ShieldCheck } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const studios = [
   {
@@ -48,7 +49,7 @@ export function Studios() {
             </span>
             .
           </h2>
-          <p className="mt-4 text-ink-soft text-lg max-w-xl">
+          <p className="mt-4 text-ink-soft text-lg max-w-xl mx-auto">
             Pick the studio that matches where you are. Each runs live, in cohorts, with real
             reviews and a repo you can point to.
           </p>
@@ -71,13 +72,13 @@ export function Studios() {
               <p className="mt-8 text-xs uppercase tracking-widest text-ink-soft">{s.tag}</p>
               <h3 className="mt-2 font-display text-3xl">{s.title}</h3>
               <p className="mt-3 text-ink-soft leading-relaxed">{s.desc}</p>
-              <a
-                href="#pricing"
+              <Link
+                to="/contact"
                 className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-ink group-hover:text-brand transition-colors"
               >
                 Explore studio{" "}
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>
-              </a>
+              </Link>
             </article>
           ))}
         </div>

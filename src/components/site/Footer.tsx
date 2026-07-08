@@ -1,37 +1,43 @@
-const cols = [
-  { h: "Studios", l: ["AI Systems", "Implementation", "For Operators", "Team Deployments"] },
-  { h: "Company", l: ["About", "Mentors", "Careers", "Contact"] },
-  { h: "Resources", l: ["Field notes", "Case studies", "Alumni ships", "Community"] },
-];
+import { Link } from "@tanstack/react-router";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface">
-      <div className="container-x py-16">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">
-          <div>
+    <footer className="border-t border-border bg-ink text-cream">
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
+          <div className="max-w-sm">
             <div className="flex items-center gap-2">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-ink text-cream font-display text-lg">I</span>
-              <span className="font-display text-2xl">Indiafuture</span>
+              <span className="grid h-8 w-8 place-items-center rounded-lg bg-cream text-ink font-display text-lg font-bold">I</span>
+              <span className="font-display text-2xl tracking-tight">Indiafuture</span>
             </div>
-            <p className="mt-4 text-sm text-ink-soft max-w-xs">
-              An AI learning and implementation studio for people who build.
+            <p className="mt-6 text-sm text-cream/60 leading-relaxed">
+              An AI learning and implementation studio for people who build. We don't just teach AI, we help you ship it to production.
             </p>
           </div>
-          {cols.map((c) => (
-            <div key={c.h}>
-              <h4 className="text-xs uppercase tracking-[0.18em] text-ink-soft">{c.h}</h4>
-              <ul className="mt-4 space-y-2 text-sm">
-                {c.l.map((x) => (
-                  <li key={x}><a href="#" className="hover:text-brand transition-colors">{x}</a></li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          
+          <div>
+            <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-brand mb-6">Navigation</h4>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <Link to="/" className="text-cream/70 hover:text-brand transition-colors font-medium">Home</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-cream/70 hover:text-brand transition-colors font-medium">Contact Us</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-brand mb-6">Legal</h4>
+            <ul className="space-y-4 text-sm">
+              <li><a href="#" className="text-cream/70 hover:text-cream transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="text-cream/70 hover:text-cream transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
         </div>
-        <div className="mt-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-t border-border pt-8 text-xs text-ink-soft">
+        
+        <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-cream/10 pt-8 text-xs text-cream/40">
           <p>© {new Date().getFullYear()} Indiafuture Studios. Built by practitioners.</p>
-          <div className="flex gap-6"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></div>
         </div>
       </div>
     </footer>

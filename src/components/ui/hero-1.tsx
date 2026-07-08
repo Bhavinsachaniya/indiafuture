@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { LogoCloud } from "@/components/ui/logo-cloud-3";
+import { Link } from "@tanstack/react-router";
 
 export function HeroSection() {
   return (
@@ -108,9 +109,12 @@ export function HeroSection() {
                 "hover:from-[oklch(0.74_0.19_42)] hover:to-[oklch(0.60_0.19_42)]",
                 "hover:-translate-y-0.5 transition-all",
               )}
+              asChild
             >
-              Start Journey
-              <ArrowRight className="ml-1 h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+              <Link to="/contact">
+                Start Journey
+                <ArrowRight className="ml-1 h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+              </Link>
             </Button>
           </div>
         </div>
@@ -132,12 +136,9 @@ const companies = [
 export function LogosSection() {
   return (
     <section className="border-y border-border bg-surface/60 overflow-hidden py-8 flex">
-      <div className="flex items-center animate-marquee whitespace-nowrap min-w-full shrink-0">
-        {[...Array(2)].map((_, blockIdx) => (
+      <div className="flex items-center animate-marquee whitespace-nowrap w-max shrink-0">
+        {[...Array(4)].map((_, blockIdx) => (
           <div key={blockIdx} className="flex items-center gap-12 shrink-0 pr-12">
-            <span className="text-[10px] tracking-[0.2em] uppercase text-ink-soft font-semibold">
-              Trusted by teams at
-            </span>
             {companies.map((company, i) => (
               <span key={i} className="text-lg md:text-xl font-display text-ink font-medium tracking-tight">
                 {company}

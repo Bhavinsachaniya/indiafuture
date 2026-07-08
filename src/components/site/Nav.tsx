@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 const links = [
   { label: "Studios", href: "#studios" },
@@ -37,13 +38,12 @@ export function Nav() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a href="#login" className="hidden sm:inline text-sm text-ink-soft hover:text-ink">Sign in</a>
-          <a
-            href="#pricing"
-            className="inline-flex items-center rounded-full bg-ink text-cream text-sm font-medium px-4 py-2 hover:opacity-90 transition-all hover:-translate-y-0.5"
+          <Link
+            to="/contact"
+            className="inline-flex items-center rounded-full bg-ink text-cream text-sm font-medium px-6 py-2.5 hover:opacity-90 transition-all hover:-translate-y-0.5"
           >
-            Start building
-          </a>
+            Contact us
+          </Link>
         </div>
       </div>
     </header>

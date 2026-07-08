@@ -3,7 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { HeroSection, LogosSection } from "@/components/ui/hero-1";
 import FUIBentoGrid from "@/components/ui/bento";
 import { Studios } from "@/components/site/Studios";
-import { Method } from "@/components/site/Method";
+import { Method } from "@/components/site/method/Method";
 import { UpskillingProgram } from "@/components/site/UpskillingProgram";
 import { Stats } from "@/components/site/Stats";
 import { Testimonials } from "@/components/site/Testimonials";

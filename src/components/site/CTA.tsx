@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function CTA() {
   return (
@@ -13,9 +14,9 @@ export function CTA() {
             <p className="mt-6 text-cream/70 max-w-xl mx-auto text-lg">
               The next cohort opens in two weeks. Seats are capped so the reviews stay real.
             </p>
-            <a href="#pricing" className="mt-10 inline-flex items-center gap-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:-translate-y-0.5 transition-all">
+            <Link to="/contact" className="mt-10 inline-flex items-center gap-2 rounded-full bg-cream text-ink px-6 py-3.5 text-sm font-medium hover:-translate-y-0.5 transition-all">
               Apply for cohort 07 <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
