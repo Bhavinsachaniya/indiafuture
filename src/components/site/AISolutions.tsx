@@ -56,20 +56,23 @@ const solutions = [
 export const AISolutions = React.memo(function AISolutions() {
   return (
     <section className="py-28 bg-surface relative overflow-hidden font-sans selection:bg-brand/20 selection:text-brand border-t border-ink/5" id="solutions">
-      {/* Background Glows */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-brand/5 rounded-full blur-[150px] pointer-events-none translate-x-1/3 translate-y-1/3" />
-      
       <div className="container-x relative z-0">
         
         {/* Header */}
-        <div className="max-w-3xl mb-16 relative z-10">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center gap-2">
-            <span className="w-8 h-[1px] bg-brand/50" /> Solutions
+        <div className="max-w-4xl mx-auto mb-16 relative z-10 text-center flex flex-col items-center">
+          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
+            <span className="w-12 h-[1px] bg-brand/40" /> Solutions <span className="w-12 h-[1px] bg-brand/40" />
           </p>
           <h2 className="font-display text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-ink tracking-tight">
-            Comprehensive AI <br />
-            for <em className="italic text-brand">Every Department.</em>
+            Comprehensive AI for <br className="hidden md:block" />
+            <span className="relative inline-block border border-brand bg-brand text-white px-4 py-1 mx-3 align-middle overflow-visible font-sans font-bold tracking-normal text-4xl md:text-5xl lg:text-[4rem]">
+              <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
+              <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+              <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
+              <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+              Every
+            </span>
+            {" "}Department.
           </h2>
         </div>
 
@@ -94,10 +97,10 @@ export const AISolutions = React.memo(function AISolutions() {
               />
               <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
-              <div className={`relative z-10 h-full flex ${solution.id === 'process' ? 'flex-col md:flex-row gap-8 md:gap-16 items-center' : 'flex-col'}`}>
+              <div className="relative z-10 h-full flex flex-col">
                 
-                {/* Left/Top Content */}
-                <div className={`flex flex-col h-full ${solution.id === 'process' ? 'flex-1' : ''}`}>
+                {/* Content */}
+                <div className="flex flex-col h-full">
                   <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-cream transition-all duration-500 shrink-0">
                     <solution.icon className="w-7 h-7" />
                   </div>
@@ -106,44 +109,18 @@ export const AISolutions = React.memo(function AISolutions() {
                     {solution.description}
                   </p>
 
-                  {/* Pills for Standard Cards */}
-                  {solution.id !== 'process' && (
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {solution.items.map((item, itemIdx) => (
-                        <span 
-                          key={itemIdx}
-                          className="px-3 py-1.5 rounded-xl bg-surface/50 text-ink/70 text-sm font-medium border border-ink/5 group-hover:border-brand/20 group-hover:text-brand group-hover:bg-brand/5 transition-all duration-300"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Right Content for Wide Card (Process) */}
-                {solution.id === 'process' && (
-                  <div className="flex-1 w-full bg-surface/50 rounded-2xl border border-ink/5 p-6 flex flex-col justify-center gap-4 relative overflow-hidden group-hover:border-brand/20 transition-colors duration-500">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/5 rounded-bl-full pointer-events-none" />
-                    <h4 className="text-sm font-bold text-ink uppercase tracking-widest mb-2">Automated Flows</h4>
-                    <div className="flex flex-col gap-3">
-                      {solution.items.map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full bg-brand/10 flex items-center justify-center shrink-0 group-hover:bg-brand group-hover:scale-110 transition-all duration-300 delay-[50ms]">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-brand group-hover:text-white" />
-                          </div>
-                          <span className="text-[15px] font-medium text-ink/80 group-hover:text-ink transition-colors">{item}</span>
-                        </div>
-                      ))}
-                    </div>
+                  {/* Pills */}
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {solution.items.map((item, itemIdx) => (
+                      <span 
+                        key={itemIdx}
+                        className="px-3 py-1.5 rounded-xl bg-surface/50 text-ink/70 text-sm font-medium border border-ink/5 group-hover:border-brand/20 group-hover:text-brand group-hover:bg-brand/5 transition-all duration-300"
+                      >
+                        {item}
+                      </span>
+                    ))}
                   </div>
-                )}
-
-              </div>
-
-              {/* Decorative corner arrow */}
-              <div className="absolute bottom-8 right-8 opacity-0 translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500 ease-out text-brand">
-                <ArrowRight className="w-6 h-6 -rotate-45" />
+                </div>
               </div>
 
             </motion.div>
