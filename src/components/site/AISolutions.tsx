@@ -83,10 +83,10 @@ export const AISolutions = React.memo(function AISolutions() {
               <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
               Every Department
             </span>
-            .
           </h2>
           <p className="mt-8 text-lg md:text-xl text-ink-soft max-w-2xl mx-auto leading-relaxed">
-            For MSMEs, we provide the specialized automation solutions mentioned below to streamline your operations and accelerate growth.
+            For MSMEs, we provide the specialized automation solutions mentioned below to streamline
+            your operations and accelerate growth.
           </p>
         </div>
 
