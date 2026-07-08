@@ -1,5 +1,6 @@
 import React from "react";
 import { User, Building2, TrendingUp, Zap } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Impact = React.memo(function Impact() {
   return (
@@ -22,7 +23,13 @@ export const Impact = React.memo(function Impact() {
           <div className="lg:col-span-7 flex flex-col gap-12 md:gap-24 pb-12">
             
             {/* Personal Impact Card */}
-            <div className="bg-[#161413] border border-cream/10 rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden group hover:border-brand/30 transition-colors duration-500">
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="bg-[#161413] border border-cream/10 rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden group hover:border-brand/30 transition-colors duration-500"
+            >
               <div className="absolute -top-32 -right-32 w-80 h-80 bg-brand/10 rounded-full blur-[100px] group-hover:bg-brand/20 transition-colors duration-500 pointer-events-none" />
               
               <div className="flex items-center gap-4 mb-10 relative z-10">
@@ -50,10 +57,16 @@ export const Impact = React.memo(function Impact() {
                   <p className="text-cream/60 leading-relaxed">AI-skilled professionals command massive premiums in the market as highly leverageable assets.</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Organizational Impact Card */}
-            <div className="bg-[#161413] border border-cream/10 rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden group hover:border-brand/30 transition-colors duration-500">
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="bg-[#161413] border border-cream/10 rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden group hover:border-brand/30 transition-colors duration-500"
+            >
               <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-brand/10 rounded-full blur-[100px] group-hover:bg-brand/20 transition-colors duration-500 pointer-events-none" />
               
               <div className="flex items-center gap-4 mb-10 relative z-10">
@@ -73,7 +86,7 @@ export const Impact = React.memo(function Impact() {
                   <p className="text-cream/60 text-lg leading-relaxed">Adapt to market changes instantly with automated insights, predictive intelligence, and rapid workflow generation.</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
