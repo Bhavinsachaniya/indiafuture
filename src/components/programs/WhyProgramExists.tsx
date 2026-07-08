@@ -7,7 +7,7 @@ export function WhyProgramExists({ data }: { data: ProgramData }) {
   return (
     <section className="py-24 md:py-32 bg-[#fdfaf5] relative overflow-hidden">
       <div className="container-x">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -16,13 +16,13 @@ export function WhyProgramExists({ data }: { data: ProgramData }) {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex justify-center">
               Why this program exists
             </p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-6">
               {data.whyExists.title}
             </h2>
-            <p className="text-lg text-ink-soft leading-relaxed">
+            <p className="text-lg text-ink-soft leading-relaxed max-w-2xl mx-auto">
               {data.whyExists.description}
             </p>
           </motion.div>

@@ -8,7 +8,10 @@ export function WhatYouWillLearn({ data }: { data: ProgramData }) {
     <section className="py-24 md:py-32 bg-[#fdfaf5] relative overflow-hidden">
       <div className="container-x">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="mb-16 text-center max-w-4xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex justify-center">
+            Curriculum Highlights
+          </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
             The capability map.
           </h2>
