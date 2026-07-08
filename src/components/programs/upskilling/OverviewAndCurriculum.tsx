@@ -8,7 +8,6 @@ export function OverviewAndCurriculum() {
     offset: ["start center", "end center"],
   });
 
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   const weeks = [
     {
@@ -109,8 +108,8 @@ export function OverviewAndCurriculum() {
             
             {/* Animated Draw Line */}
             <motion.div
-              className="absolute left-8 md:left-1/2 top-0 w-[2px] bg-brand md:-translate-x-1/2 origin-top"
-              style={{ height: lineHeight }}
+              className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-brand md:-translate-x-1/2 origin-top"
+              style={{ scaleY: scrollYProgress }}
             />
 
             <div className="space-y-12">
