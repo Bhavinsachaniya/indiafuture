@@ -133,10 +133,12 @@ export const programsConfig: Record<string, ProgramData> = {
       },
     ],
     experiences: [
-      { title: "Live Sessions", description: "Interactive, real-time classes with industry veterans.", icon: Presentation },
-      { title: "Mentorship", description: "1-on-1 guidance to navigate roadblocks and plan your career.", icon: Users },
-      { title: "Assignments", description: "Practical, code-first assignments that build real muscle.", icon: Laptop },
-      { title: "Community", description: "Join a vibrant Discord community of fellow builders.", icon: Globe },
+      { title: "Live sessions", description: "Two working sessions each week, recorded so you never miss context.", icon: Presentation },
+      { title: "1:1 Mentorship", description: "Senior practitioners review your builds and unblock you in office hours.", icon: Users },
+      { title: "Assignments", description: "Ship a deliverable weekly — code, workflow, or writeup — with real review.", icon: Code },
+      { title: "Community", description: "A private room of 2,400+ builders posting repos and shipping in public.", icon: MessageSquare },
+      { title: "Certification", description: "A verified credential recognised by hiring teams inside our network.", icon: ShieldCheck },
+      { title: "Lifetime resources", description: "Every playbook, template and eval harness stays yours after graduation.", icon: Database },
     ],
     outcomes: [
       { phase: "Before Joining", description: "Theoretical understanding, uncertain about practical implementation." },
