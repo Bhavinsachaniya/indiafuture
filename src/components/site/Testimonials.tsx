@@ -131,7 +131,7 @@ export const Testimonials = React.memo(function Testimonials() {
             <div className="h-[1px] w-12 bg-brand/40" />
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-ink tracking-tight leading-[1.1] mb-6 font-display">
+          <h2 className="text-4xl md:text-5xl lg:text-[3.5rem]  text-ink tracking-tight leading-[1.1] mb-6 font-display">
             Loved by{" "}
             <span className="relative inline-block border border-brand  bg-brand/5 text-brand px-3 py-1 mx-2 align-middle overflow-visible">
               <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
