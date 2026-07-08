@@ -91,7 +91,7 @@ export function OverviewAndCurriculum() {
       </section>
 
       {/* Interactive Curriculum Timeline */}
-      <section className="py-24 md:py-32 bg-surface relative overflow-hidden border-t border-ink/5" ref={containerRef}>
+      <section className="py-24 md:py-32 bg-surface relative overflow-hidden border-t border-ink/5">
         <div className="container-x">
           <div className="max-w-3xl mx-auto mb-20 text-center">
             <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
@@ -102,7 +102,7 @@ export function OverviewAndCurriculum() {
             </h2>
           </div>
 
-          <div className="max-w-5xl mx-auto relative">
+          <div className="max-w-5xl mx-auto relative" ref={containerRef}>
             {/* Background Line */}
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-ink/5 md:-translate-x-1/2" />
             
