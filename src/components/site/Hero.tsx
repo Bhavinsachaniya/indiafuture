@@ -16,9 +16,16 @@ export function Hero() {
           Cohort 07
         </div>
 
-        {/* Title */}
         <h1 className="font-display text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-ink tracking-tight max-w-4xl">
-          The studio where <em className="italic text-brand font-light">builders</em> <br className="hidden md:block" />
+          The studio where 
+          <span className="relative inline-block border border-brand bg-brand/5 text-ink px-4 py-1 mx-2 align-middle overflow-visible font-light">
+            <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
+            <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+            <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
+            <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-brand border border-brand"></span>
+            builders
+          </span> 
+          <br className="hidden md:block" />
           learn to ship with AI.
         </h1>
 

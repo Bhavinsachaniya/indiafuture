@@ -5,6 +5,7 @@ export type ProgramData = {
   theme: string;
   label: string;
   title: React.ReactNode;
+  highlightWord?: string;
   subtitle: string;
   description: string;
   stats: { label: string; value: string }[];
@@ -61,6 +62,7 @@ export const programsConfig: Record<string, ProgramData> = {
     theme: "Future-ready AI education.",
     label: "UPSKILLING",
     title: "AI Upskilling Programs",
+    highlightWord: "Upskilling",
     subtitle: "Future-Ready AI Education",
     description: "A comprehensive hands-on AI program designed to help students become AI-ready with practical skills. Build the future with confidence.",
     stats: [
@@ -170,6 +172,7 @@ export const programsConfig: Record<string, ProgramData> = {
     theme: "Short intensive learning.",
     label: "MASTERCLASSES",
     title: "Masterclasses & Certifications",
+    highlightWord: "Masterclasses",
     subtitle: "Short, Intensive Learning",
     description: "Customized AI masterclasses for schools, colleges, working professionals, and MSMEs to use AI workflows immediately.",
     stats: [
@@ -260,6 +263,7 @@ export const programsConfig: Record<string, ProgramData> = {
     theme: "Build real automations.",
     label: "LABS",
     title: "Hands-on Automation Labs",
+    highlightWord: "Automation",
     subtitle: "Build Real Automations",
     description: "AI Labs and productivity training for educators and teams to automate repetitive tasks and build custom workflows.",
     stats: [
@@ -352,6 +356,7 @@ export const programsConfig: Record<string, ProgramData> = {
     theme: "Enterprise AI transformation.",
     label: "CUSTOM AI",
     title: "Customized AI Programs",
+    highlightWord: "Customized",
     subtitle: "Enterprise AI Transformation",
     description: "Exclusive AI learning and certification programs designed for organizations and communities based on specific objectives.",
     stats: [
