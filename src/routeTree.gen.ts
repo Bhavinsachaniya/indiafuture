@@ -15,6 +15,7 @@ import { Route as ProgramsWorkshopsRouteImport } from './routes/programs/worksho
 import { Route as ProgramsUpskillingRouteImport } from './routes/programs/upskilling'
 import { Route as ProgramsMasterclassesRouteImport } from './routes/programs/masterclasses'
 import { Route as ProgramsCustomRouteImport } from './routes/programs/custom'
+import { Route as ProgramsAiUpskillingRouteImport } from './routes/programs/ai-upskilling'
 
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
@@ -46,10 +47,16 @@ const ProgramsCustomRoute = ProgramsCustomRouteImport.update({
   path: '/programs/custom',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgramsAiUpskillingRoute = ProgramsAiUpskillingRouteImport.update({
+  id: '/programs/ai-upskilling',
+  path: '/programs/ai-upskilling',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/programs/ai-upskilling': typeof ProgramsAiUpskillingRoute
   '/programs/custom': typeof ProgramsCustomRoute
   '/programs/masterclasses': typeof ProgramsMasterclassesRoute
   '/programs/upskilling': typeof ProgramsUpskillingRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/programs/ai-upskilling': typeof ProgramsAiUpskillingRoute
   '/programs/custom': typeof ProgramsCustomRoute
   '/programs/masterclasses': typeof ProgramsMasterclassesRoute
   '/programs/upskilling': typeof ProgramsUpskillingRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/programs/ai-upskilling': typeof ProgramsAiUpskillingRoute
   '/programs/custom': typeof ProgramsCustomRoute
   '/programs/masterclasses': typeof ProgramsMasterclassesRoute
   '/programs/upskilling': typeof ProgramsUpskillingRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/programs/ai-upskilling'
     | '/programs/custom'
     | '/programs/masterclasses'
     | '/programs/upskilling'
@@ -85,6 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/programs/ai-upskilling'
     | '/programs/custom'
     | '/programs/masterclasses'
     | '/programs/upskilling'
@@ -93,6 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/programs/ai-upskilling'
     | '/programs/custom'
     | '/programs/masterclasses'
     | '/programs/upskilling'
@@ -102,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  ProgramsAiUpskillingRoute: typeof ProgramsAiUpskillingRoute
   ProgramsCustomRoute: typeof ProgramsCustomRoute
   ProgramsMasterclassesRoute: typeof ProgramsMasterclassesRoute
   ProgramsUpskillingRoute: typeof ProgramsUpskillingRoute
@@ -152,12 +165,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramsCustomRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programs/ai-upskilling': {
+      id: '/programs/ai-upskilling'
+      path: '/programs/ai-upskilling'
+      fullPath: '/programs/ai-upskilling'
+      preLoaderRoute: typeof ProgramsAiUpskillingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  ProgramsAiUpskillingRoute: ProgramsAiUpskillingRoute,
   ProgramsCustomRoute: ProgramsCustomRoute,
   ProgramsMasterclassesRoute: ProgramsMasterclassesRoute,
   ProgramsUpskillingRoute: ProgramsUpskillingRoute,
