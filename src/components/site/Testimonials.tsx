@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     id: 2,
-    avatar: "/Testimonials/KEshav Singla.png",
+    avatar: "/Testimonials/keshav-singla.png",
     name: "Keshav Singla",
     role: "Founder CEO, Grocery on Wheels",
     text: "I am blown away with the ease of process automations that India Future AI set up for my business. What was otherwise direct cost of ₹3 lac/pm is now reduced to ₹4,000/mo leading to direct savings for the company.",
@@ -27,7 +27,7 @@ const testimonials = [
   },
   {
     id: 3,
-    avatar: "/Testimonials/harsh Mittal.png",
+    avatar: "/Testimonials/harsh-mittal.png",
     name: "Harsh Mittal",
     role: "Director, GoldenKey",
     text: "I run a Proptech business that runs on traditional methods of outreach. I had an idea on how AI can automate lot of my marketing outreach but it is only through India Future AI that I could see the magic of it happening.",
@@ -36,7 +36,7 @@ const testimonials = [
   },
   {
     id: 4,
-    avatar: "/Testimonials/Shrey Saxena.png",
+    avatar: "/Testimonials/shrey-saxena.png",
     name: "Shrey Saxena",
     role: "Director, Growdiesel",
     text: "India Future AI has cracked ease of execution with their automations. A lot of our processes are now running automated without external intervention. Away from costs it save, it gets us direct business.",

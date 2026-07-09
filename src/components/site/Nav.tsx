@@ -43,9 +43,14 @@ export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light
         </Link>
         <nav className={`hidden md:flex items-center gap-8 text-sm ${theme === "dark" ? "text-cream/70" : "text-ink-soft"}`}>
           {links.map((l) => (
-            <a key={l.href} href={`/${l.href}`} className={`transition-colors ${theme === "dark" ? "hover:text-cream" : "hover:text-ink"}`}>
+            <Link
+              key={l.href}
+              to="/"
+              hash={l.href.replace('#', '')}
+              className={`transition-colors ${theme === "dark" ? "hover:text-cream" : "hover:text-ink"}`}
+            >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="flex items-center gap-3">
