@@ -6,10 +6,12 @@ export const Pricing = React.memo(function Pricing() {
     <section id="pricing" className="py-28">
       <div className="container-x">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand">
-            <span className="w-12 h-[1px] bg-brand/40" /> PRICING{" "}
-            <span className="w-12 h-[1px] bg-brand/40" />
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> PRICING{" "}
+              <span className="w-12 h-[1px] bg-brand/40" />
+            </p>
+          </div>
           <h2 className="mt-3 font-display text-5xl md:text-6xl leading-[1.05]">
             One membership. <em className="italic">Every studio.</em>
           </h2>

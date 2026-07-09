@@ -10,9 +10,11 @@ export function ProgramTestimonials({ data }: { data: ProgramData }) {
     <section className="py-24 md:py-32 bg-surface relative overflow-hidden border-t border-ink/5">
       <div className="container-x">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-            Student Stories
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> STUDENT STORIES <span className="w-12 h-[1px] bg-brand/40" />
+            </p>
+          </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
             Don't just take <br />
             <span className="italic text-brand-soft">our word for it.</span>

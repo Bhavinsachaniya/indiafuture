@@ -71,9 +71,11 @@ export function OverviewAndCurriculum() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-6">
-              The Why
+            <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> THE WHY <span className="w-12 h-[1px] bg-brand/40" />
             </p>
+          </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-8">
               AI isn't replacing you. <br />
               <span className="italic text-ink-soft">Someone using AI is.</span>
@@ -94,9 +96,11 @@ export function OverviewAndCurriculum() {
       <section className="py-24 md:py-32 bg-surface relative overflow-hidden border-t border-ink/5">
         <div className="container-x">
           <div className="max-w-3xl mx-auto mb-20 text-center">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-              The Journey
+            <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> THE JOURNEY <span className="w-12 h-[1px] bg-brand/40" />
             </p>
+          </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
               8 Weeks to Mastery
             </h2>

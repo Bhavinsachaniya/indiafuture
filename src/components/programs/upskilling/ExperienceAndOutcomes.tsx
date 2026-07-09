@@ -33,9 +33,11 @@ export function ExperienceAndOutcomes() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
               >
-                <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-                  Methodology
-                </p>
+                <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> METHODOLOGY <span className="w-12 h-[1px] bg-brand/40" />
+            </p>
+          </div>
                 <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05] mb-8">
                   How you will <br />
                   <span className="italic text-brand-soft">learn.</span>

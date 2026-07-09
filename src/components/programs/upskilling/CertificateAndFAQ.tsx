@@ -48,9 +48,11 @@ export function CertificateAndFAQ() {
 
             {/* Right: Copy */}
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-                Verifiable Credentials
-              </p>
+              <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> VERIFIABLE CREDENTIALS <span className="w-12 h-[1px] bg-brand/40" />
+            </p>
+          </div>
               <h2 className="font-display text-4xl md:text-5xl text-ink leading-[1.05] mb-8">
                 Proof of Work.
               </h2>

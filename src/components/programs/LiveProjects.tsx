@@ -13,9 +13,11 @@ export function LiveProjects({ data }: { data: ProgramData }) {
       
       <div className="container-x relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-            Real World Application
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> REAL WORLD APPLICATION <span className="w-12 h-[1px] bg-brand/40" />
+            </p>
+          </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
             Build <span className="italic text-cream/70">Live Projects</span>
           </h2>

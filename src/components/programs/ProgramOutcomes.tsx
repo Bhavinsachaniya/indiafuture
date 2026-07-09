@@ -10,9 +10,11 @@ export function ProgramOutcomes({ data }: { data: ProgramData }) {
     <section className="py-24 md:py-32 bg-white relative overflow-hidden">
       <div className="container-x">
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-            The Transformation
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> THE TRANSFORMATION <span className="w-12 h-[1px] bg-brand/40" />
+            </p>
+          </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
             Your Growth <br />
             <span className="italic text-ink-soft">Trajectory</span>

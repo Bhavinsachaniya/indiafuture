@@ -53,9 +53,11 @@ export function ProjectsAndTools() {
         
         <div className="container-x relative z-10">
           <div className="max-w-3xl mx-auto mb-20 text-center">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-              Real Deliverables
+            <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> REAL DELIVERABLES <span className="w-12 h-[1px] bg-brand/40" />
             </p>
+          </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
               Build <span className="italic text-cream/70">Live Projects</span>
             </h2>
@@ -118,9 +120,11 @@ export function ProjectsAndTools() {
       <section className="py-24 md:py-32 bg-surface relative overflow-hidden">
         <div className="container-x">
           <div className="max-w-3xl mx-auto mb-16 text-center">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4">
-              Your New Arsenal
+            <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> YOUR NEW ARSENAL <span className="w-12 h-[1px] bg-brand/40" />
             </p>
+          </div>
             <h2 className="font-display text-4xl md:text-5xl text-ink leading-[1.05]">
               Tools You'll Master
             </h2>

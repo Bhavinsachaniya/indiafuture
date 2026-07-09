@@ -9,9 +9,11 @@ export function LearningExperience({ data }: { data: ProgramData }) {
     <section className="py-24 md:py-32 bg-[#fdfaf5] relative overflow-hidden">
       <div className="container-x">
         <div className="mb-16 text-center max-w-4xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex justify-center">
-            Learning Experience
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <span className="w-12 h-[1px] bg-brand/40" /> LEARNING EXPERIENCE <span className="w-12 h-[1px] bg-brand/40" />
+            </p>
+          </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
             How the studio actually runs.
           </h2>
