@@ -59,7 +59,7 @@ export const Studios = React.memo(function Studios() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 md:grid-cols-2">
           {studios.map((s) => (
             <article
               key={s.title}
