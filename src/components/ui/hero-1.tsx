@@ -97,22 +97,20 @@ export function HeroSection() {
 
           {/* CTA */}
           <div className="mt-10 flex justify-center">
-            <Button
-              size="lg"
+            <Link
+              to="/contact"
               className={cn(
+                "inline-flex items-center justify-center whitespace-nowrap",
                 "group h-14 rounded-md px-8 text-base font-medium text-white",
                 "bg-gradient-to-b from-[oklch(0.72_0.19_42)] to-[oklch(0.58_0.19_42)]",
                 "shadow-[0_10px_30px_-8px_oklch(0.62_0.19_42/0.55)]",
                 "hover:from-[oklch(0.74_0.19_42)] hover:to-[oklch(0.60_0.19_42)]",
                 "hover:-translate-y-0.5 transition-all",
               )}
-              asChild
             >
-              <Link to="/contact">
-                Start Journey
-                <ArrowRight className="ml-1 h-5 w-5 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </Button>
+              Start Journey
+              <ArrowRight className="ml-1 h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
           </div>
         </div>
       </div>

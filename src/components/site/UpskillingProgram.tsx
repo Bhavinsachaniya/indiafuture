@@ -102,13 +102,12 @@ export function UpskillingProgram() {
             <p>Eight weeks. Real tools. Real projects.</p>
             <p>Learn AI by building, applying, and shipping practical solutions.</p>
           </div>
-          <Button
-            size="lg"
-            className="bg-[#f97316] hover:bg-[#ea580c] text-white rounded-full px-8 py-6 text-base font-medium transition-all shadow-md hover:shadow-lg"
-            asChild
+          <Link
+            to="/programs/ai-upskilling"
+            className="inline-flex items-center justify-center whitespace-nowrap bg-[#f97316] hover:bg-[#ea580c] text-white rounded-full px-8 py-6 text-base font-medium transition-all shadow-md hover:shadow-lg"
           >
-            <Link to="/programs/ai-upskilling">View Curriculum &rarr;</Link>
-          </Button>
+            View Curriculum &rarr;
+          </Link>
         </div>
 
         {/* Grid of Weeks */}
