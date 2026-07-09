@@ -231,7 +231,7 @@ function PrivacyPolicy() {
         <section className="container-x mx-auto max-w-5xl px-6 grid grid-cols-1 lg:grid-cols-[0.3fr_0.7fr] gap-12 items-start">
           
           {/* Left Column: Sticky Sidebar Index */}
-          <aside className="hidden lg:block sticky top-32 w-full pr-6 max-h-[70vh] overflow-y-auto no-scrollbar">
+          <aside className="hidden lg:block sticky top-32 w-full pr-6">
             <h3 className="text-[11px] font-bold text-[#161413]/40 uppercase tracking-[0.2em] mb-6">
               Outline
             </h3>
