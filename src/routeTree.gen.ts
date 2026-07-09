@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StudentCreationsRouteImport } from './routes/student-creations'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgramsWorkshopsRouteImport } from './routes/programs/workshops'
@@ -17,6 +18,11 @@ import { Route as ProgramsMasterclassesRouteImport } from './routes/programs/mas
 import { Route as ProgramsCustomRouteImport } from './routes/programs/custom'
 import { Route as ProgramsAiUpskillingRouteImport } from './routes/programs/ai-upskilling'
 
+const StudentCreationsRoute = StudentCreationsRouteImport.update({
+  id: '/student-creations',
+  path: '/student-creations',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -56,6 +62,7 @@ const ProgramsAiUpskillingRoute = ProgramsAiUpskillingRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/student-creations': typeof StudentCreationsRoute
   '/programs/ai-upskilling': typeof ProgramsAiUpskillingRoute
   '/programs/custom': typeof ProgramsCustomRoute
   '/programs/masterclasses': typeof ProgramsMasterclassesRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/student-creations': typeof StudentCreationsRoute
   '/programs/ai-upskilling': typeof ProgramsAiUpskillingRoute
   '/programs/custom': typeof ProgramsCustomRoute
   '/programs/masterclasses': typeof ProgramsMasterclassesRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/student-creations': typeof StudentCreationsRoute
   '/programs/ai-upskilling': typeof ProgramsAiUpskillingRoute
   '/programs/custom': typeof ProgramsCustomRoute
   '/programs/masterclasses': typeof ProgramsMasterclassesRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/student-creations'
     | '/programs/ai-upskilling'
     | '/programs/custom'
     | '/programs/masterclasses'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/student-creations'
     | '/programs/ai-upskilling'
     | '/programs/custom'
     | '/programs/masterclasses'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/student-creations'
     | '/programs/ai-upskilling'
     | '/programs/custom'
     | '/programs/masterclasses'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  StudentCreationsRoute: typeof StudentCreationsRoute
   ProgramsAiUpskillingRoute: typeof ProgramsAiUpskillingRoute
   ProgramsCustomRoute: typeof ProgramsCustomRoute
   ProgramsMasterclassesRoute: typeof ProgramsMasterclassesRoute
@@ -123,6 +136,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/student-creations': {
+      id: '/student-creations'
+      path: '/student-creations'
+      fullPath: '/student-creations'
+      preLoaderRoute: typeof StudentCreationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  StudentCreationsRoute: StudentCreationsRoute,
   ProgramsAiUpskillingRoute: ProgramsAiUpskillingRoute,
   ProgramsCustomRoute: ProgramsCustomRoute,
   ProgramsMasterclassesRoute: ProgramsMasterclassesRoute,
