@@ -5,6 +5,7 @@ import FUIBentoGrid from "@/components/ui/bento";
 import { Studios } from "@/components/site/Studios";
 import { WhyIndiaFutureBento } from "@/components/site/WhyIndiaFutureBento";
 import { Method } from "@/components/site/method/Method";
+import { ProgramsList } from "@/components/site/ProgramsList";
 import { UpskillingProgram } from "@/components/site/UpskillingProgram";
 import { AISolutions } from "@/components/site/AISolutions";
 import { Impact } from "@/components/site/Impact";
@@ -28,9 +29,10 @@ function Index() {
       <main>
         <HeroSection />
         <LogosSection />
-        <Studios />
         <WhyIndiaFutureBento />
+
         <Method />
+        <ProgramsList />
         <UpskillingProgram />
         <AISolutions />
         <Impact />

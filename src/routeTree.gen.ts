@@ -9,7 +9,9 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
 import { Route as StudentCreationsRouteImport } from './routes/student-creations'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgramsWorkshopsRouteImport } from './routes/programs/workshops'
@@ -18,9 +20,19 @@ import { Route as ProgramsMasterclassesRouteImport } from './routes/programs/mas
 import { Route as ProgramsCustomRouteImport } from './routes/programs/custom'
 import { Route as ProgramsAiUpskillingRouteImport } from './routes/programs/ai-upskilling'
 
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StudentCreationsRoute = StudentCreationsRouteImport.update({
   id: '/student-creations',
   path: '/student-creations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -62,7 +74,9 @@ const ProgramsAiUpskillingRoute = ProgramsAiUpskillingRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/student-creations': typeof StudentCreationsRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/programs/ai-upskilling': typeof ProgramsAiUpskillingRoute
   '/programs/custom': typeof ProgramsCustomRoute
   '/programs/masterclasses': typeof ProgramsMasterclassesRoute
@@ -72,7 +86,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/student-creations': typeof StudentCreationsRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/programs/ai-upskilling': typeof ProgramsAiUpskillingRoute
   '/programs/custom': typeof ProgramsCustomRoute
   '/programs/masterclasses': typeof ProgramsMasterclassesRoute
@@ -83,7 +99,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/student-creations': typeof StudentCreationsRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/programs/ai-upskilling': typeof ProgramsAiUpskillingRoute
   '/programs/custom': typeof ProgramsCustomRoute
   '/programs/masterclasses': typeof ProgramsMasterclassesRoute
@@ -95,7 +113,9 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/privacy-policy'
     | '/student-creations'
+    | '/terms-of-service'
     | '/programs/ai-upskilling'
     | '/programs/custom'
     | '/programs/masterclasses'
@@ -105,7 +125,9 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/privacy-policy'
     | '/student-creations'
+    | '/terms-of-service'
     | '/programs/ai-upskilling'
     | '/programs/custom'
     | '/programs/masterclasses'
@@ -115,7 +137,9 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/privacy-policy'
     | '/student-creations'
+    | '/terms-of-service'
     | '/programs/ai-upskilling'
     | '/programs/custom'
     | '/programs/masterclasses'
@@ -126,7 +150,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   StudentCreationsRoute: typeof StudentCreationsRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
   ProgramsAiUpskillingRoute: typeof ProgramsAiUpskillingRoute
   ProgramsCustomRoute: typeof ProgramsCustomRoute
   ProgramsMasterclassesRoute: typeof ProgramsMasterclassesRoute
@@ -136,11 +162,25 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/student-creations': {
       id: '/student-creations'
       path: '/student-creations'
       fullPath: '/student-creations'
       preLoaderRoute: typeof StudentCreationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -198,7 +238,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   StudentCreationsRoute: StudentCreationsRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
   ProgramsAiUpskillingRoute: ProgramsAiUpskillingRoute,
   ProgramsCustomRoute: ProgramsCustomRoute,
   ProgramsMasterclassesRoute: ProgramsMasterclassesRoute,

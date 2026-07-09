@@ -22,14 +22,14 @@ function Contact() {
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[120px] -translate-x-1/2 pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[150px] translate-x-1/3 pointer-events-none" />
 
-        <div className="w-full max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="container-x w-full mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
           {/* Left Column: Copy */}
           <div>
             <p className="text-brand text-sm font-semibold tracking-widest uppercase mb-4 flex items-center gap-2">
               <MessageSquare className="h-4 w-4" /> Get in touch
             </p>
-            <h1 className="font-display text-5xl md:text-7xl mb-6 leading-[1.1]">
-              Let's build <br />
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl mb-6 leading-[1.1]">
+              Let's build{" "}
               <HighlightText className="text-black tracking-normal">
                 something real.
               </HighlightText>

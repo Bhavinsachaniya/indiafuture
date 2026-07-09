@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 export const Footer = React.memo(function Footer() {
   return (
     <footer className="border-t border-border bg-ink text-cream">
-      <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className="container-x mx-auto py-16">
         <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
             <div className="flex items-center gap-2">
@@ -52,8 +52,8 @@ export const Footer = React.memo(function Footer() {
           <div>
             <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-brand mb-6">Legal</h4>
             <ul className="space-y-4 text-sm">
-              <li><a href="#" className="text-cream/70 hover:text-cream transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-cream/70 hover:text-cream transition-colors">Terms of Service</a></li>
+              <li><Link to="/privacy-policy" className="text-cream/70 hover:text-cream transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="text-cream/70 hover:text-cream transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>

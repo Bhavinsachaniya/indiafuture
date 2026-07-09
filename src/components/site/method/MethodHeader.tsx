@@ -7,11 +7,8 @@ export function MethodHeader() {
       <div className="max-w-4xl mx-auto pointer-events-auto">
         <p className="text-xs uppercase tracking-[0.2em] text-brand-soft/80">The method</p>
         <h2 className="mt-3 font-display text-5xl md:text-6xl leading-[1.05] text-balance max-w-4xl mx-auto">
-          We don't <em className="italic">teach</em> AI. We help
-          <HighlightText className="text-white tracking-normal">
-            you ship it
-          </HighlightText>
-          .
+          We don't <em className="italic">teach</em> AI. We help{" "}
+          <HighlightText className="text-white tracking-normal">you ship it</HighlightText>.
         </h2>
         <p className="mt-6 text-cream/70 text-lg leading-relaxed max-w-2xl mx-auto">
           Indiafuture is closer to a residency than a course. Every week is a real deliverable,

@@ -30,7 +30,7 @@ export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light
     <header
       className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out ${
         scrolled
-          ? `top-4 w-[calc(100%-2rem)] max-w-5xl rounded-full border backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${
+          ? `top-4 w-[calc(100%-2rem)] max-w-[1200px] rounded-full border backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${
               theme === "dark" ? "border-cream/10 bg-[#161413]/80" : "border-border/40 bg-background/80"
             }`
           : "top-0 w-full border-b border-transparent bg-transparent"
