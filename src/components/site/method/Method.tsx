@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { useScroll } from "framer-motion";
 import { MethodHeader } from "./MethodHeader";
-import { MethodFooter } from "./MethodFooter";
 import { MethodCard } from "./MethodCard";
 import { steps } from "./constants";
 
@@ -15,33 +14,28 @@ export function Method() {
 
   return (
     <section id="method" className="bg-ink text-cream relative pt-24">
-      {/* Top Header Section */}
-      <div className="relative w-full z-10 pt-[10vh]">
-        <MethodHeader />
-      </div>
-
       <main ref={container} className="relative w-full">
-        {/* We need enough scroll height for: 4 cards stacking + 1 final spread phase */}
-        
-        <div className="relative w-full pt-[10vh]">
+        {/* Absolute wrapper matches main's height, allowing synchronized sticky un-sticking */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <div className="sticky top-[24vh] h-[143vh] md:h-[148vh] w-full">
+            <MethodHeader />
+          </div>
+        </div>
+
+        <div className="relative w-full pt-[35vh]">
           {steps.map((step, i) => (
             <MethodCard
               key={`step_${i}`}
               i={i}
-              n={step.n}
+              icon={step.icon}
               t={step.t}
               d={step.d}
-              icon={step.icon}
               totalCards={steps.length}
               progress={scrollYProgress}
             />
           ))}
-          {/* Extra scroll space for the final spread animation */}
-          <div className="h-[80vh] w-full" />
         </div>
       </main>
-
-      <MethodFooter />
     </section>
   );
 }
