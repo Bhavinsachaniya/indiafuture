@@ -35,6 +35,31 @@ export function Method() {
             />
           ))}
         </div>
+
+        <div className="relative w-full min-h-[80vh] flex flex-col items-center justify-center py-24 z-10 bg-ink mt-24">
+          <div className="max-w-6xl mx-auto px-6 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative">
+              {/* Optional: Add a dotted line connecting them on desktop */}
+              <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[1px] border-t border-dashed border-brand/30 -z-10" />
+              
+              {steps.map((step, i) => {
+                const Icon = step.icon;
+                return (
+                  <div key={i} className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 rounded-full bg-[#111] border border-white/5 flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(255,100,0,0.15)] bg-ink">
+                      <Icon className="w-8 h-8 text-brand" strokeWidth={1.5} />
+                    </div>
+                    <div className="w-6 h-[2px] bg-brand rounded-full mb-4" />
+                    <h4 className="font-display text-2xl mb-2 text-cream">{step.t}</h4>
+                    <p className="text-cream/50 text-sm leading-relaxed max-w-[200px]">
+                      {step.d}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </main>
     </section>
   );
