@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { HighlightText } from "@/components/ui/HighlightText";
 
-import keshavAvatar from "@/assets/Testimonials/Keshav_Singla.png";
-import harshAvatar from "@/assets/Testimonials/Harsh_Mittal.png";
-import shreyAvatar from "@/assets/Testimonials/Shrey_Saxena.png";
-
 const testimonials = [
   {
     id: 1,
@@ -34,7 +30,7 @@ const testimonials = [
   },
   {
     id: 2,
-    avatar: keshavAvatar,
+    avatar: "/Testimonials/KEshav Singla.png",
     stars: 5,
     text: (
       <>
@@ -58,7 +54,7 @@ const testimonials = [
   },
   {
     id: 3,
-    avatar: harshAvatar,
+    avatar: "/Testimonials/harsh Mittal.png",
     stars: 5,
     text: (
       <>
@@ -82,7 +78,7 @@ const testimonials = [
   },
   {
     id: 4,
-    avatar: shreyAvatar,
+    avatar: "/Testimonials/Shrey Saxena.png",
     stars: 5,
     text: (
       <>

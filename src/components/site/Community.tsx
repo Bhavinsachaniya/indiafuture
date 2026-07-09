@@ -19,8 +19,8 @@ export const Community = React.memo(function Community() {
         </div>
         <div className="mt-14 grid md:grid-cols-3 gap-5">
           {blocks.map((b) => (
-            <div key={b.t} className="group rounded-3xl bg-card border border-border p-8 transition-colors hover:border-brand/20 hover:bg-card/60">
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-transparent border border-ink/10 text-ink transition-all duration-300 group-hover:bg-brand group-hover:text-white group-hover:border-brand">
+            <div key={b.t} className="rounded-3xl bg-card border border-border p-8">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-ink text-cream">
                 <b.icon className="h-5 w-5" />
               </div>
               <h3 className="mt-6 font-display text-2xl">{b.t}</h3>
