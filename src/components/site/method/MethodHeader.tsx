@@ -13,8 +13,9 @@ export function MethodHeader() {
           </HighlightText>
           .
         </h2>
-        <p className="mt-6 text-cream/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium">
-          Learn. Build. Apply. Repeat.
+        <p className="mt-6 text-cream/70 text-lg leading-relaxed max-w-2xl mx-auto">
+          Indiafuture is closer to a residency than a course. Every week is a real deliverable,
+          reviewed by senior practitioners who work on production AI systems every day.
         </p>
       </div>
     </div>

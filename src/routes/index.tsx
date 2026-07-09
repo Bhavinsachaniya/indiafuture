@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { HeroSection, LogosSection } from "@/components/ui/hero-1";
 import FUIBentoGrid from "@/components/ui/bento";
-import { Studios } from "@/components/site/Studios";
+import { WhyIndiaFutureBento } from "@/components/site/WhyIndiaFutureBento";
 import { Method } from "@/components/site/method/Method";
 import { UpskillingProgram } from "@/components/site/UpskillingProgram";
 import { AISolutions } from "@/components/site/AISolutions";
@@ -27,8 +27,7 @@ function Index() {
       <main>
         <HeroSection />
         <LogosSection />
-        <Studios />
-        <FUIBentoGrid />
+        <WhyIndiaFutureBento />
         <Method />
         <UpskillingProgram />
         <AISolutions />
