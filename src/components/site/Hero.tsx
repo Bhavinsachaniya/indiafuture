@@ -43,13 +43,14 @@ export function Hero() {
             Join the next cohort
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
-          <a
-            href="#method"
+          <Link
+            to="/"
+            hash="method"
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-white border border-ink/10 text-ink px-8 py-3.5 text-sm font-medium transition-all hover:bg-surface hover:-translate-y-0.5 shadow-sm w-full sm:w-auto"
           >
             <Play className="w-4 h-4 text-ink-soft group-hover:text-brand transition-colors" />
             How it works
-          </a>
+          </Link>
         </div>
 
         {/* Stats Row */}
