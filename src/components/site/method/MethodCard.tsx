@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, MotionValue, useMotionTemplate } from "framer-motion";
+import { motion, MotionValue, useMotionTemplate, useTransform } from "framer-motion";
 import { useCardProgress } from "./useCardProgress";
 
 interface MethodCardProps {
