@@ -7,44 +7,42 @@ const testimonials = [
   {
     id: 1,
     avatar:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=faces",
-    name: "Ananya Singh",
-    role: "AI Program Learner",
-    text: "The program gave me the skills and confidence to build real AI projects. I landed my first internship because of my portfolio.",
-    badgeIcon: <GraduationCap className="w-4 h-4" />,
-    badgeText: "Student",
+      "https://ui-avatars.com/api/?name=Vishu+Mittal&background=f97316&color=fff",
+    name: "Vishu Mittal",
+    role: "Founder, Oakcraft",
+    text: "I run Oakcraft, a ₹100 cr ARR furniture business. A lot of my operations & processes at the factory and client dealing had been manual. India Future AI helped me automate these processes saving ₹1 cr+ every year.",
+    badgeIcon: <Briefcase className="w-4 h-4" />,
+    badgeText: "Industry Leader",
+    linkedin: "https://www.linkedin.com/in/vishuoakcraft/",
   },
   {
     id: 2,
-    avatar:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=faces",
-    name: "Dr. Rakesh Verma",
-    role: (
-      <>
-        Dean, Tech & Innovation
-        <br />
-        XYZ Institute of Technology
-      </>
-    ),
-    text: "IndiaFutureAI helped us set up our AI Lab and train faculty. Our students are now building solutions they were only learning about before.",
-    badgeIcon: <Landmark className="w-4 h-4" />,
-    badgeText: "Academic Leader",
+    avatar: "/Testimonials/KEshav Singla.png",
+    name: "Keshav Singla",
+    role: "Founder CEO, Grocery on Wheels",
+    text: "I am blown away with the ease of process automations that India Future AI set up for my business. What was otherwise direct cost of ₹3 lac/pm is now reduced to ₹4,000/mo leading to direct savings for the company.",
+    badgeIcon: <Briefcase className="w-4 h-4" />,
+    badgeText: "Industry Leader",
+    linkedin: "https://www.linkedin.com/in/keshav-singla-gow/",
   },
   {
     id: 3,
-    avatar:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=faces",
-    name: "Rohit Mehra",
-    role: (
-      <>
-        Head of Operations
-        <br />
-        BrightEdge Solutions
-      </>
-    ),
-    text: "The workshops helped our team automate key workflows and work smarter every day. The impact on productivity has been immediate.",
+    avatar: "/Testimonials/harsh Mittal.png",
+    name: "Harsh Mittal",
+    role: "Director, GoldenKey",
+    text: "I run a Proptech business that runs on traditional methods of outreach. I had an idea on how AI can automate lot of my marketing outreach but it is only through India Future AI that I could see the magic of it happening.",
     badgeIcon: <Briefcase className="w-4 h-4" />,
-    badgeText: "Organization Partner",
+    badgeText: "Industry Leader",
+  },
+  {
+    id: 4,
+    avatar: "/Testimonials/Shrey Saxena.png",
+    name: "Shrey Saxena",
+    role: "Director, Growdiesel",
+    text: "India Future AI has cracked ease of execution with their automations. A lot of our processes are now running automated without external intervention. Away from costs it save, it gets us direct business.",
+    badgeIcon: <Briefcase className="w-4 h-4" />,
+    badgeText: "Industry Leader",
+    linkedin: "https://www.linkedin.com/in/shrenewable",
   },
 ];
 
@@ -79,7 +77,7 @@ export const Testimonials = React.memo(function Testimonials() {
         <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-[#faf9f8] to-transparent z-10 pointer-events-none" />
 
         <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-6 px-3">
-          {[...testimonials, ...testimonials, ...testimonials].map((t, idx) => (
+          {[...testimonials, ...testimonials, ...testimonials, ...testimonials].map((t, idx) => (
             <div
               key={idx}
               className="w-[350px] md:w-[400px] shrink-0 bg-white rounded-3xl p-8 border border-[#161413]/5 relative overflow-hidden shadow-sm flex flex-col transition-shadow hover:shadow-md"
@@ -89,7 +87,13 @@ export const Testimonials = React.memo(function Testimonials() {
               <div className="flex items-center gap-4 mb-6 relative z-10">
                 <img src={t.avatar} alt={t.name} className="w-16 h-16 object-cover rounded-full" />
                 <div>
-                  <h4 className="font-bold text-[#161413] text-lg leading-tight">{t.name}</h4>
+                  {t.linkedin ? (
+                    <a href={t.linkedin} target="_blank" rel="noopener noreferrer" className="font-bold text-[#161413] text-lg leading-tight hover:text-[#f97316] transition-colors inline-block">
+                      {t.name}
+                    </a>
+                  ) : (
+                    <h4 className="font-bold text-[#161413] text-lg leading-tight">{t.name}</h4>
+                  )}
                   <p className="text-[#161413]/60 text-sm leading-tight mt-1">{t.role}</p>
                 </div>
               </div>

@@ -65,8 +65,6 @@ export function ProgramsList() {
             description="Help teams integrate AI into daily workflows through productivity training, automation, department-specific use cases, and implementation support."
             link="/programs/custom"
             linkText="Explore Solution"
-            iconBg="bg-[#f97316]"
-            iconColor="text-white"
           />
         </div>
       </div>
@@ -83,7 +81,7 @@ function ProgramCard({
   link,
   linkText,
   iconBg = "bg-[#fff5ec]",
-  iconColor = "text-[#161413]",
+  iconColor = "text-[#f97316]",
 }: {
   icon: React.ElementType;
   badge: string;
@@ -104,9 +102,9 @@ function ProgramCard({
       className="group relative flex flex-col p-6 sm:p-8 rounded-3xl border border-[#f97316]/10 bg-white shadow-sm hover:shadow-[0_10px_40px_-15px_rgba(249,115,22,0.15)] transition-all duration-500 hover:-translate-y-1"
     >
       <div className="flex items-start justify-between mb-8">
-        <div className={`flex items-center justify-center w-12 h-12 rounded-full ${iconBg} transition-colors duration-500`}>
+        <div className={`flex items-center justify-center w-12 h-12 rounded-full ${iconBg} group-hover:bg-[#f97316] transition-colors duration-500`}>
           <Icon
-            className={`w-5 h-5 ${iconColor} transition-colors duration-500`}
+            className={`w-5 h-5 ${iconColor} group-hover:text-white transition-colors duration-500`}
             strokeWidth={1.5}
           />
         </div>

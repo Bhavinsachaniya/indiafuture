@@ -9,7 +9,7 @@ interface VideoCardProps {
 }
 
 export function VideoCard({ video, onClick, index = 0 }: VideoCardProps) {
-  const thumbnailUrl = `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`;
+  const thumbnailUrl = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
 
   return (
     <motion.div

@@ -28,7 +28,6 @@ function Index() {
       <Nav />
       <main>
         <HeroSection />
-        <LogosSection />
         <WhyIndiaFutureBento />
 
         <Method />

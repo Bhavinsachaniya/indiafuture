@@ -28,7 +28,7 @@ export const CTA = React.memo(function CTA() {
           <div className="relative z-10">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] max-w-3xl mx-auto mb-6">
               Stop learning about AI.<br />
-              <HighlightText className="mt-2 text-[#f97316] !bg-[#f97316]/10 !border-[#f97316]">
+              <HighlightText className="mt-2 text-white !bg-[#f97316]/10 !border-[#f97316]">
                 Start building with it.
               </HighlightText>
             </h2>

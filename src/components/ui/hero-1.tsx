@@ -58,17 +58,17 @@ export function HeroSection() {
             LEARN. &nbsp;BUILD. &nbsp;SHIP.
           </p>
 
-          <h1 className="mt-8 font-display font-normal text-ink text-[clamp(2.5rem,4vw,5rem)] leading-[1.1] tracking-tight text-balance max-w-4xl mx-auto">
+          <h1 className="mt-8 font-display font-normal text-ink text-[clamp(3rem,6vw,6.5rem)] leading-[1.05] tracking-tight md:tracking-tighter text-balance max-w-5xl mx-auto drop-shadow-sm">
             India's Practical AI Upskilling{" "}
             <br className="hidden md:block" />
-            <HighlightText className="text-ink font-normal tracking-normal">
+            <HighlightText className="text-ink font-normal tracking-normal md:tracking-tighter">
               Partner
             </HighlightText>{" "}
             For The Future.
           </h1>
 
           {/* Subtitle */}
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
+          <p className="mx-auto mt-8 max-w-3xl text-xl md:text-2xl leading-relaxed text-ink-soft">
             Empowering students, educators, and organizations with practical AI skills. We believe AI should not just be understood—it should be used.
           </p>
 

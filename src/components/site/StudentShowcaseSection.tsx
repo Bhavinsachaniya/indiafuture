@@ -5,10 +5,11 @@ import { useState } from "react";
 import { STUDENT_VIDEOS, StudentVideo } from "@/data/student-videos";
 import { VideoCard } from "@/components/videos/VideoCard";
 import { VideoModal } from "@/components/videos/VideoModal";
+import { HighlightText } from "../ui/HighlightText";
 
 export function StudentShowcaseSection() {
   const [selectedVideo, setSelectedVideo] = useState<StudentVideo | null>(null);
-  
+
   // Only take the first 3 featured videos
   const featuredVideos = STUDENT_VIDEOS.slice(0, 3);
 
@@ -24,22 +25,18 @@ export function StudentShowcaseSection() {
           >
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink">
               Create Stunning AI Videos <br className="hidden md:block" />
-              <span className="text-brand">Like These</span>
+              <HighlightText>Like These</HighlightText>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-ink-soft md:text-xl">
-              Every video below was created by students using the techniques taught inside our AI Creator Program.
+              Every video below was created by students using the techniques taught inside our AI
+              Creator Program.
             </p>
           </motion.div>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16">
           {featuredVideos.map((video, index) => (
-            <VideoCard
-              key={video.id}
-              video={video}
-              index={index}
-              onClick={setSelectedVideo}
-            />
+            <VideoCard key={video.id} video={video} index={index} onClick={setSelectedVideo} />
           ))}
         </div>
 
@@ -59,11 +56,11 @@ export function StudentShowcaseSection() {
           </Link>
         </motion.div>
       </div>
-      
-      <VideoModal 
-        video={selectedVideo} 
-        isOpen={!!selectedVideo} 
-        onClose={() => setSelectedVideo(null)} 
+
+      <VideoModal
+        video={selectedVideo}
+        isOpen={!!selectedVideo}
+        onClose={() => setSelectedVideo(null)}
       />
     </section>
   );
