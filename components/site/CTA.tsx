@@ -35,8 +35,9 @@ export const CTA = React.memo(function CTA() {
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] max-w-3xl mx-auto mb-6">
               Stop reading about AI from afar!
               <br />
-              <HighlightText className="mt-2 text-white !bg-[#f97316]/10 !border-[#f97316]">
-                Start using it to make REAL money
+              Start using it to make{" "}
+              <HighlightText className="text-white !bg-[#f97316]/10 !border-[#f97316]">
+                REAL MONEY
               </HighlightText>
             </h2>
             <p className="mt-6 text-white/70 max-w-xl mx-auto text-lg md:text-xl font-light">
@@ -60,7 +61,7 @@ export const CTA = React.memo(function CTA() {
               </div>
               <div className="flex flex-col items-center text-center gap-3">
                 <Briefcase className="w-8 h-8 text-[#f97316]" strokeWidth={1.5} />
-                <span className="text-white/80 text-sm font-medium">Real Opportunities</span>
+                <span className="text-white/80 text-sm font-medium">Placement Opportunities</span>
               </div>
               <div className="flex flex-col items-center text-center gap-3">
                 <Award className="w-8 h-8 text-[#f97316]" strokeWidth={1.5} />
