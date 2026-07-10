@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/site/Nav";
+
 import { HeroSection, LogosSection } from "@/components/ui/hero-1";
 import FUIBentoGrid from "@/components/ui/bento";
 import { Studios } from "@/components/site/Studios";
@@ -15,7 +15,7 @@ import { Community } from "@/components/site/Community";
 import { Pricing } from "@/components/site/Pricing";
 import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
-import { Footer } from "@/components/site/Footer";
+
 import { StudentShowcaseSection } from "@/components/site/StudentShowcaseSection";
 
 export const Route = createFileRoute("/")({
@@ -25,8 +25,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Nav />
-      <main>
+<main>
         <HeroSection />
         <WhyIndiaFutureBento />
 
@@ -43,7 +42,6 @@ function Index() {
         <StudentShowcaseSection />
         <CTA />
       </main>
-      <Footer />
-    </div>
+</div>
   );
 }

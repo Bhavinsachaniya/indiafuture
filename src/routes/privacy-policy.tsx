@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/site/Nav";
-import { Footer } from "@/components/site/Footer";
+
+
 import { Calendar, User, ShieldCheck, Cookie, Share2, Lock, ExternalLink, UserCog, Users, RefreshCcw, Mail } from "lucide-react";
 import { HighlightText } from "@/components/ui/HighlightText";
 
@@ -209,8 +209,7 @@ function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-[#faf9f8] text-[#161413] flex flex-col">
-      <Nav />
-      <main className="flex-1 pt-32 pb-24">
+<main className="flex-1 pt-32 pb-24">
         
         {/* HEADER TITLE */}
         <section className="container-x mx-auto max-w-5xl px-6 mb-16 text-center">
@@ -294,7 +293,6 @@ function PrivacyPolicy() {
 
         </section>
       </main>
-      <Footer />
-    </div>
+</div>
   );
 }

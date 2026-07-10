@@ -30,15 +30,15 @@ export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light
     <header
       className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out ${
         scrolled
-          ? `top-4 w-[calc(100%-2rem)] max-w-[1200px] rounded-full border backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${
-              theme === "dark" ? "border-cream/10 bg-[#161413]/80" : "border-border/40 bg-background/80"
+          ? `top-4 w-[calc(100%-2rem)] max-w-[1200px] rounded-full border shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${
+              theme === "dark" ? "border-cream/10 bg-[#161413]" : "border-border/40 bg-white"
             }`
           : "top-0 w-full border-b border-transparent bg-transparent"
       }`}
     >
       <div className={`mx-auto flex items-center justify-between transition-all duration-500 ${scrolled ? "h-14 px-6" : "h-20 container-x"}`}>
         <Link to="/" className="flex items-center gap-2">
-          <span className={`grid h-8 w-8 place-items-center rounded-lg font-display text-lg ${theme === "dark" ? "bg-cream text-ink" : "bg-ink text-cream"}`}>I</span>
+          <img src="/favicon1.png" alt="IndiaFutureAI Logo" className={`h-8 w-8 object-contain ${theme === "dark" ? "rounded-lg bg-white" : "mix-blend-multiply"}`} />
           <span className="font-display text-xl">IndiaFutureAI</span>
         </Link>
         <nav className={`hidden md:flex items-center gap-8 text-sm ${theme === "dark" ? "text-cream/70" : "text-ink-soft"}`}>

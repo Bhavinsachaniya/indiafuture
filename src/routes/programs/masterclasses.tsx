@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/site/Nav";
-import { Footer } from "@/components/site/Footer";
+
+
 
 // Data
 import { programsConfig } from "@/config/programs";
@@ -27,9 +27,7 @@ function MasterclassesPage() {
 
   return (
     <div className="min-h-screen bg-surface text-ink font-sans flex flex-col selection:bg-brand/20 selection:text-brand">
-      <Nav theme="light" />
-      
-      <main className="flex-1 flex flex-col pt-20">
+<main className="flex-1 flex flex-col pt-20">
         <ProgramHero data={data} />
         <TrustedBy />
         <WhyProgramExists data={data} />
@@ -42,8 +40,6 @@ function MasterclassesPage() {
         <FAQ />
         <ProgramCTA data={data} />
       </main>
-      
-      <Footer />
-    </div>
+</div>
   );
 }

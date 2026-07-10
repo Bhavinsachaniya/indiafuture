@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Nav } from "@/components/site/Nav";
-import { Footer } from "@/components/site/Footer";
+
+
 import { STUDENT_VIDEOS, StudentVideo } from "@/data/student-videos";
 import { SearchBar } from "@/components/videos/SearchBar";
 import { VideoFilters } from "@/components/videos/VideoFilters";
@@ -42,9 +42,7 @@ function StudentCreationsPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <Nav />
-      
-      <main className="flex-1 pt-24 pb-16">
+<main className="flex-1 pt-24 pb-16">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-16 md:py-24">
           <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
@@ -104,10 +102,7 @@ function StudentCreationsPage() {
         
         <GalleryCTA />
       </main>
-      
-      <Footer />
-
-      <VideoModal 
+<VideoModal 
         video={selectedVideo} 
         isOpen={!!selectedVideo} 
         onClose={() => setSelectedVideo(null)} 

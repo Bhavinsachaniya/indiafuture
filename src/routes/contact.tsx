@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Nav } from "@/components/site/Nav";
-import { Footer } from "@/components/site/Footer";
+
+
 import { ArrowRight, Mail, MessageSquare } from "lucide-react";
 import { HighlightText } from "@/components/ui/HighlightText";
 
@@ -16,8 +16,7 @@ function Contact() {
 
   return (
     <div className="min-h-screen bg-surface text-ink font-sans flex flex-col selection:bg-brand/20 selection:text-brand">
-      <Nav theme="light" />
-      <main className="flex-1 flex flex-col items-center justify-center pt-32 pb-24 px-4 relative overflow-hidden">
+<main className="flex-1 flex flex-col items-center justify-center pt-32 pb-24 px-4 relative overflow-hidden">
         {/* Background Accents */}
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[120px] -translate-x-1/2 pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[150px] translate-x-1/3 pointer-events-none" />
@@ -164,7 +163,6 @@ function Contact() {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+</div>
   );
 }

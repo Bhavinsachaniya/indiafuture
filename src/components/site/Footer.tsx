@@ -8,7 +8,7 @@ export const Footer = React.memo(function Footer() {
         <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
             <div className="flex items-center gap-2">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-cream text-ink font-display text-lg font-bold">I</span>
+              <img src="/favicon1.png" alt="IndiaFutureAI Logo" className="h-8 w-8 object-contain rounded-full bg-white" />
               <span className="font-display text-2xl tracking-tight">IndiaFutureAI</span>
             </div>
             <p className="mt-6 text-sm text-cream/60 leading-relaxed">

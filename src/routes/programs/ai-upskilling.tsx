@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/site/Nav";
-import { Footer } from "@/components/site/Footer";
+
+
 
 import { ProgramHero } from "@/components/programs/ProgramHero";
 import { programsConfig } from "@/config/programs";
@@ -26,9 +26,7 @@ function AIUpskillingPage() {
 
   return (
     <div className="min-h-screen bg-surface text-ink font-sans flex flex-col selection:bg-brand/20 selection:text-brand">
-      <Nav theme="light" />
-      
-      <main className="flex-1 flex flex-col pt-20">
+<main className="flex-1 flex flex-col pt-20">
         <ProgramHero data={data} />
         
         <div className="relative">
@@ -43,8 +41,6 @@ function AIUpskillingPage() {
           <FinalCTA />
         </div>
       </main>
-      
-      <Footer />
-    </div>
+</div>
   );
 }
