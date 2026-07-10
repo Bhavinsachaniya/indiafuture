@@ -29,7 +29,8 @@ export function StudentShowcaseSection() {
               Learn to create <HighlightText>Stunning Visuals</HighlightText> like these and more!
             </h2>
             <p className="mx-auto mt-6 max-w-4xl text-lg text-ink-soft md:text-xl px-4">
-              Learn to work with efficiency, save time and make money through our Fellowship & Masterclasses. Experience some of our Fellows’ creations!
+              Learn to work with efficiency, save time and make money through our Fellowship &
+              Masterclasses. Experience some of our Fellows’ creations!
             </p>
           </motion.div>
         </div>
