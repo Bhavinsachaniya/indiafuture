@@ -87,7 +87,14 @@ export const Testimonials = React.memo(function Testimonials() {
               <Quote className="absolute top-8 right-8 w-12 h-12 text-[#fff5ec] fill-[#fff5ec]" />
 
               <div className="flex items-center gap-4 mb-6 relative z-10">
-                <Image src={t.avatar} alt={t.name} width={64} height={64} unoptimized className="w-16 h-16 object-cover rounded-full" />
+                <Image
+                  src={t.avatar}
+                  alt={t.name}
+                  width={64}
+                  height={64}
+                  unoptimized
+                  className="w-16 h-16 object-cover rounded-full"
+                />
                 <div>
                   {t.linkedin ? (
                     <a

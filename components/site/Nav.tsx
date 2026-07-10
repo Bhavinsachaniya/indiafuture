@@ -43,7 +43,14 @@ export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light
         className={`mx-auto flex items-center justify-between transition-all duration-500 ${scrolled ? "h-14 px-6" : "h-20 container-x"}`}
       >
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/favicon1.png" alt="IndiaFutureAI Logo" width={32} height={32} unoptimized className={`object-contain ${theme === "dark" ? "rounded-lg bg-white" : "mix-blend-multiply"}`} />
+          <Image
+            src="/favicon1.png"
+            alt="IndiaFutureAI Logo"
+            width={32}
+            height={32}
+            unoptimized
+            className={`object-contain ${theme === "dark" ? "rounded-lg bg-white" : "mix-blend-multiply"}`}
+          />
           <span className="font-display text-xl">IndiaFutureAI</span>
         </Link>
         <nav
