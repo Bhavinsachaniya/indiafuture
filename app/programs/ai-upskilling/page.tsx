@@ -11,7 +11,7 @@ import { FinalCTA } from "@/components/programs/upskilling/FinalCTA";
 
 import { WhyProgramExists } from "@/components/programs/WhyProgramExists";
 import { WhatYouWillLearn } from "@/components/programs/WhatYouWillLearn";
-import { Testimonials } from "@/components/site/Testimonials";
+import { IndustryTestimonialsSection } from "@/components/site/IndustryTestimonialsSection";
 
 export default function AIUpskillingPage() {
   const data = programsConfig.upskilling;
@@ -29,7 +29,7 @@ export default function AIUpskillingPage() {
           <ExperienceAndOutcomes />
           <CareerAndMentors />
           <CertificateAndFAQ />
-          <Testimonials />
+          <IndustryTestimonialsSection />
           <FinalCTA />
         </div>
       </main>

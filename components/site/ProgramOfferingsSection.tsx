@@ -7,7 +7,7 @@ import { GraduationCap, Users, Landmark, Briefcase, ArrowRight } from "lucide-re
 import { HighlightText } from "@/components/ui/HighlightText";
 import { fadeUpVariant, defaultViewport } from "@/lib/motion";
 
-export function ProgramsList() {
+export function ProgramOfferingsSection() {
   return (
     <section className="bg-[#faf9f8] py-28 relative overflow-hidden">
       <div className="container-x relative z-10">

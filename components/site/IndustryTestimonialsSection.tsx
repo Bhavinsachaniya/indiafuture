@@ -47,7 +47,7 @@ const testimonials = [
   },
 ];
 
-export const Testimonials = React.memo(function Testimonials() {
+export const IndustryTestimonialsSection = React.memo(function IndustryTestimonialsSection() {
   return (
     <section className="py-24 bg-[#faf9f8] relative overflow-hidden" id="testimonials">
       <div className="container-x relative z-10 mx-auto px-4 md:px-8">

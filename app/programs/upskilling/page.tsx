@@ -9,7 +9,7 @@ import { CurriculumTimeline } from "@/components/programs/CurriculumTimeline";
 import { LiveProjects } from "@/components/programs/LiveProjects";
 import { LearningExperience } from "@/components/programs/LearningExperience";
 import { ProgramOutcomes } from "@/components/programs/ProgramOutcomes";
-import { Testimonials } from "@/components/site/Testimonials";
+import { IndustryTestimonialsSection } from "@/components/site/IndustryTestimonialsSection";
 import { FAQ } from "@/components/site/FAQ";
 import { ProgramCTA } from "@/components/programs/ProgramCTA";
 
@@ -27,7 +27,7 @@ export default function UpskillingProgramPage() {
         <LiveProjects data={data} />
         <LearningExperience data={data} />
         <ProgramOutcomes data={data} />
-        <Testimonials />
+        <IndustryTestimonialsSection />
         <FAQ />
         <ProgramCTA data={data} />
       </main>

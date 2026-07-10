@@ -9,7 +9,7 @@ import { VideoCard } from "@/components/videos/VideoCard";
 import { VideoModal } from "@/components/videos/VideoModal";
 import { HighlightText } from "../ui/HighlightText";
 
-export function StudentShowcaseSection() {
+export function ProjectShowcaseSection() {
   const [selectedVideo, setSelectedVideo] = useState<StudentVideo | null>(null);
 
   // Only take the first 3 featured videos

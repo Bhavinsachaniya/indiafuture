@@ -4,7 +4,7 @@ import React from "react";
 import { User, Building2, TrendingUp, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
-export const Impact = React.memo(function Impact() {
+export const ImpactMetricsSection = React.memo(function ImpactMetricsSection() {
   return (
     <section className="bg-ink text-cream relative pt-24 pb-12" id="impact">
       <div className="container-x">

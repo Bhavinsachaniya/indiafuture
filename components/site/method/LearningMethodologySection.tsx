@@ -6,7 +6,7 @@ import { MethodHeader } from "./MethodHeader";
 import { MethodCard } from "./MethodCard";
 import { steps } from "./constants";
 
-export function Method() {
+export function LearningMethodologySection() {
   const container = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
