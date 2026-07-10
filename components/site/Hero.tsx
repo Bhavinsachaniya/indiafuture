@@ -1,7 +1,7 @@
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { HighlightText } from "./ui/HighlightText";
-import { Button } from "./ui/button";
+import { HighlightText } from "@/components/ui/HighlightText";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
