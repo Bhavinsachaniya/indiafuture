@@ -6,14 +6,9 @@ import { Button } from "./ui/button";
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fdfaf5]">
-      {/* Background Glows & Filter (Responsive for mobile & light mode optimized) */}
+      {/* Background Glows & Filter (Strictly using the provided image for light mode) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Grain overlay for texture */}
-        <div className="absolute inset-0 z-10 opacity-[0.15] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxmaWx0ZXIgaWQ9Im4iPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjciIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjM1Ii8+PC9zdmc+')]"></div>
-
-        {/* Fiery Orbs */}
-        <div className="absolute -top-[10%] -left-[20%] w-[120%] md:w-[60%] h-[60%] rounded-full bg-gradient-to-br from-[#FFB800] via-[#FF5C00] to-[#E91E63] blur-[100px] md:blur-[140px] opacity-[0.25] md:opacity-[0.18] mix-blend-multiply animate-pulse-slow" />
-        <div className="absolute top-[30%] -right-[20%] w-[120%] md:w-[60%] h-[70%] rounded-full bg-gradient-to-tl from-[#FFD600] via-[#FF3D00] to-[#9C27B0] blur-[100px] md:blur-[140px] opacity-[0.25] md:opacity-[0.15] mix-blend-multiply" />
+        <div className="absolute inset-0 z-10 w-full h-full bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-no-repeat opacity-[0.25] mix-blend-multiply filter contrast-125 saturate-150"></div>
       </div>
 
       <div className="container-x relative z-10 flex flex-col items-center justify-center text-center">
