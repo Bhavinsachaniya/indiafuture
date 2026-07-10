@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
 
 export const Footer = React.memo(function Footer() {
   return (
@@ -22,9 +23,47 @@ export const Footer = React.memo(function Footer() {
               <span className="font-display text-2xl tracking-tight">IndiaFutureAI</span>
             </div>
             <p className="mt-6 text-sm text-cream/60 leading-relaxed">
-              India&apos;s Practical AI Upskilling Partner. We believe AI should not just be
-              understood—it should be used.
+              India&apos;s AI upskilling partner empowering young Indians; learn with us to win your
+              career!
             </p>
+            <div className="mt-8 flex items-center gap-4">
+              <a
+                href="https://instagram.com/indiafuture.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-cream/70 hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all"
+              >
+                <Instagram className="w-4 h-4" />
+                <span className="sr-only">Instagram</span>
+              </a>
+              <a
+                href="https://x.com/indiafutureai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-cream/70 hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all"
+              >
+                <Twitter className="w-4 h-4" />
+                <span className="sr-only">X (Twitter)</span>
+              </a>
+              <a
+                href="https://youtube.com/@indiafuture_ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-cream/70 hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all"
+              >
+                <Youtube className="w-4 h-4" />
+                <span className="sr-only">YouTube</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/indiafutureai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-cream/70 hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all"
+              >
+                <Linkedin className="w-4 h-4" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+            </div>
           </div>
 
           <div>

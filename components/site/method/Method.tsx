@@ -19,12 +19,12 @@ export function Method() {
       <main ref={container} className="relative w-full">
         {/* Absolute wrapper matches main's height, allowing synchronized sticky un-sticking */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-          <div className="sticky top-[24vh] h-[143vh] md:h-[148vh] w-full">
+          <div className="sticky top-[20vh] h-[143vh] md:h-[143vh] w-full">
             <MethodHeader />
           </div>
         </div>
 
-        <div className="relative w-full pt-[35vh]">
+        <div className="relative w-full pt-[40vh] md:pt-[45vh]">
           {steps.map((step, i) => (
             <MethodCard
               key={`step_${i}`}

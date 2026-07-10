@@ -20,7 +20,6 @@ export default function HomePage() {
     <div className="min-h-screen bg-background text-foreground">
       <main>
         <HeroSection />
-        {/*      <WhyIndiaFutureBento /> */}
         <Stats />
         <ProgramsList />
         <Method />

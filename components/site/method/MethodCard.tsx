@@ -19,7 +19,7 @@ export function MethodCard({ icon: Icon, t, d, i, totalCards, progress }: Method
 
   return (
     <div
-      className="sticky top-[55vh] md:top-[60vh] w-full flex items-start justify-center h-[100vh]"
+      className="sticky top-[80vh] md:top-[73vh] p-5 w-full flex items-start justify-center h-[95vh]"
       style={{ zIndex: i }}
     >
       <motion.div
@@ -32,7 +32,7 @@ export function MethodCard({ icon: Icon, t, d, i, totalCards, progress }: Method
           perspective: 1000,
           willChange: "transform, opacity, filter",
         }}
-        className="flex flex-col items-center text-center gap-6 p-10 md:p-14 w-full max-w-lg rounded-[32px] md:rounded-[40px] border border-cream/10 bg-[#161413] shadow-[0_30px_80px_rgba(0,0,0,0.8)] overflow-hidden relative"
+        className="flex flex-col items-center text-center gap-6 p-4 md:p-6 w-full max-w-lg rounded-[32px] md:rounded-[40px] border border-cream/10 bg-[#161413] shadow-[0_30px_80px_rgba(0,0,0,0.8)] overflow-hidden relative"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-brand/5 to-transparent pointer-events-none" />
 

@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-background pt-32 pb-24">
+    <section className="relative isolate overflow-hidden bg-background min-h-[calc(100vh-180px)] flex flex-col">
       {/* Grid / circuit background */}
       <div
         aria-hidden
@@ -52,14 +52,14 @@ export function HeroSection() {
       {/* Soft glow */}
       <div className="pointer-events-none absolute left-1/2 top-40 -z-10 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-brand-soft/70 blur-3xl" />
 
-      <div className="relative container-x">
+      <div className="relative container-x my-auto pt-32 pb-12">
         <div className="mx-auto max-w-5xl text-center">
           {/* Eyebrow */}
           <p className="text-xs sm:text-sm font-medium tracking-[0.25em] text-brand uppercase">
             LEARN. &nbsp;BUILD. &nbsp;WIN.
           </p>
 
-          <h1 className="mt-8 font-display font-normal text-ink text-[clamp(3rem,6vw,6.5rem)] leading-[1.05] tracking-tight md:tracking-tighter text-balance max-w-5xl mx-auto drop-shadow-sm">
+          <h1 className="mt-6 font-display font-normal text-ink text-[clamp(3rem,6vw,6.5rem)] leading-[1.05] tracking-tight md:tracking-tighter text-balance max-w-5xl mx-auto drop-shadow-sm">
             India’s AI Upskilling Partner <br className="hidden md:block" />
             For the{" "}
             <HighlightText className="text-ink font-normal tracking-normal md:tracking-tighter">
@@ -69,19 +69,20 @@ export function HeroSection() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mx-auto mt-8 max-w-3xl text-xl md:text-2xl leading-relaxed text-ink-soft">
+          <p className="mx-auto mt-6 max-w-3xl text-xl md:text-2xl leading-relaxed text-ink-soft">
             Empowering professionals, institutions, and organizations with practical AI skills. We
             turn learning into opportunities, careers, and lasting impact.
           </p>
 
           {/* Avatars + count */}
-          <div className="mt-8 flex items-center justify-center gap-3">
-            <div className="flex -space-x-2">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <div className="flex -space-x-2 shrink-0">
               {[
-                "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=faces",
-                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces",
-                "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=faces",
-                "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=faces",
+                "/avatars/1.png",
+                "/avatars/2.png",
+                "/avatars/3.png",
+                "/avatars/4.png",
+                "/avatars/5.png",
               ].map((src, i) => (
                 <Image
                   key={i}
@@ -94,14 +95,14 @@ export function HeroSection() {
                 />
               ))}
             </div>
-            <p className="text-sm text-ink">
+            <p className="text-sm text-ink text-center sm:text-left max-w-[280px] sm:max-w-none">
               <HighlightText className="font-semibold text-brand">2000+</HighlightText>{" "}
               <span className="text-ink-soft">Indians upskilled with AI via our programs</span>
             </p>
           </div>
 
           {/* CTA */}
-          <div className="mt-10 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Link
               href="/contact"
               className={cn(

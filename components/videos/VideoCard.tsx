@@ -43,9 +43,15 @@ export function VideoCard({ video, onClick, index = 0 }: VideoCardProps) {
           </motion.div>
         </div>
 
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md border border-white/10 transition-colors group-hover:bg-brand/90 group-hover:border-brand">
-          {video.category}
+        <div className="absolute top-4 left-4 flex items-center gap-3">
+          {/* Student Name Badge */}
+          <div className="rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md border border-white/10 transition-colors group-hover:bg-brand/90 group-hover:border-brand">
+            {video.studentName}
+          </div>
+          {/* Category Badge */}
+          <div className="rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-md border border-white/10 transition-colors group-hover:bg-brand/90 group-hover:border-brand">
+            {video.category}
+          </div>
         </div>
 
         {/* Duration */}

@@ -128,7 +128,7 @@ function ProgramCard({
       <div className="mt-auto">
         <Link
           href={link as any}
-          className="inline-flex items-center text-sm font-semibold text-[#f97316] hover:text-[#f97316]/80 transition-colors"
+          className="inline-flex items-center text-sm font-semibold text-[#f97316] hover:text-[#f97316]/80 transition-colors before:absolute before:inset-0 before:z-10"
         >
           {linkText}
           <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" />
