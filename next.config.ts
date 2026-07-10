@@ -1,0 +1,11 @@
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* Performance: use Turbopack in dev for faster HMR */
+  /* Image optimization: allow external domains if needed */
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
+};
+
+export default nextConfig;
