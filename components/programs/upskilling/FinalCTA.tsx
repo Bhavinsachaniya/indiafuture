@@ -33,8 +33,8 @@ export function FinalCTA() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/contact"
-              className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-white px-8 py-4 text-lg font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20 overflow-hidden w-full sm:w-auto"
+              href="/contact?program=upskilling"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white px-8 py-4 text-base font-semibold transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-xl shadow-brand/20 w-full sm:w-auto"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Apply Now

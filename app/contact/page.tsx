@@ -1,14 +1,189 @@
 "use client";
 
+import React, { Suspense, useState } from "react";
 import { ArrowRight, Mail, MessageSquare } from "lucide-react";
 import { HighlightText } from "@/components/ui/HighlightText";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { useSearchParams } from "next/navigation";
 
-function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Thanks for reaching out! We'll be in touch soon.");
+// --- Form Validation Schema (Zod) ---
+const contactSchema = z.object({
+  firstName: z.string().min(2, "First name must be at least 2 characters."),
+  lastName: z.string().min(2, "Last name must be at least 2 characters."),
+  email: z.string().email("Please enter a valid email address."),
+  interest: z.string().min(1, "Please select an interest."),
+  message: z.string().min(10, "Message must be at least 10 characters."),
+});
+
+type ContactFormValues = z.infer<typeof contactSchema>;
+
+// --- Form Component ---
+function ContactForm() {
+  const searchParams = useSearchParams();
+  const programParam = searchParams.get("program");
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  // Map URL parameter to dropdown value
+  const defaultInterest = React.useMemo(() => {
+    if (programParam === "ai-upskilling" || programParam === "upskilling") return "ai-upskilling";
+    if (programParam === "masterclasses") return "masterclasses";
+    if (programParam === "custom") return "custom";
+    if (programParam === "workshops") return "workshops";
+    return "";
+  }, [programParam]);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      interest: defaultInterest,
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: ContactFormValues) => {
+    setIsSubmitting(true);
+    setIsSuccess(false);
+    try {
+      // ---------------------------------------------------------
+      // TODO: ATTACH BACKEND LINK HERE
+      // ---------------------------------------------------------
+      // const response = await fetch("https://YOUR_BACKEND_WEBHOOK_OR_API_URL_HERE", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(data),
+      // });
+      // if (!response.ok) throw new Error("Failed to submit");
+      // ---------------------------------------------------------
+
+      // Simulate API call for now since no backend is attached yet
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setIsSuccess(true);
+      reset(); // clear form
+
+      setTimeout(() => setIsSuccess(false), 5000); // hide success message after 5s
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
+  return (
+    <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+      {isSuccess && (
+        <div className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-xl text-sm font-medium">
+          Thanks for reaching out! We&apos;ll be in touch soon.
+        </div>
+      )}
+
+      <div className="grid grid-cols-2 gap-6">
+        <div className="space-y-2 col-span-2 sm:col-span-1">
+          <label htmlFor="firstName" className="text-sm font-medium text-ink/90">
+            First Name
+          </label>
+          <input
+            {...register("firstName")}
+            id="firstName"
+            className={`w-full bg-surface border ${errors.firstName ? "border-red-500 focus:ring-red-500" : "border-ink/10 focus:ring-brand"} rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 transition-all placeholder:text-ink/30`}
+            placeholder="Jane"
+          />
+          {errors.firstName && (
+            <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>
+          )}
+        </div>
+        <div className="space-y-2 col-span-2 sm:col-span-1">
+          <label htmlFor="lastName" className="text-sm font-medium text-ink/90">
+            Last Name
+          </label>
+          <input
+            {...register("lastName")}
+            id="lastName"
+            className={`w-full bg-surface border ${errors.lastName ? "border-red-500 focus:ring-red-500" : "border-ink/10 focus:ring-brand"} rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 transition-all placeholder:text-ink/30`}
+            placeholder="Doe"
+          />
+          {errors.lastName && (
+            <p className="text-red-500 text-xs mt-1">{errors.lastName.message}</p>
+          )}
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="email" className="text-sm font-medium text-ink/90">
+          Work Email
+        </label>
+        <input
+          {...register("email")}
+          type="email"
+          id="email"
+          className={`w-full bg-surface border ${errors.email ? "border-red-500 focus:ring-red-500" : "border-ink/10 focus:ring-brand"} rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 transition-all placeholder:text-ink/30`}
+          placeholder="jane@company.com"
+        />
+        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="interest" className="text-sm font-medium text-ink/90">
+          I&apos;m interested in...
+        </label>
+        <select
+          {...register("interest")}
+          id="interest"
+          className={`w-full bg-surface border ${errors.interest ? "border-red-500 focus:ring-red-500" : "border-ink/10 focus:ring-brand"} rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 transition-all appearance-none cursor-pointer`}
+        >
+          <option value="" disabled>
+            Select an option
+          </option>
+          <option value="ai-upskilling">8-Week AI Upskilling Program</option>
+          <option value="masterclasses">Masterclasses &amp; Certification</option>
+          <option value="workshops">Corporate Workshops</option>
+          <option value="custom">Customized AI Programs for Orgs</option>
+          <option value="other">Other</option>
+        </select>
+        {errors.interest && <p className="text-red-500 text-xs mt-1">{errors.interest.message}</p>}
+      </div>
+
+      <div className="space-y-2">
+        <label htmlFor="message" className="text-sm font-medium text-ink/90">
+          Message
+        </label>
+        <textarea
+          {...register("message")}
+          id="message"
+          rows={4}
+          className={`w-full bg-surface border ${errors.message ? "border-red-500 focus:ring-red-500" : "border-ink/10 focus:ring-brand"} rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 transition-all resize-none placeholder:text-ink/30`}
+          placeholder="Tell us a bit about your goals..."
+        ></textarea>
+        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
+      </div>
+
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full group inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-white px-6 py-4 text-base font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+      >
+        {isSubmitting ? "Sending..." : "Send Message"}
+        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+      </button>
+    </form>
+  );
+}
+
+// --- Main Page Component ---
+function Contact() {
   return (
     <div className="min-h-screen bg-surface text-ink font-sans flex flex-col selection:bg-brand/20 selection:text-brand">
       <main className="flex-1 flex flex-col items-center justify-center pt-32 pb-24 px-4 relative overflow-hidden">
@@ -70,90 +245,17 @@ function Contact() {
             </div>
           </div>
 
-          {/* Right Column: Form */}
+          {/* Right Column: Form with Suspense Boundary */}
           <div className="bg-white border border-ink/5 rounded-[32px] p-8 md:p-10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.05)]">
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="space-y-2 col-span-2 sm:col-span-1">
-                  <label htmlFor="firstName" className="text-sm font-medium text-ink/90">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    required
-                    className="w-full bg-surface border border-ink/10 rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all placeholder:text-ink/30"
-                    placeholder="Jane"
-                  />
+            <Suspense
+              fallback={
+                <div className="h-64 flex items-center justify-center text-ink-soft">
+                  Loading form...
                 </div>
-                <div className="space-y-2 col-span-2 sm:col-span-1">
-                  <label htmlFor="lastName" className="text-sm font-medium text-ink/90">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    required
-                    className="w-full bg-surface border border-ink/10 rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all placeholder:text-ink/30"
-                    placeholder="Doe"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-ink/90">
-                  Work Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  className="w-full bg-surface border border-ink/10 rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all placeholder:text-ink/30"
-                  placeholder="jane@company.com"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="interest" className="text-sm font-medium text-ink/90">
-                  I&apos;m interested in...
-                </label>
-                <select
-                  id="interest"
-                  required
-                  defaultValue=""
-                  className="w-full bg-surface border border-ink/10 rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all appearance-none cursor-pointer"
-                >
-                  <option value="" disabled>
-                    Select an option
-                  </option>
-                  <option value="cohort">8-Week AI Upskilling Program</option>
-                  <option value="masterclass">Masterclasses &amp; Certification</option>
-                  <option value="team">Customized AI Programs for Orgs</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-ink/90">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  required
-                  rows={4}
-                  className="w-full bg-surface border border-ink/10 rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all resize-none placeholder:text-ink/30"
-                  placeholder="Tell us a bit about your goals..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full group inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-white px-6 py-4 text-base font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20"
-              >
-                Send Message{" "}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </button>
-            </form>
+              }
+            >
+              <ContactForm />
+            </Suspense>
           </div>
         </div>
       </main>

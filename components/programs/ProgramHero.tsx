@@ -82,8 +82,8 @@ export function ProgramHero({ data }: { data: ProgramData }) {
           className="flex flex-col sm:flex-row items-center gap-4 mb-20"
         >
           <Link
-            href="/contact"
-            className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-white px-8 py-4 text-lg font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20 overflow-hidden"
+            href={`/contact?program=${data.id}`}
+            className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white px-8 py-3.5 text-sm font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20 w-full sm:w-auto"
           >
             <span className="relative z-10 flex items-center gap-2">
               Enroll Now

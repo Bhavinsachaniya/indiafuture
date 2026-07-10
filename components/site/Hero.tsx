@@ -6,10 +6,9 @@ import { Button } from "./ui/button";
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fdfaf5]">
-      {/* Background Glows & Filter (Strictly using the provided image for light mode) */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 z-10 w-full h-full bg-[url('/image.png')] bg-cover bg-center bg-no-repeat opacity-[0.25] mix-blend-multiply filter contrast-125 saturate-150"></div>
-      </div>
+      {/* Abstract decorative elements similar to ProgramHero */}
+      <div className="absolute top-1/4 left-[10%] w-[120px] h-[120px] rounded-3xl border border-brand/10 rotate-12 bg-white/40 blur-[1px]" />
+      <div className="absolute bottom-1/4 right-[15%] w-32 h-32 rounded-full border border-brand/5 bg-brand/5 blur-xl" />
 
       <div className="container-x relative z-10 flex flex-col items-center justify-center text-center">
         {/* Pill */}
