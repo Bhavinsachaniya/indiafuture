@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import type { ProgramData } from "@/config/programs";
+import { HighlightText } from "../ui/HighlightText";
 
 export function ProgramCTA({ data }: { data: ProgramData }) {
   return (
@@ -21,10 +22,11 @@ export function ProgramCTA({ data }: { data: ProgramData }) {
           className="max-w-4xl mx-auto"
         >
           <h2 className="font-display text-5xl md:text-7xl leading-[1.05] mb-8">
-            Ready to <span className="italic text-brand-soft">transform?</span>
+            Ready to <HighlightText>transform?</HighlightText>
           </h2>
           <p className="text-xl md:text-2xl text-cream/70 leading-relaxed mb-12 max-w-2xl mx-auto">
-            Take the next step in your journey. Enroll in the {data.title} today and start building the future.
+            Take the next step in your journey. Enroll in the {data.title} today and start building
+            the future.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -37,7 +39,7 @@ export function ProgramCTA({ data }: { data: ProgramData }) {
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
-            
+
             <button className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white/5 border border-white/10 text-white px-8 py-4 text-lg font-medium transition-all hover:bg-white/10 hover:-translate-y-0.5 w-full sm:w-auto">
               <Download className="w-5 h-5 text-cream/70 group-hover:text-brand transition-colors" />
               Download Brochure

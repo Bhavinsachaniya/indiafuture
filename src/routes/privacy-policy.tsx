@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Calendar, User, ShieldCheck, Cookie, Share2, Lock, ExternalLink, UserCog, Users, RefreshCcw, Mail } from "lucide-react";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export const Route = createFileRoute("/privacy-policy")({
   component: PrivacyPolicy,
@@ -215,7 +216,7 @@ function PrivacyPolicy() {
         <section className="container-x mx-auto max-w-5xl px-6 mb-16 text-center">
           <div className="border-b border-[#161413]/10 pb-12">
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6">
-              Privacy <span className="text-[#f97316]">Policy</span>
+              Privacy <HighlightText className="text-brand">Policy</HighlightText>
             </h1>
             <div className="flex items-center justify-center gap-2 text-[#f97316] font-medium text-sm mb-8">
               <Calendar className="w-4 h-4" />

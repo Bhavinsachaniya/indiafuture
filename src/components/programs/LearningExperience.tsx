@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import type { ProgramData } from "@/config/programs";
+import { HighlightText } from "../ui/HighlightText";
 
 export function LearningExperience({ data }: { data: ProgramData }) {
   if (!data.experiences || data.experiences.length === 0) return null;
@@ -11,11 +12,12 @@ export function LearningExperience({ data }: { data: ProgramData }) {
         <div className="mb-16 text-center max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-6">
             <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
-              <span className="w-12 h-[1px] bg-brand/40" /> LEARNING EXPERIENCE <span className="w-12 h-[1px] bg-brand/40" />
+              <span className="w-12 h-[1px] bg-brand/40" /> LEARNING EXPERIENCE{" "}
+              <span className="w-12 h-[1px] bg-brand/40" />
             </p>
           </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
-            How the studio actually runs.
+            How <HighlightText>the studio</HighlightText> actually runs.
           </h2>
         </div>
 

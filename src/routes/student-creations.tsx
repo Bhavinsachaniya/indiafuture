@@ -9,6 +9,7 @@ import { VideoFilters } from "@/components/videos/VideoFilters";
 import { VideoGrid } from "@/components/videos/VideoGrid";
 import { VideoModal } from "@/components/videos/VideoModal";
 import { GalleryCTA } from "@/components/videos/GalleryCTA";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export const Route = createFileRoute("/student-creations")({
   component: StudentCreationsPage,
@@ -58,7 +59,7 @@ function StudentCreationsPage() {
               className="mb-6 font-display text-5xl md:text-6xl lg:text-7xl text-ink"
             >
               Explore Student <br className="hidden md:block" />
-              <span className="text-brand">AI Video Creations</span>
+              <HighlightText className="text-brand">AI Video Creations</HighlightText>
             </motion.h1>
             
             <motion.p 

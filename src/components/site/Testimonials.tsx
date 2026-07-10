@@ -6,8 +6,7 @@ import { HighlightText } from "../ui/HighlightText";
 const testimonials = [
   {
     id: 1,
-    avatar:
-      "https://ui-avatars.com/api/?name=Vishu+Mittal&background=f97316&color=fff",
+    avatar: "https://ui-avatars.com/api/?name=Vishu+Mittal&background=f97316&color=fff",
     name: "Vishu Mittal",
     role: "Founder, Oakcraft",
     text: "I run Oakcraft, a ₹100 cr ARR furniture business. A lot of my operations & processes at the factory and client dealing had been manual. India Future AI helped me automate these processes saving ₹1 cr+ every year.",
@@ -60,8 +59,9 @@ export const Testimonials = React.memo(function Testimonials() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#161413] tracking-tight leading-[1.1] mb-6 font-display">
-            Built with <HighlightText className="text-brand">Learners</HighlightText>. Trusted by{" "}
-            <HighlightText className="text-brand">Institutions</HighlightText>.
+            Built with <HighlightText className="text-brand">Learners</HighlightText>.{" "}
+            <br className="md:hidden" />
+            Trusted by <HighlightText className="text-brand">Leaders</HighlightText>.
           </h2>
 
           <p className="text-[#161413]/70 text-lg md:text-xl max-w-2xl mx-auto font-medium">
@@ -88,7 +88,12 @@ export const Testimonials = React.memo(function Testimonials() {
                 <img src={t.avatar} alt={t.name} className="w-16 h-16 object-cover rounded-full" />
                 <div>
                   {t.linkedin ? (
-                    <a href={t.linkedin} target="_blank" rel="noopener noreferrer" className="font-bold text-[#161413] text-lg leading-tight hover:text-[#f97316] transition-colors inline-block">
+                    <a
+                      href={t.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-[#161413] text-lg leading-tight hover:text-[#f97316] transition-colors inline-block"
+                    >
                       {t.name}
                     </a>
                   ) : (
@@ -116,7 +121,9 @@ export const Testimonials = React.memo(function Testimonials() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-[#161413]/70 font-medium mb-4 text-sm md:text-base">
           <Users className="w-5 h-5 text-[#f97316]" />
           <span>
-            Join a growing community of 500+ learners, 20+ institutions & forward-thinking teams.
+            Join a growing community of <HighlightText className="text-brand">500+</HighlightText>{" "}
+            learners, <HighlightText className="text-brand">20+</HighlightText> institutions &
+            forward-thinking teams.
           </span>
         </div>
 

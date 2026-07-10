@@ -90,7 +90,7 @@ export function HeroSection() {
               ))}
             </div>
             <p className="text-sm text-ink">
-              <span className="font-semibold text-brand">500+</span>{" "}
+              <HighlightText className="font-semibold text-brand">500+</HighlightText>{" "}
               <span className="text-ink-soft">Students in the ongoing 8-Week AI Upskilling Program</span>
             </p>
           </div>

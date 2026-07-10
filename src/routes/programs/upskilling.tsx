@@ -15,7 +15,7 @@ import { LiveProjects } from "@/components/programs/LiveProjects";
 import { LearningExperience } from "@/components/programs/LearningExperience";
 import { ProgramOutcomes } from "@/components/programs/ProgramOutcomes";
 import { Testimonials } from "@/components/site/Testimonials";
-import { ProgramFAQ } from "@/components/programs/ProgramFAQ";
+import { FAQ } from "@/components/site/FAQ";
 import { ProgramCTA } from "@/components/programs/ProgramCTA";
 
 export const Route = createFileRoute("/programs/upskilling")({
@@ -39,7 +39,7 @@ function UpskillingProgramPage() {
         <LearningExperience data={data} />
         <ProgramOutcomes data={data} />
         <Testimonials />
-        <ProgramFAQ data={data} />
+        <FAQ />
         <ProgramCTA data={data} />
       </main>
       

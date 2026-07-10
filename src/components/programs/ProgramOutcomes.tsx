@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TrendingUp, ArrowDown } from "lucide-react";
 import type { ProgramData } from "@/config/programs";
+import { HighlightText } from "../ui/HighlightText";
 
 export function ProgramOutcomes({ data }: { data: ProgramData }) {
   if (!data.outcomes || data.outcomes.length === 0) return null;
@@ -12,12 +13,12 @@ export function ProgramOutcomes({ data }: { data: ProgramData }) {
         <div className="max-w-3xl mx-auto text-center mb-20">
           <div className="flex items-center justify-center gap-4 mb-6">
             <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
-              <span className="w-12 h-[1px] bg-brand/40" /> THE TRANSFORMATION <span className="w-12 h-[1px] bg-brand/40" />
+              <span className="w-12 h-[1px] bg-brand/40" /> THE TRANSFORMATION{" "}
+              <span className="w-12 h-[1px] bg-brand/40" />
             </p>
           </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
-            Your Growth <br />
-            <span className="italic text-ink-soft">Trajectory</span>
+            Your <HighlightText>Growth</HighlightText> Trajectory
           </h2>
         </div>
 
@@ -38,20 +39,24 @@ export function ProgramOutcomes({ data }: { data: ProgramData }) {
                         : "bg-surface border-ink/5"
                     }`}
                   >
-                    <p className={`text-xs uppercase tracking-widest font-semibold mb-3 ${isLast ? "text-white/70" : "text-brand"}`}>
+                    <p
+                      className={`text-xs uppercase tracking-widest font-semibold mb-3 ${isLast ? "text-white/70" : "text-brand"}`}
+                    >
                       {outcome.phase}
                     </p>
-                    <p className={`text-xl md:text-2xl font-medium leading-relaxed ${isLast ? "text-white" : "text-ink"}`}>
+                    <p
+                      className={`text-xl md:text-2xl font-medium leading-relaxed ${isLast ? "text-white" : "text-ink"}`}
+                    >
                       {outcome.description}
                     </p>
-                    
+
                     {isLast && (
                       <div className="absolute -top-4 -right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border border-brand/10">
                         <TrendingUp className="w-6 h-6 text-brand" />
                       </div>
                     )}
                   </motion.div>
-                  
+
                   {/* Down Arrow separator */}
                   {!isLast && (
                     <motion.div

@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Calendar, FileText, User, UserCheck, CreditCard, Copyright, ShieldAlert, Award, ExternalLink, AlertTriangle, UserX, Sliders, Scale, Mail } from "lucide-react";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export const Route = createFileRoute("/terms-of-service")({
   component: TermsOfService,
@@ -197,7 +198,7 @@ function TermsOfService() {
         <section className="container-x mx-auto max-w-5xl px-6 mb-16 text-center">
           <div className="border-b border-[#161413]/10 pb-12">
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6">
-              Terms of <span className="text-[#f97316]">Service</span>
+              Terms of <HighlightText className="text-brand">Service</HighlightText>
             </h1>
             <div className="flex items-center justify-center gap-2 text-[#f97316] font-medium text-sm mb-8">
               <Calendar className="w-4 h-4" />

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FolderGit2, Sparkles, Clock, Puzzle } from "lucide-react";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export function ProjectsAndTools() {
   const projects = [
@@ -59,7 +60,7 @@ export function ProjectsAndTools() {
             </p>
           </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-              Build <span className="italic text-cream/70">Live Projects</span>
+              Build <HighlightText>Live Projects</HighlightText>
             </h2>
           </div>
 
@@ -126,7 +127,7 @@ export function ProjectsAndTools() {
             </p>
           </div>
             <h2 className="font-display text-4xl md:text-5xl text-ink leading-[1.05]">
-              Tools You'll Master
+              <HighlightText>Tools</HighlightText> You'll Master
             </h2>
           </div>
 

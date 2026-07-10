@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Clock, BarChart } from "lucide-react";
 import type { ProgramData } from "@/config/programs";
+import { HighlightText } from "../ui/HighlightText";
 
 export function WhatYouWillLearn({ data }: { data: ProgramData }) {
   return (
@@ -11,11 +12,12 @@ export function WhatYouWillLearn({ data }: { data: ProgramData }) {
         <div className="mb-16 text-center max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-6">
             <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
-              <span className="w-12 h-[1px] bg-brand/40" /> CURRICULUM HIGHLIGHTS <span className="w-12 h-[1px] bg-brand/40" />
+              <span className="w-12 h-[1px] bg-brand/40" /> CURRICULUM HIGHLIGHTS{" "}
+              <span className="w-12 h-[1px] bg-brand/40" />
             </p>
           </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
-            The capability map.
+            The <HighlightText> capability </HighlightText> map.
           </h2>
         </div>
 
@@ -32,7 +34,10 @@ export function WhatYouWillLearn({ data }: { data: ProgramData }) {
             >
               {/* Icon */}
               <div className="w-12 h-12 rounded-full border border-ink/10 group-hover:border-brand/30 flex items-center justify-center mb-8 bg-transparent group-hover:bg-brand/10 transition-colors duration-300">
-                <item.icon className="w-5 h-5 text-ink group-hover:text-brand transition-colors duration-300" strokeWidth={1} />
+                <item.icon
+                  className="w-5 h-5 text-ink group-hover:text-brand transition-colors duration-300"
+                  strokeWidth={1}
+                />
               </div>
 
               {/* Content */}

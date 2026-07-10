@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, CalendarDays, Clock, MapPin, Ticket } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export function FinalCTA() {
   return (
@@ -21,7 +22,7 @@ export function FinalCTA() {
         >
           <h2 className="font-display text-5xl md:text-7xl leading-[1.05] mb-8">
             Start Your <br className="md:hidden" />
-            <span className="italic text-brand-soft">AI Journey Today</span>
+            <HighlightText>AI Journey</HighlightText> Today
           </h2>
           <p className="text-xl md:text-2xl text-cream/70 leading-relaxed mb-12 max-w-2xl mx-auto">
             Join the next cohort of builders. Stop watching from the sidelines and start mastering the tools of the future.

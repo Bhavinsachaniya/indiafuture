@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export function OverviewAndCurriculum() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -77,7 +78,7 @@ export function OverviewAndCurriculum() {
             </p>
           </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-8">
-              AI isn't replacing you. <br />
+              <HighlightText>AI</HighlightText> isn't replacing you. <br />
               <span className="italic text-ink-soft">Someone using AI is.</span>
             </h2>
             <div className="space-y-6 text-lg text-ink-soft leading-relaxed text-left max-w-2xl mx-auto">
@@ -102,7 +103,7 @@ export function OverviewAndCurriculum() {
             </p>
           </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
-              8 Weeks to Mastery
+              <HighlightText>8 Weeks</HighlightText> to Mastery
             </h2>
           </div>
 

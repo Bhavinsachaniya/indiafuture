@@ -182,11 +182,11 @@ function SpeedGraphic() {
         </div>
         <div className="mt-3 space-y-1 text-ink-soft">
           <div>
-            <span className="text-brand">›</span> radiant search
+            <HighlightText className="text-brand">›</HighlightText> radiant search
           </div>
           <div className="text-emerald-600">✓ 2.4k results in 12ms</div>
           <div>
-            <span className="text-brand">›</span> radiant ship
+            <HighlightText className="text-brand">›</HighlightText> radiant ship
           </div>
           <div className="flex items-center gap-1 text-ink">
             <Zap className="h-3 w-3 text-brand" /> deployed

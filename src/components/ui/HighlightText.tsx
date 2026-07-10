@@ -11,7 +11,7 @@ export function HighlightText({
   return (
     <span
       className={cn(
-        "relative inline-block border border-brand bg-brand/10 px-3 py-1 mx-2 align-middle overflow-visible",
+        "relative inline-block border border-brand bg-brand/10 px-3 py-1 align-middle overflow-visible",
         className,
       )}
     >

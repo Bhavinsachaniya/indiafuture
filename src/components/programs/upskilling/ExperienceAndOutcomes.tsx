@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Video, MessagesSquare, Users, Trophy, ChevronRight, Briefcase } from "lucide-react";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export function ExperienceAndOutcomes() {
   const experiences = [
@@ -40,7 +41,7 @@ export function ExperienceAndOutcomes() {
           </div>
                 <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05] mb-8">
                   How you will <br />
-                  <span className="italic text-brand-soft">learn.</span>
+                  <HighlightText>learn.</HighlightText>
                 </h2>
                 <p className="text-ink-soft text-lg leading-relaxed mb-8 max-w-md">
                   We don't do pre-recorded monologues. Our methodology is built entirely around active building, rapid feedback loops, and community accountability.
@@ -82,7 +83,7 @@ export function ExperienceAndOutcomes() {
         <div className="container-x relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-20">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-              Your Transformation
+              Your <HighlightText>Transformation</HighlightText>
             </h2>
           </div>
 

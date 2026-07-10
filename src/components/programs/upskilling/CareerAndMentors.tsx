@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Briefcase, ArrowUpRight, Linkedin } from "lucide-react";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export function CareerAndMentors() {
   const roles = [
@@ -40,7 +41,7 @@ export function CareerAndMentors() {
             </p>
           </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05]">
-              Career Opportunities
+              <HighlightText>Career</HighlightText> Opportunities
             </h2>
           </div>
 
@@ -79,7 +80,7 @@ export function CareerAndMentors() {
             </p>
           </div>
             <h2 className="font-display text-4xl md:text-5xl text-ink leading-[1.05]">
-              Your Instructors
+              Your <HighlightText>Instructors</HighlightText>
             </h2>
           </div>
 

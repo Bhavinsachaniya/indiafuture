@@ -27,11 +27,11 @@ export function CurriculumTimeline({ data }: { data: ProgramData }) {
 
         <div className="max-w-4xl mx-auto relative">
           {/* Animated Background Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-ink/5 md:-translate-x-1/2" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-ink/5 -translate-x-1/2" />
           
           {/* Animated Foreground Line (Brand Color) */}
           <motion.div
-            className="absolute left-8 md:left-1/2 top-0 w-[2px] bg-brand md:-translate-x-1/2 origin-top"
+            className="absolute left-8 md:left-1/2 top-0 w-[2px] bg-brand -translate-x-1/2 origin-top"
             style={{ height: lineHeight }}
           />
 
@@ -48,7 +48,7 @@ export function CurriculumTimeline({ data }: { data: ProgramData }) {
                 } flex-row pl-24 md:pl-0`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-white border-[3px] border-brand md:-translate-x-1/2 z-10" />
+                <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-white border-[3px] border-brand -translate-x-1/2 z-10" />
 
                 {/* Content Box */}
                 <div className="w-full md:w-[45%]">
@@ -76,10 +76,10 @@ export function CurriculumTimeline({ data }: { data: ProgramData }) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative flex justify-center mt-16"
+              className="relative flex items-center md:justify-center mt-16 pl-24 md:pl-0"
             >
-              <div className="absolute left-8 md:left-1/2 w-6 h-6 rounded-full bg-brand border-[4px] border-brand/20 md:-translate-x-1/2 z-10" />
-              <div className="ml-24 md:ml-0 md:mt-12 bg-brand text-white px-8 py-4 rounded-full font-medium shadow-lg shadow-brand/20 text-center">
+              <div className="absolute left-8 md:left-1/2 w-6 h-6 rounded-full bg-brand border-[4px] border-brand/20 -translate-x-1/2 z-10" />
+              <div className="w-full md:w-auto md:mt-12 bg-brand text-white px-8 py-4 rounded-xl md:rounded-full font-medium shadow-lg shadow-brand/20 text-center">
                 Certification Complete
               </div>
             </motion.div>

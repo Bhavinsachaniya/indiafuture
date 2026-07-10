@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Share2, Search, CheckCircle, Plus } from "lucide-react";
+import { FAQ } from "@/components/site/FAQ";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export function CertificateAndFAQ() {
-  const [open, setOpen] = useState<number | null>(0);
-  const faqs = [
-    { q: "Who can join?", a: "This program is designed for beginners and intermediate learners. No advanced coding experience is required, though a basic understanding of logic is helpful." },
-    { q: "How much time is needed each week?", a: "You should dedicate 8-10 hours per week. This includes 3 hours of live sessions and 5-7 hours for assignments and projects." },
-    { q: "Will sessions be recorded?", a: "Yes, all live sessions are recorded and made available within 24 hours. You have lifetime access to these recordings." },
-    { q: "What certificate is awarded?", a: "Upon completion of your capstone project, you will receive a verified digital certificate and LinkedIn badge." },
-  ];
 
   return (
     <>
@@ -54,7 +49,7 @@ export function CertificateAndFAQ() {
             </p>
           </div>
               <h2 className="font-display text-4xl md:text-5xl text-ink leading-[1.05] mb-8">
-                Proof of Work.
+                Proof of <HighlightText>Work</HighlightText>.
               </h2>
               <div className="space-y-6">
                 {[
@@ -84,38 +79,7 @@ export function CertificateAndFAQ() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-28 bg-[#fdfaf5]">
-        <div className="container-x max-w-3xl">
-          <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand">Questions</p>
-            <h2 className="mt-3 font-display text-5xl md:text-6xl leading-[1.05] text-ink">
-              Frequently asked.
-            </h2>
-          </div>
-          <div className="mt-12 divide-y divide-border border-y border-border">
-            {faqs.map((faq, i) => {
-              const isOpen = open === i;
-              return (
-                <div key={i} className="py-2">
-                  <button
-                    onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-6 py-5 text-left group"
-                  >
-                    <span className="font-display text-2xl text-ink">{faq.q}</span>
-                    <Plus className={`h-5 w-5 shrink-0 text-ink-soft transition-transform duration-300 ${isOpen ? "rotate-45 text-brand" : ""}`} />
-                  </button>
-                  <div className={`grid transition-all duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`}>
-                    <div className="overflow-hidden">
-                      <p className="text-ink-soft leading-relaxed max-w-2xl">{faq.a}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <FAQ />
     </>
   );
 }

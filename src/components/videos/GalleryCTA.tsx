@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
+import { HighlightText } from "@/components/ui/HighlightText";
 
 export function GalleryCTA() {
   return (
@@ -30,7 +31,7 @@ export function GalleryCTA() {
           
           <h2 className="mb-6 font-display text-5xl md:text-7xl leading-[1.02] max-w-3xl mx-auto text-cream">
             Ready to Create Videos <br className="hidden md:block" />
-            <span className="text-brand">Like These?</span>
+            <HighlightText className="text-brand">Like These?</HighlightText>
           </h2>
           
           <p className="mx-auto mb-10 max-w-2xl text-lg text-cream/70 md:text-xl">
