@@ -1,5 +1,7 @@
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { HighlightText } from "./ui/HighlightText";
+import { Button } from "./ui/button";
 
 export function Hero() {
   return (
@@ -36,13 +38,12 @@ export function Hero() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/contact"
-            className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white px-8 py-3.5 text-sm font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20 w-full sm:w-auto"
-          >
-            Join the next cohort
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          <Button variant="glossy" className="rounded-xl px-10 py-6 text-lg shadow-xl" asChild>
+            <Link href="/contact" className="group flex items-center gap-2">
+              Join the next cohort
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
           <Link
             href="/#method"
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-white border border-ink/10 text-ink px-8 py-3.5 text-sm font-medium transition-all hover:bg-surface hover:-translate-y-0.5 shadow-sm w-full sm:w-auto"
