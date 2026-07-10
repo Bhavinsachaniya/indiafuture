@@ -8,7 +8,7 @@ export function Hero() {
     <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fdfaf5]">
       {/* Background Glows & Filter (Strictly using the provided image for light mode) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 z-10 w-full h-full bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-no-repeat opacity-[0.25] mix-blend-multiply filter contrast-125 saturate-150"></div>
+        <div className="absolute inset-0 z-10 w-full h-full bg-[url('/image.png')] bg-cover bg-center bg-no-repeat opacity-[0.25] mix-blend-multiply filter contrast-125 saturate-150"></div>
       </div>
 
       <div className="container-x relative z-10 flex flex-col items-center justify-center text-center">
