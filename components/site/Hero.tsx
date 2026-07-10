@@ -6,9 +6,15 @@ import { Button } from "./ui/button";
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fdfaf5]">
-      {/* Abstract decorative elements similar to ProgramHero */}
-      <div className="absolute top-1/4 left-[10%] w-[120px] h-[120px] rounded-3xl border border-brand/10 rotate-12 bg-white/40 blur-[1px]" />
-      <div className="absolute bottom-1/4 right-[15%] w-32 h-32 rounded-full border border-brand/5 bg-brand/5 blur-xl" />
+      {/* Background Glows & Filter (Responsive for mobile & light mode optimized) */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Grain overlay for texture */}
+        <div className="absolute inset-0 z-10 opacity-[0.15] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxmaWx0ZXIgaWQ9Im4iPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjciIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjM1Ii8+PC9zdmc+')]"></div>
+
+        {/* Fiery Orbs */}
+        <div className="absolute -top-[10%] -left-[20%] w-[120%] md:w-[60%] h-[60%] rounded-full bg-gradient-to-br from-[#FFB800] via-[#FF5C00] to-[#E91E63] blur-[100px] md:blur-[140px] opacity-[0.25] md:opacity-[0.18] mix-blend-multiply animate-pulse-slow" />
+        <div className="absolute top-[30%] -right-[20%] w-[120%] md:w-[60%] h-[70%] rounded-full bg-gradient-to-tl from-[#FFD600] via-[#FF3D00] to-[#9C27B0] blur-[100px] md:blur-[140px] opacity-[0.25] md:opacity-[0.15] mix-blend-multiply" />
+      </div>
 
       <div className="container-x relative z-10 flex flex-col items-center justify-center text-center">
         {/* Pill */}
