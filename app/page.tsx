@@ -20,18 +20,21 @@ export default function HomePage() {
     <div className="min-h-screen bg-background text-foreground">
       <main>
         <HeroSection />
-        <WhyIndiaFutureBento />
-        <Method />
-        <ProgramsList />
-        <UpskillingProgram />
-        <AISolutions />
-        <Impact />
+        {/*      <WhyIndiaFutureBento /> */}
         <Stats />
-        <Testimonials />
-        <Community />
-        <Pricing />
-        <FAQ />
+        <ProgramsList />
+        <Method />
         <StudentShowcaseSection />
+        {/*  <UpskillingProgram /> */}
+        {/*  <AISolutions /> */}
+
+        <Impact />
+
+        <Testimonials />
+        {/*  <Community /> */}
+        {/* <Pricing /> */}
+        <FAQ />
+
         <CTA />
       </main>
     </div>

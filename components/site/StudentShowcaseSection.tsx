@@ -26,12 +26,11 @@ export function StudentShowcaseSection() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink">
-              Create Stunning AI Videos <br className="hidden md:block" />
-              <HighlightText>Like These</HighlightText>
+              Learn to create <HighlightText>Stunning Visuals</HighlightText> like these and more!
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-ink-soft md:text-xl">
-              Every video below was created by students using the techniques taught inside our AI
-              Creator Program.
+              Learn to work with efficiency, save time and make money through our Fellowship &
+              Masterclasses. Experience some of our Fellows’ creations!
             </p>
           </motion.div>
         </div>

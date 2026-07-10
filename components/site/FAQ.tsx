@@ -7,33 +7,43 @@ import { HighlightText } from "@/components/ui/HighlightText";
 
 const faqs = [
   {
-    q: "Is this a course or a program?",
-    a: "It's a hands-on AI implementation program. Every session is built around practical tools, projects, and real-world application.",
+    q: "What is AI Creator Fellowship? How do I benefit from it?",
+    a: "It is an 8 week community program. You learn 360 AI Creation and by the end of it you get placed via our partner networks. 100% of our fellows get Placement Opportunities and a certificate.",
+    icon: <Laptop className="w-5 h-5 text-[#f97316]" />,
+  },
+  {
+    q: "Do you have AI for Professionals?",
+    a: "Yes, we have a cohort where we enable professionals to make efficient processes and smarter personal automations to make better money, save time and increase their income streams. You get a professional certificate.",
     icon: <Laptop className="w-5 h-5 text-[#f97316]" />,
   },
   {
     q: "Do I need prior AI experience?",
-    a: "No. Our flagship 8-Week AI Upskilling Program is designed for students to start from the fundamentals and become AI-ready.",
+    a: "No! All you need is a device (either of phone, laptop, tab) and basic Hindi/English/other language knowledge",
     icon: <Laptop className="w-5 h-5 text-[#f97316]" />,
   },
   {
-    q: "Who are the programs designed for?",
-    a: "Our programs are designed for students, educators, and professionals looking to apply AI practically in their fields.",
+    q: "How do you engage with Schools, Colleges and Universities?",
+    a: "We have exclusive AI upskilling and certification programs for students, teachers, and professors. At the same time, we set up AI labs & Centre for Excellence on campuses.",
     icon: <Laptop className="w-5 h-5 text-[#f97316]" />,
   },
   {
-    q: "Do you work with schools and organizations?",
-    a: "Yes. We design exclusive AI learning, certification programs, and masterclasses for institutions, MSMEs, and professional communities based on specific objectives.",
+    q: "What do you have for hospitals?",
+    a: "For hospitals, we have exclusive automation programs to deliver results leading to smoother processes, efficient work flow, direct savings and increased revenue.",
     icon: <Laptop className="w-5 h-5 text-[#f97316]" />,
   },
   {
-    q: "Will I receive a certificate?",
-    a: "Participants may receive industry-recognized certificates of participation or completion based on program structure, attendance, assessments, or project completion.",
+    q: "How do you help MSMEs?",
+    a: "We own end to end automations for MSMEs to give them income boost, savings and expanded business.",
     icon: <Laptop className="w-5 h-5 text-[#f97316]" />,
   },
   {
-    q: "What makes IndiaFutureAI different?",
-    a: "We focus on building, not just watching. You will leave with actual tools, workflows, and a portfolio of AI projects you can immediately use.",
+    q: "How can Consultants and Business Coaches benefit from IndiaFutureAI?",
+    a: "At IFAI, we are committed to upskilling professionals as well as partner with them to further strengthen our mission of making India AI ready. If you are a coach, a consultant or a person with great network, we welcome you to partner with us for expansion.",
+    icon: <Laptop className="w-5 h-5 text-[#f97316]" />,
+  },
+  {
+    q: "How big is your community?",
+    a: "IndiaFutureAI is India’s largest AI Community with 10k+ active members",
     icon: <Laptop className="w-5 h-5 text-[#f97316]" />,
   },
 ];
@@ -53,7 +63,7 @@ export const FAQ = React.memo(function FAQ() {
             Frequently Asked .
           </h2>
           <p className="text-lg text-[#161413]/70 max-w-lg mx-auto">
-            Everything you need to know about our programs, workshops, and AI solutions.
+            Answering all your questions to help you become part of India’s Largest AI Community.
           </p>
         </div>
 

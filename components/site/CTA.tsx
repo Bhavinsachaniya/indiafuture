@@ -33,16 +33,15 @@ export const CTA = React.memo(function CTA() {
 
           <div className="relative z-10">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] max-w-3xl mx-auto mb-6">
-              Stop learning about AI.
+              Stop reading about AI from afar!
               <br />
               <HighlightText className="mt-2 text-white !bg-[#f97316]/10 !border-[#f97316]">
-                Start building with it.
+                Start using it to make REAL money
               </HighlightText>
             </h2>
             <p className="mt-6 text-white/70 max-w-xl mx-auto text-lg md:text-xl font-light">
-              Cohort-based programs. Practical learning.
-              <br className="hidden md:block" />
-              Limited seats. Real outcomes.
+              Join our next Upskilling Fellowship for Professionals to advance your career and make
+              real money
             </p>
 
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-12 relative">
@@ -57,7 +56,7 @@ export const CTA = React.memo(function CTA() {
               </div>
               <div className="flex flex-col items-center text-center gap-3">
                 <Users className="w-8 h-8 text-[#f97316]" strokeWidth={1.5} />
-                <span className="text-white/80 text-sm font-medium">Active Community</span>
+                <span className="text-white/80 text-sm font-medium">10k+ active community</span>
               </div>
               <div className="flex flex-col items-center text-center gap-3">
                 <Briefcase className="w-8 h-8 text-[#f97316]" strokeWidth={1.5} />
@@ -65,7 +64,7 @@ export const CTA = React.memo(function CTA() {
               </div>
               <div className="flex flex-col items-center text-center gap-3">
                 <Award className="w-8 h-8 text-[#f97316]" strokeWidth={1.5} />
-                <span className="text-white/80 text-sm font-medium">Trusted by 500+ Learners</span>
+                <span className="text-white/80 text-sm font-medium">Trusted by 1000+ Learners</span>
               </div>
             </div>
 
@@ -73,11 +72,12 @@ export const CTA = React.memo(function CTA() {
               href="/contact"
               className="inline-flex items-center gap-3 rounded-full bg-white text-[#161413] px-8 py-4 text-base font-bold hover:bg-[#f9f8f6] transition-colors shadow-lg"
             >
-              Join the next cohort <ArrowRight className="h-4 w-4" />
+              Join the next cohort
+              <ArrowRight className="h-4 w-4" />
             </Link>
 
             <p className="mt-6 text-white/40 text-[13px] font-medium tracking-wide">
-              Cohort 07 opens soon &bull; Seats are limited
+              Next Fellowship Cohort &bull; Seats are limited
             </p>
           </div>
         </div>

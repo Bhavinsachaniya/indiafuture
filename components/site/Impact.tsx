@@ -13,7 +13,7 @@ export const Impact = React.memo(function Impact() {
           <div className="lg:col-span-5 lg:sticky lg:top-40 shrink-0 pt-8 pb-24 md:pt-14 md:pb-64 flex flex-col justify-center">
             <p className="text-xs uppercase tracking-[0.2em] text-brand">The Impact</p>
             <h2 className="mt-4 font-display text-5xl md:text-6xl leading-[1.05]">
-              Real
+              Measurable
               {/* <em className="italic text-brand-soft">Growth</em> */}
               <span className="relative inline-block border border-brand bg-brand/10 text-white px-3 py-1 mx-2 align-middle overflow-visible">
                 <span className="absolute -top-1 -left-1 w-2 h-2 bg-brand border border-brand"></span>
@@ -26,8 +26,8 @@ export const Impact = React.memo(function Impact() {
               At Every Level.
             </h2>
             <p className="mt-6 text-cream/70 text-lg max-w-md">
-              AI isn't just about cutting costs. It's about exponential growth for both individuals
-              and the organizations they power.
+              We help you not JUST cut the costs but also make more money! How? Upskilling for
+              professionals & automations for organizations
             </p>
           </div>
 
@@ -53,24 +53,24 @@ export const Impact = React.memo(function Impact() {
               <div className="grid sm:grid-cols-2 gap-10 relative z-10 mt-8">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-display text-6xl text-brand">100X</span>
+                    <span className="font-display text-6xl text-brand">20X</span>
                     <Zap className="w-8 h-8 text-brand" />
                   </div>
                   <h4 className="text-xl font-medium text-cream mb-3">Productivity Boost</h4>
                   <p className="text-cream/60 leading-relaxed">
-                    Employees automate repetitive tasks to focus purely on high-value creative
-                    problem solving and strategy.
+                    Professionals automate repetitive tasks to focus on high-value inputs, solve
+                    problems and strategy
                   </p>
                 </div>
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-display text-6xl text-brand">100X</span>
+                    <span className="font-display text-6xl text-brand">10x</span>
                     <TrendingUp className="w-8 h-8 text-brand" />
                   </div>
                   <h4 className="text-xl font-medium text-cream mb-3">Career Increment</h4>
                   <p className="text-cream/60 leading-relaxed">
-                    AI-skilled professionals command massive premiums in the market as highly
-                    leverageable assets.
+                    Our AI upskilled professionals command premiums in the market serving high
+                    leverage skills.
                   </p>
                 </div>
               </div>
@@ -97,17 +97,18 @@ export const Impact = React.memo(function Impact() {
 
               <div className="grid gap-10 relative z-10 mt-8">
                 <div className="border-l-2 border-brand pl-6">
-                  <h4 className="text-2xl font-medium text-cream mb-3">Exponential Scaling</h4>
+                  <h4 className="text-2xl font-medium text-cream mb-3">10x scale</h4>
                   <p className="text-cream/60 text-lg leading-relaxed">
-                    Scale operations infinitely without scaling headcount. Serve millions of
-                    customers with the overhead of a startup.
+                    Scale your operations with increased employee efficiency upskilled with
+                    IndiaFutureAI. Save costs while maximizing revenue with high returns operations.
                   </p>
                 </div>
                 <div className="border-l-2 border-brand/40 pl-6">
-                  <h4 className="text-2xl font-medium text-cream mb-3">Operational Agility</h4>
+                  <h4 className="text-2xl font-medium text-cream mb-3">20x Operational Agility</h4>
                   <p className="text-cream/60 text-lg leading-relaxed">
-                    Adapt to market changes instantly with automated insights, predictive
-                    intelligence, and rapid workflow generation.
+                    Our automations will help you win markets with precise insights, predictive
+                    intelligence, and rapid workflow generation leading to expansion beyond current
+                    horizons.
                   </p>
                 </div>
               </div>

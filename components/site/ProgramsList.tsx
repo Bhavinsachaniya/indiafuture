@@ -14,7 +14,7 @@ export function ProgramsList() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
             <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
-              <span className="w-12 h-[1px] bg-brand/40" /> THE PROGRAMS{" "}
+              <span className="w-12 h-[1px] bg-brand/40" /> Pick one to help us help you!{" "}
               <span className="w-12 h-[1px] bg-brand/40" />
             </p>
           </div>
@@ -23,18 +23,18 @@ export function ProgramsList() {
             <HighlightText className="mx-2 inline-block">practical skills</HighlightText>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#161413]/70">
-            Pick the program that matches where you are. We conduct customized AI masterclasses and
-            certification programs for every audience.
+            Pick the program for your goals. Our AI Masterclasses and certification programs are
+            curated for audiences of varying Industries.
           </p>
         </div>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <ProgramCard
             icon={GraduationCap}
-            badge="STUDENTS"
+            badge="YOUNG INDIANS"
             eyebrow="FLAGSHIP PROGRAM"
-            title="AI Upskilling Program"
-            description="An 8-week hands-on journey that takes learners from AI fundamentals to real-world implementation through projects, automation, and practical workflows."
+            title="AI Creator Fellowship for Students & Young Professionals"
+            description="8 Week Fellowship to master AI Creator Skills through projects, automation lessons, peer & community learning and placement opportunities."
             link="/programs/ai-upskilling"
             linkText="Explore Program"
           />
@@ -42,29 +42,29 @@ export function ProgramsList() {
           <ProgramCard
             icon={Users}
             badge="INSTITUTIONS"
-            eyebrow="WORKSHOPS"
-            title="AI Workshops & Certifications"
-            description="Interactive AI workshops and certification programs designed for schools, colleges, universities, organizations, and MSMEs."
+            eyebrow="MASTERCLASSES"
+            title="AI Masterclasses & Certifications"
+            description="Interactive AI masterclasses with 7 days Mentor Implementation Access designed for professionals, institutions, startups and corporates."
             link="/programs/masterclasses"
-            linkText="Explore Workshops"
+            linkText="Explore Masterclasses"
           />
 
           <ProgramCard
             icon={Landmark}
             badge="INSTITUTIONS"
-            eyebrow="AI LABS & ENABLEMENT"
-            title="AI Labs & Campus Enablement"
-            description="Build an AI-ready institution with faculty development, student upskilling, AI labs, curriculum support, and long-term implementation."
+            eyebrow="AI Labs & Certification"
+            title="AI Skill Labs & Certification"
+            description="Build a future ready AI lab or Centre of Excellence serving certified AI upskilling for students with personalized curriculum and long term implementation."
             link="/programs/workshops"
-            linkText="Explore Solution"
+            linkText="Explore AI Labs"
           />
 
           <ProgramCard
             icon={Briefcase}
             badge="ORGANIZATIONS"
             eyebrow="ORGANIZATIONS"
-            title="AI Adoption Programs"
-            description="Help teams integrate AI into daily workflows through productivity training, automation, department-specific use cases, and implementation support."
+            title="AI Automations"
+            description="We automate repetitive operations for startups, institutions and MSMEs leading to increased efficiency, higher savings and generating more revenue."
             link="/programs/custom"
             linkText="Explore Solution"
           />

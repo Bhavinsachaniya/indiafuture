@@ -1,10 +1,10 @@
 import React from "react";
 
 const stats = [
-  { k: "500+", l: "Students in ongoing cohort" },
-  { k: "100%", l: "Practical AI Training" },
-  { k: "Custom", l: "Masterclasses & AI Labs" },
-  { k: "Real", l: "World implementation" },
+  { k: "20+", l: "Institution Partners" },
+  { k: "2,000+", l: "Indians Upskilled" },
+  { k: "10x", l: "Organizational Efficiency" },
+  { k: "100%", l: "Practical Training" },
 ];
 
 export const Stats = React.memo(function Stats() {

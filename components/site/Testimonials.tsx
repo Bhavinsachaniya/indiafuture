@@ -55,7 +55,7 @@ export const Testimonials = React.memo(function Testimonials() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
             <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
-              <span className="w-12 h-[1px] bg-brand/40" /> THE COMMUNITY{" "}
+              <span className="w-12 h-[1px] bg-brand/40" /> What Industry says about us{" "}
               <span className="w-12 h-[1px] bg-brand/40" />
             </p>
           </div>
@@ -67,7 +67,7 @@ export const Testimonials = React.memo(function Testimonials() {
           </h2>
 
           <p className="text-[#161413]/70 text-lg md:text-xl max-w-2xl mx-auto font-medium">
-            Hear from learners, educators, and organizations building with AI.
+            Hear directly from Leaders building India who trust IndiaFutureAI.
           </p>
         </div>
       </div>
@@ -130,9 +130,8 @@ export const Testimonials = React.memo(function Testimonials() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-[#161413]/70 font-medium mb-4 text-sm md:text-base">
           <Users className="w-5 h-5 text-[#f97316]" />
           <span>
-            Join a growing community of <HighlightText className="text-brand">500+</HighlightText>{" "}
-            learners, <HighlightText className="text-brand">20+</HighlightText> institutions &
-            forward-thinking teams.
+            Join a community of <HighlightText className="text-brand">2,000+</HighlightText>{" "}
+            learners, <HighlightText className="text-brand"> 20+ </HighlightText> institutions!
           </span>
         </div>
 

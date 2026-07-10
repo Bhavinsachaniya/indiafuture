@@ -4,7 +4,7 @@ export const steps = [
   {
     icon: BookOpen,
     t: "Learn",
-    d: "Understand the fundamentals.",
+    d: "Understand the Fundamentals.",
   },
   {
     icon: CodeXml,
@@ -14,11 +14,11 @@ export const steps = [
   {
     icon: Rocket,
     t: "Implement",
-    d: "Use AI every day.",
+    d: "Live Projects & Applications.",
   },
   {
     icon: Briefcase,
     t: "Launch",
-    d: "Freelance. Get hired. Build more.",
+    d: "Freelance. Products. Make Money.",
   },
 ];
