@@ -2,7 +2,16 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ShoppingBag, Stethoscope, Home, GraduationCap, Utensils, Briefcase, Factory, ShieldCheck } from "lucide-react";
+import {
+  ShoppingBag,
+  Stethoscope,
+  Home,
+  GraduationCap,
+  Utensils,
+  Briefcase,
+  Factory,
+  ShieldCheck,
+} from "lucide-react";
 
 export function Industries() {
   const industries = [
@@ -68,7 +77,8 @@ export function Industries() {
             Built Around How Your Industry Works
           </h2>
           <p className="text-lg text-ink-soft leading-relaxed max-w-2xl mx-auto">
-            AI automation works best when it fits your day-to-day operations.<br className="hidden md:block" />
+            AI automation works best when it fits your day-to-day operations.
+            <br className="hidden md:block" />
             We design use cases around your workflow, not a generic template.
           </p>
         </div>
@@ -90,12 +100,8 @@ export function Industries() {
               </div>
 
               {/* Content */}
-              <h3 className="font-semibold text-base text-ink mb-3">
-                {item.title}
-              </h3>
-              <p className="text-ink-soft text-[14px] leading-relaxed">
-                {item.desc}
-              </p>
+              <h3 className="font-semibold text-base text-ink mb-3">{item.title}</h3>
+              <p className="text-ink-soft text-[14px] leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>

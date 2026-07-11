@@ -58,7 +58,7 @@ export function WhatYouWillLearn() {
                   >
                     {audience}
                   </div>
-                )
+                ),
               )}
             </div>
           </div>

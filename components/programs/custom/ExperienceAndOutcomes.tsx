@@ -50,7 +50,8 @@ export function ExperienceAndOutcomes() {
                 <HighlightText>work?</HighlightText>
               </h2>
               <p className="text-ink-soft text-lg leading-relaxed mb-8 max-w-md">
-                In order to deliver world class operations, we follow an international SoP to deliver best quality results.
+                In order to deliver world class operations, we follow an international SoP to
+                deliver best quality results.
               </p>
             </motion.div>
           </div>

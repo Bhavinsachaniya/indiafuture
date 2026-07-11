@@ -2,7 +2,15 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { PhoneCall, Bot, MessageCircle, Database, Workflow, Headset, ArrowRight } from "lucide-react";
+import {
+  PhoneCall,
+  Bot,
+  MessageCircle,
+  Database,
+  Workflow,
+  Headset,
+  ArrowRight,
+} from "lucide-react";
 import Link from "next/link";
 
 export function PracticalAutomations() {
@@ -50,11 +58,13 @@ export function PracticalAutomations() {
             </p>
           </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05] mb-6">
-            Practical AI Automations<br />
+            Practical AI Automations
+            <br />
             for Modern Businesses
           </h2>
           <p className="text-lg text-ink-soft leading-relaxed max-w-3xl mx-auto">
-            From first customer contact to internal operations, we build practical AI systems that save time, reduce manual work, and improve customer experience.
+            From first customer contact to internal operations, we build practical AI systems that
+            save time, reduce manual work, and improve customer experience.
           </p>
         </div>
 
@@ -75,12 +85,8 @@ export function PracticalAutomations() {
               </div>
 
               {/* Content */}
-              <h3 className="font-semibold text-lg text-ink mb-3">
-                {item.title}
-              </h3>
-              <p className="text-ink-soft text-[15px] leading-relaxed">
-                {item.desc}
-              </p>
+              <h3 className="font-semibold text-lg text-ink mb-3">{item.title}</h3>
+              <p className="text-ink-soft text-[15px] leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -94,7 +100,7 @@ export function PracticalAutomations() {
             Book a Demo
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
-          
+
           {/* Decorative line */}
           <div className="absolute top-1/2 left-0 right-0 flex items-center justify-center -z-0">
             <div className="h-[1px] w-full max-w-2xl bg-gradient-to-r from-transparent via-brand/20 to-transparent" />

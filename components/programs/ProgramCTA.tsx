@@ -35,17 +35,21 @@ export function ProgramCTA({ data }: { data: ProgramData }) {
             {data.id === "custom" ? (
               <>Bring an AI Lab to Your Institution</>
             ) : data.id === "workshops" ? (
-              <>Ready to <HighlightText>automate?</HighlightText></>
+              <>
+                Ready to <HighlightText>automate?</HighlightText>
+              </>
             ) : (
-              <>Ready to <HighlightText>master AI?</HighlightText></>
+              <>
+                Ready to <HighlightText>master AI?</HighlightText>
+              </>
             )}
           </h2>
           <p className="text-xl md:text-2xl text-cream/70 leading-relaxed mb-12 max-w-2xl mx-auto">
             {data.id === "custom"
               ? "Build a customized AI Lab with infrastructure support, recurring training, and co-branded skill certifications."
               : data.id === "workshops"
-              ? "Take the next logical step to prepare your organization AI ready. It’s not about IF, it’s about When. So, when do you start?"
-              : "Hosting us at your institution’s campus will make it worthwhile. Maximize your organization’s revenue with procedural employee productivity today."}
+                ? "Take the next logical step to prepare your organization AI ready. It’s not about IF, it’s about When. So, when do you start?"
+                : "Hosting us at your institution’s campus will make it worthwhile. Maximize your organization’s revenue with procedural employee productivity today."}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -54,7 +58,11 @@ export function ProgramCTA({ data }: { data: ProgramData }) {
               className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-white px-8 py-4 text-lg font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20 overflow-hidden w-full sm:w-auto"
             >
               <span className="relative z-10 flex items-center gap-2">
-                {data.id === "custom" ? "SET UP AN AI LAB" : data.id === "workshops" ? "Start Now" : "Invite us"}
+                {data.id === "custom"
+                  ? "SET UP AN AI LAB"
+                  : data.id === "workshops"
+                    ? "Start Now"
+                    : "Invite us"}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>

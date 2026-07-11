@@ -112,12 +112,14 @@ export const programsConfig: Record<string, ProgramData> = {
       reasons: [
         {
           title: "Get Placed once upskilled",
-          description: "Our Recruiters recognize India Future AI Fellows with great trust for their world class abilities",
+          description:
+            "Our Recruiters recognize India Future AI Fellows with great trust for their world class abilities",
           icon: Target,
         },
         {
           title: "Real Money options",
-          description: "Beyond placements, we make our Fellows self sustainable to either work in organization or take up freelance projects.",
+          description:
+            "Beyond placements, we make our Fellows self sustainable to either work in organization or take up freelance projects.",
           icon: Rocket,
         },
         {
@@ -385,7 +387,7 @@ export const programsConfig: Record<string, ProgramData> = {
         topics: [
           "what AI is in simple terms",
           "real-world use cases",
-          "where AI is already changing work and learning"
+          "where AI is already changing work and learning",
         ],
         outcome: "Understand where AI can create real value.",
       },
@@ -395,7 +397,7 @@ export const programsConfig: Record<string, ProgramData> = {
         topics: [
           "anatomy of a good prompt",
           "role, context, task, constraints",
-          "practical prompting examples"
+          "practical prompting examples",
         ],
         outcome: "Write better prompts and get better results.",
       },
@@ -405,7 +407,7 @@ export const programsConfig: Record<string, ProgramData> = {
         topics: [
           "research and summarization",
           "emails, reports, presentations",
-          "faster daily workflows"
+          "faster daily workflows",
         ],
         outcome: "Use AI to save time in real work and study tasks.",
       },
@@ -416,7 +418,7 @@ export const programsConfig: Record<string, ProgramData> = {
           "simple no-code automations",
           "repetitive task workflows",
           "Personal GPT basics",
-          "building your own AI assistant"
+          "building your own AI assistant",
         ],
         outcome: "Automate routine work and create your own helpful AI workflows.",
       },
@@ -427,7 +429,7 @@ export const programsConfig: Record<string, ProgramData> = {
           "writing and social media",
           "slides and visuals",
           "basic audio/video support",
-          "live creation use cases"
+          "live creation use cases",
         ],
         outcome: "Create quality content faster with AI.",
       },
@@ -438,7 +440,7 @@ export const programsConfig: Record<string, ProgramData> = {
           "explain concepts simply",
           "AI as a study companion",
           "notes, revision, and doubt solving",
-          "personalized learning support"
+          "personalized learning support",
         ],
         outcome: "Learn smarter and faster with AI.",
       },
