@@ -5,11 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const links = [
-  { label: "Programs", href: "/#studios" },
-  { label: "Method", href: "/#method" },
-  { label: "Community", href: "/#community" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Home", href: "/" },
+  { label: "Creator Fellowship", href: "/#creator-fellowship" },
+  { label: "Masterclass", href: "/#masterclass" },
+  { label: "Automations", href: "/#automations" },
+  { label: "AI Labs", href: "/#ai-labs" },
+  { label: "About Us", href: "/#about-us" },
 ];
 
 export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light" | "dark" }) {

@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import type { ProgramData } from "@/config/programs";
+import { HighlightText } from "../ui/HighlightText";
 
 export function WhyProgramExists({ data }: { data: ProgramData }) {
   return (
@@ -20,12 +21,13 @@ export function WhyProgramExists({ data }: { data: ProgramData }) {
           >
             <div className="flex items-center justify-center gap-4 mb-6">
               <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
-                <span className="w-12 h-[1px] bg-brand/40" /> WHY THIS PROGRAM EXISTS{" "}
+                <span className="w-12 h-[1px] bg-brand/40" /> What’s in it for you?{" "}
                 <span className="w-12 h-[1px] bg-brand/40" />
               </p>
             </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-6">
-              {data.whyExists.title}
+              Master AI workflows in our masterclass - <HighlightText>Save</HighlightText> time,
+              energy and money.
             </h2>
             <p className="text-lg text-ink-soft leading-relaxed max-w-2xl mx-auto">
               {data.whyExists.description}

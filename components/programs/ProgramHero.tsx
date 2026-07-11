@@ -82,18 +82,21 @@ export function ProgramHero({ data }: { data: ProgramData }) {
           className="flex flex-col sm:flex-row items-center gap-4 mb-20"
         >
           <Link
-            href={`/contact?program=${data.id}`}
+            href="/payment"
             className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white px-8 py-3.5 text-sm font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20 w-full sm:w-auto"
           >
             <span className="relative z-10 flex items-center gap-2">
-              Enroll Now
+              {data.id === "custom" || data.id === "workshops" ? "Ask us how" : "Join Now"}
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
-          <button className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white border border-ink/10 text-ink px-8 py-4 text-lg font-medium transition-all hover:bg-surface hover:-translate-y-0.5 shadow-sm">
-            <PlayCircle className="w-5 h-5 text-ink-soft group-hover:text-brand transition-colors" />
-            Watch Preview
-          </button>
+
+          {data.id === "custom" && (
+            <button className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink border border-ink/10 px-8 py-3.5 text-sm font-medium transition-all hover:bg-surface hover:-translate-y-0.5 shadow-sm w-full sm:w-auto">
+              <PlayCircle className="w-5 h-5 text-ink-soft group-hover:text-brand transition-colors" />
+              Watch Preview
+            </button>
+          )}
         </motion.div>
 
         {/* Stats Grid */}

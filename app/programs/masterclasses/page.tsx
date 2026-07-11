@@ -12,6 +12,8 @@ import { ProgramOutcomes } from "@/components/programs/ProgramOutcomes";
 import { IndustryTestimonialsSection } from "@/components/site/IndustryTestimonialsSection";
 import { FAQ } from "@/components/site/FAQ";
 import { ProgramCTA } from "@/components/programs/ProgramCTA";
+import { ExperienceAndOutcomes } from "@/components/programs/upskilling/ExperienceAndOutcomes";
+import { CareerAndMentors } from "@/components/programs/upskilling/CareerAndMentors";
 
 export default function MasterclassesPage() {
   const data = programsConfig.masterclasses;
@@ -20,15 +22,17 @@ export default function MasterclassesPage() {
     <div className="min-h-screen bg-surface text-ink font-sans flex flex-col selection:bg-brand/20 selection:text-brand">
       <main className="flex-1 flex flex-col pt-20">
         <ProgramHero data={data} />
-        <TrustedBy />
+        {/*         <TrustedBy /> */}
         <WhyProgramExists data={data} />
-        <WhatYouWillLearn data={data} />
+        {/*   <WhatYouWillLearn data={data} /> */}
         <CurriculumTimeline data={data} />
-        <LiveProjects data={data} />
-        <LearningExperience data={data} />
-        <ProgramOutcomes data={data} />
-        <IndustryTestimonialsSection />
-        <FAQ />
+        <ExperienceAndOutcomes />
+
+        {/* <LiveProjects data={data} /> */}
+        {/* <LearningExperience data={data} /> */}
+        {/*   <ProgramOutcomes data={data} /> */}
+        {/* <IndustryTestimonialsSection /> */}
+        {/*    <FAQ /> */}
         <ProgramCTA data={data} />
       </main>
     </div>

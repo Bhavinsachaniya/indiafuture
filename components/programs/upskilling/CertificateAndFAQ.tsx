@@ -80,8 +80,6 @@ export function CertificateAndFAQ() {
           </div>
         </div>
       </section>
-
-      <FAQ />
     </>
   );
 }

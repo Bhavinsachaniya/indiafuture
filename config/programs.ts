@@ -54,7 +54,9 @@ export type ProgramData = {
   curriculum: {
     week: string;
     title: string;
-    description: string;
+    description?: string;
+    topics?: string[];
+    outcome?: string;
   }[];
   projects: {
     title: string;
@@ -90,38 +92,37 @@ export const programsConfig: Record<string, ProgramData> = {
   upskilling: {
     id: "upskilling",
     theme: "Future-ready AI education.",
-    label: "FLAGSHIP PROGRAM",
-    title: "AI Upskilling Program",
-    highlightWord: "Upskilling",
+    label: "Professionals' Program",
+    title: "AI Creator Fellowship",
+    highlightWord: "Fellowship",
     subtitle: "Future-Ready AI Education",
     description:
-      "An 8-week hands-on journey that takes learners from AI fundamentals to real-world implementation through projects, automation, and practical workflows.",
+      "An 8 week hands on journey to become a pro at AI content, automations, soft skills, and practical workflows. We help you get placed after the program!",
     stats: [
-      { label: "Students", value: "3000+" },
+      { label: "Learners", value: "2000+" },
       { label: "Completion Rate", value: "95%" },
-      { label: "Projects", value: "40+" },
-      { label: "Mentors", value: "15+" },
+      { label: "Live Projects", value: "40+" },
+      { label: "Employers", value: "100+" },
     ],
     audience: ["Students", "Fresh Graduates", "Job Seekers"],
     whyExists: {
-      title: "The AI skill gap is closing fast — and courses aren't keeping up.",
+      title: "AI won’t take away your job, someone with AI will!",
       description:
-        "Every team is hiring for AI fluency, but tutorials leave people stuck at 'hello world'. Vertex was built to close that gap: you learn by shipping evaluated systems into real codebases, week after week.",
+        "This program exists to cross the chasm between theory and application. We remove the fluff and focus purely on practical, hands-on implementation that you can use on Monday morning to save 10 hours a week.",
       reasons: [
         {
-          title: "Real hiring signal",
-          description: "Recruiters recognise Vertex graduates because the repos are inspectable.",
+          title: "Get Placed once upskilled",
+          description: "Our Recruiters recognize India Future AI Fellows with great trust for their world class abilities",
           icon: Target,
         },
         {
-          title: "Compounding output",
-          description:
-            "Every week produces a shippable artefact — not a certificate of attendance.",
+          title: "Real Money options",
+          description: "Beyond placements, we make our Fellows self sustainable to either work in organization or take up freelance projects.",
           icon: Rocket,
         },
         {
-          title: "Senior review",
-          description: "Practitioners with production AI experience review your code, not TAs.",
+          title: "Community support",
+          description: "Every batch has great rapport. Win a community for life!",
           icon: Shield,
         },
       ],
@@ -310,37 +311,37 @@ export const programsConfig: Record<string, ProgramData> = {
   masterclasses: {
     id: "masterclasses",
     theme: "Short intensive learning.",
-    label: "WORKSHOPS",
-    title: "AI Workshops & Certifications",
-    highlightWord: "Workshops",
+    label: "MASTERCLASSES",
+    title: "AI Masterclasses & Certifications",
+    highlightWord: "Masterclasses",
     subtitle: "Interactive Learning",
     description:
-      "Interactive AI workshops and certification programs designed for schools, colleges, universities, organizations, and MSMEs.",
+      "Interactive AI Masterclasses and certification programs designed for schools, colleges, universities, startups, corporates, NGOs and organizations.",
     stats: [
-      { label: "Attendees", value: "5000+" },
-      { label: "Satisfaction", value: "4.9/5" },
-      { label: "Sessions", value: "100+" },
-      { label: "Partners", value: "30+" },
+      { label: "Attendees", value: "1,500+" },
+      { label: "Ratings", value: "4.8/5" },
+      { label: "Sessions", value: "30+" },
+      { label: "Partners", value: "15+" },
     ],
     audience: ["Working professionals", "College students", "Faculty", "Corporate teams"],
     whyExists: {
-      title: "Master AI workflows in a weekend — because you don't have months to learn.",
+      title: "Master AI workflows in our masterclass - Save time, energy and money.",
       description:
-        "Professionals need immediate, actionable knowledge to stay relevant. Our masterclasses distill complex AI concepts into hyper-focused, weekend-long intensive sessions that yield immediate productivity gains.",
+        "These are for institutions to upskill their workforce and students. Our masterclasses distill AI concepts into hyperfoucsed, 2 hour long intensive session with immediate productivity gains",
       reasons: [
         {
-          title: "Immediate ROI",
-          description: "Apply what you learn on Monday morning.",
+          title: "Immediate RoI",
+          description: "Boost to Efficiency per person",
           icon: Target,
         },
         {
-          title: "Hyper-focused",
-          description: "No fluff, just the tools and techniques that matter.",
+          title: "Practice Approach",
+          description: "We don’t just teach but make you do it",
           icon: Rocket,
         },
         {
-          title: "Expert led",
-          description: "Taught by industry veterans who use AI daily.",
+          title: "Revenue Boost",
+          description: "Processes for savings and revenue growth",
           icon: Shield,
         },
       ],
@@ -379,24 +380,67 @@ export const programsConfig: Record<string, ProgramData> = {
     ],
     curriculum: [
       {
-        week: "Session 1",
-        title: "Introduction & Context",
-        description: "Understanding the current AI landscape and capabilities.",
+        week: "Module 01",
+        title: "AI Landscape & Opportunities",
+        topics: [
+          "what AI is in simple terms",
+          "real-world use cases",
+          "where AI is already changing work and learning"
+        ],
+        outcome: "Understand where AI can create real value.",
       },
       {
-        week: "Session 2",
-        title: "Prompt Architecture",
-        description: "Building robust, repeatable prompts for professional use.",
+        week: "Module 02",
+        title: "Prompting Like a Pro",
+        topics: [
+          "anatomy of a good prompt",
+          "role, context, task, constraints",
+          "practical prompting examples"
+        ],
+        outcome: "Write better prompts and get better results.",
       },
       {
-        week: "Session 3",
-        title: "Workflow Integration",
-        description: "Connecting AI outputs directly into your existing tools.",
+        week: "Module 03",
+        title: "AI for Productivity",
+        topics: [
+          "research and summarization",
+          "emails, reports, presentations",
+          "faster daily workflows"
+        ],
+        outcome: "Use AI to save time in real work and study tasks.",
       },
       {
-        week: "Session 4",
-        title: "Live Assessment",
-        description: "Real-time project build and certification review.",
+        week: "Module 04",
+        title: "Automations & Personal GPTs",
+        topics: [
+          "simple no-code automations",
+          "repetitive task workflows",
+          "Personal GPT basics",
+          "building your own AI assistant"
+        ],
+        outcome: "Automate routine work and create your own helpful AI workflows.",
+      },
+      {
+        week: "Module 05",
+        title: "Content Creation with AI",
+        topics: [
+          "writing and social media",
+          "slides and visuals",
+          "basic audio/video support",
+          "live creation use cases"
+        ],
+        outcome: "Create quality content faster with AI.",
+      },
+      {
+        week: "Module 06",
+        title: "How to Learn with AI",
+        topics: [
+          "explain concepts simply",
+          "AI as a study companion",
+          "notes, revision, and doubt solving",
+          "personalized learning support"
+        ],
+        outcome: "Learn smarter and faster with AI.",
       },
     ],
     projects: [
@@ -462,16 +506,16 @@ export const programsConfig: Record<string, ProgramData> = {
     id: "workshops",
     theme: "Build real automations.",
     label: "AI LABS & ENABLEMENT",
-    title: "AI Labs & Campus Enablement",
-    highlightWord: "Enablement",
+    title: "AI Automation Program",
+    highlightWord: "Automation",
     subtitle: "Build an AI-ready institution",
     description:
-      "Build an AI-ready institution with faculty development, student upskilling, AI labs, curriculum support, and long-term implementation.",
+      "We integrate AI in automating processes of MSMEs, Hospitals, Institutions with our expertise. We deliver on the promise of increased efficiency, direct savings and revenue scale.",
     stats: [
       { label: "Workflows Built", value: "10,000+" },
-      { label: "Hours Saved", value: "1M+" },
-      { label: "Integrations", value: "500+" },
-      { label: "Teams", value: "200+" },
+      { label: "Hours Saved", value: "500k+" },
+      { label: "Integrations", value: "100+" },
+      { label: "Teams", value: "300+" },
     ],
     audience: ["Developers", "Businesses", "Operations Teams", "Students"],
     whyExists: {
@@ -620,11 +664,11 @@ export const programsConfig: Record<string, ProgramData> = {
     id: "custom",
     theme: "Enterprise AI transformation.",
     label: "ORGANIZATIONS",
-    title: "AI Adoption Programs",
-    highlightWord: "Adoption",
-    subtitle: "Enterprise AI Transformation",
+    title: "AI Labs & Certification",
+    highlightWord: "Certification",
+    subtitle: "AI Labs to serve for upskilling and certifications",
     description:
-      "Help teams integrate AI into daily workflows through productivity training, automation, department-specific use cases, and implementation support.",
+      "AI labs to serve for upskilling and certifications. We bring state of the art infrastructure, curriculum & recurring training, and co branded skill certifications",
     stats: [
       { label: "Enterprises", value: "50+" },
       { label: "ROI", value: "300%" },

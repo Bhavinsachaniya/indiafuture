@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import type { ProgramData } from "@/config/programs";
+import { Target } from "lucide-react";
 
 export function CurriculumTimeline({ data }: { data: ProgramData }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -62,7 +63,33 @@ export function CurriculumTimeline({ data }: { data: ProgramData }) {
                     <h3 className="font-display text-2xl text-ink mb-3 group-hover:text-brand transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-ink-soft leading-relaxed text-lg">{item.description}</p>
+                    {item.description && (
+                      <p className="text-ink-soft leading-relaxed text-lg">{item.description}</p>
+                    )}
+                    {item.topics && (
+                      <div className="mb-6 mt-4">
+                        <p className="text-xs uppercase tracking-widest text-ink-soft mb-2 font-semibold">
+                          Topics
+                        </p>
+                        <ul className="grid gap-2">
+                          {item.topics.map((topic, i) => (
+                            <li key={i} className="text-sm text-ink flex items-center gap-2">
+                              <span className="w-1 h-1 rounded-full bg-brand/50" />
+                              {topic}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {item.outcome && (
+                      <div className="pt-4 border-t border-ink/5">
+                        <p className="text-xs uppercase tracking-widest text-brand mb-1 font-semibold flex items-center gap-1.5">
+                          <Target className="w-3.5 h-3.5" />
+                          Outcome
+                        </p>
+                        <p className="text-sm font-medium text-ink">{item.outcome}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
 

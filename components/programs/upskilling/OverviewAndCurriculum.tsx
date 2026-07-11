@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { HighlightText } from "@/components/ui/HighlightText";
+import { Target } from "lucide-react";
 
 export function OverviewAndCurriculum() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -13,64 +14,59 @@ export function OverviewAndCurriculum() {
 
   const weeks = [
     {
-      week: "Week 01",
-      title: "Build Your First AI Assistant",
-      topics: ["AI fundamentals", "ChatGPT", "Prompt basics", "Personal assistant"],
-      outcome: "Build a working AI assistant.",
+      week: "WEEK 01",
+      title: "Prompt Foundations",
+      topics: ["AI basics", "prompt structure", "role-task-format", "everyday use cases"],
+      outcome: "Learn to write clear prompts for work, study, and content.",
     },
     {
-      week: "Week 02",
-      title: "Advanced Prompt Engineering",
-      topics: ["Few-shot prompting", "Chain of thought", "System prompts", "Persona building"],
-      outcome: "Master steering LLMs for reliable outputs.",
+      week: "WEEK 02",
+      title: "Advanced Prompting",
+      topics: ["prompt chaining", "refinement loops", "research prompts", "image prompts"],
+      outcome: "Build stronger, more reliable AI outputs.",
     },
     {
-      week: "Week 03",
-      title: "No-Code Automation Workflows",
-      topics: ["Zapier & Make", "Triggers & Actions", "Webhooks", "API basics"],
-      outcome: "Connect your AI assistant to Gmail and Slack.",
+      week: "WEEK 03",
+      title: "AI Graphics & Design",
+      topics: ["Canva + AI", "social creatives", "thumbnails & carousels", "brand visuals"],
+      outcome: "Create polished graphics faster.",
     },
     {
-      week: "Week 04",
-      title: "Content Generation Pipelines",
-      topics: [
-        "Bulk processing",
-        "Data formatting",
-        "Markdown generation",
-        "Social media automation",
-      ],
-      outcome: "Create a self-running content engine.",
+      week: "WEEK 04",
+      title: "AI Audio",
+      topics: ["voice generation", "cleanup tools", "dubbing basics", "podcast workflows"],
+      outcome: "Produce clean, engaging audio content.",
     },
     {
-      week: "Week 05",
-      title: "Custom GPTs and Knowledge Bases",
-      topics: ["Vector databases", "RAG concepts", "OpenAI Custom GPTs", "Document parsing"],
-      outcome: "Build an AI that knows your private data.",
+      week: "WEEK 05",
+      title: "AI Video",
+      topics: ["script to video", "short-form editing", "captions & B-roll", "creator workflows"],
+      outcome: "Create high-quality videos at speed.",
     },
     {
-      week: "Week 06",
-      title: "Image & Audio AI Generation",
-      topics: ["Midjourney", "Stable Diffusion", "ElevenLabs", "Video synthesis"],
-      outcome: "Generate a complete multimedia marketing campaign.",
+      week: "WEEK 06",
+      title: "Creator Systems",
+      topics: ["content planning", "no-code automation", "repurposing", "workflow setup"],
+      outcome: "Build repeatable content systems that save time.",
     },
     {
-      week: "Week 07",
-      title: "Capstone Project Development",
-      topics: ["Project scoping", "Architecture design", "Debugging", "User testing"],
-      outcome: "Begin building your final portfolio piece.",
+      week: "WEEK 07",
+      title: "LinkedIn, X & Portfolio",
+      topics: ["profile optimization", "personal brand", "posting strategy", "portfolio building"],
+      outcome: "Build an online presence that attracts opportunities.",
     },
     {
-      week: "Week 08",
-      title: "Deployment & Certification",
-      topics: ["Hosting", "API limits", "Cost management", "Final presentations"],
-      outcome: "Deploy your project and receive your certification.",
+      week: "WEEK 08",
+      title: "Freelancing & Client Acquisition",
+      topics: ["niche selection", "pricing", "outreach", "proposals"],
+      outcome: "Start earning with AI-powered services.",
     },
   ];
 
   return (
     <>
       {/* Program Overview */}
-      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+      {/* <section className="py-24 md:py-32 bg-white relative overflow-hidden">
         <div className="container-x max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -103,7 +99,7 @@ export function OverviewAndCurriculum() {
           </motion.div>
         </div>
       </section>
-
+ */}
       {/* Interactive Curriculum Timeline */}
       <section className="py-24 md:py-32 bg-surface relative overflow-hidden border-t border-ink/5">
         <div className="container-x">
@@ -169,7 +165,8 @@ export function OverviewAndCurriculum() {
                       </div>
 
                       <div className="pt-4 border-t border-ink/5">
-                        <p className="text-xs uppercase tracking-widest text-ink-soft mb-1 font-semibold">
+                        <p className="text-xs uppercase tracking-widest text-brand mb-1 font-semibold flex items-center gap-1.5">
+                          <Target className="w-3.5 h-3.5" />
                           Outcome
                         </p>
                         <p className="text-sm font-medium text-ink">{week.outcome}</p>

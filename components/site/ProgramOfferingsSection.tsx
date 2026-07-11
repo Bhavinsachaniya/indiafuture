@@ -55,7 +55,7 @@ export function ProgramOfferingsSection() {
             eyebrow="AI Labs & Certification"
             title="AI Skill Labs & Certification"
             description="Build a future ready AI lab or Centre of Excellence serving certified AI upskilling for students with personalized curriculum and long term implementation."
-            link="/programs/workshops"
+            link="/programs/custom"
             linkText="Explore AI Labs"
           />
 
@@ -65,7 +65,7 @@ export function ProgramOfferingsSection() {
             eyebrow="ORGANIZATIONS"
             title="AI Automations"
             description="We automate repetitive operations for startups, institutions and MSMEs leading to increased efficiency, higher savings and generating more revenue."
-            link="/programs/custom"
+            link="/programs/workshops"
             linkText="Explore Solution"
           />
         </div>

@@ -33,19 +33,19 @@ export function FinalCTA() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/contact?program=upskilling"
+              href="/payment"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white px-8 py-4 text-base font-semibold transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-xl shadow-brand/20 w-full sm:w-auto"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Apply Now
+                Join Now
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
 
-            <button className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white/5 border border-white/10 text-white px-8 py-4 text-lg font-medium transition-all hover:bg-white/10 hover:-translate-y-0.5 w-full sm:w-auto">
+            {/*     <button className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white/5 border border-white/10 text-white px-8 py-4 text-lg font-medium transition-all hover:bg-white/10 hover:-translate-y-0.5 w-full sm:w-auto">
               <Download className="w-5 h-5 text-cream/70 group-hover:text-brand transition-colors" />
               Download Brochure
-            </button>
+            </button> */}
           </div>
         </motion.div>
       </div>
@@ -97,10 +97,10 @@ export function StickyWidget() {
         </div>
 
         <Link
-          href="/contact"
+          href="/payment"
           className="w-full flex items-center justify-center gap-2 rounded-xl bg-brand text-white px-6 py-4 font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20 mb-3 group"
         >
-          Apply Now
+          Join Now
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </Link>
         <button className="w-full flex items-center justify-center gap-2 rounded-xl bg-surface border border-ink/10 text-ink px-6 py-4 font-medium transition-all hover:bg-surface/50 mb-6">

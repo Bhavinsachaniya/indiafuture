@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Adoption Programs",
+  title: "AI Labs & Campus Enablement",
   description:
-    "Help teams integrate AI into daily workflows through productivity training, automation, department-specific use cases, and implementation support.",
+    "Build an AI-ready institution with faculty development, student upskilling, AI labs, curriculum support, and long-term implementation.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
