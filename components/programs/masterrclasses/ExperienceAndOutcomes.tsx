@@ -24,8 +24,8 @@ export function ExperienceAndOutcomes() {
     },
     {
       icon: Users,
-      title: "Dedicated Placement Support",
-      desc: "Exclusive support from our placement team to land roles paying ₹20k–₹25k/month.",
+      title: "7-Day Mentor Support",
+      desc: "Exclusive post-program access to our instructors to ensure you confidently apply your new skills.",
     },
   ];
 

@@ -70,7 +70,7 @@ export const CTA = React.memo(function CTA() {
             </div>
 
             <Link
-              href="/contact"
+              href="https://pages.razorpay.com/pl_TCX5i1BuJ6T8yV/view"
               className="inline-flex items-center gap-3 rounded-full bg-white text-[#161413] px-8 py-4 text-base font-bold hover:bg-[#f9f8f6] transition-colors shadow-lg"
             >
               Join the next cohort

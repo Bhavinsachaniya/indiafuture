@@ -44,6 +44,7 @@ function ContactForm() {
     if (programParam === "masterclasses") return "masterclasses";
     if (programParam === "custom") return "custom";
     if (programParam === "workshops") return "workshops";
+    if (programParam === "ai-lab") return "ai-lab";
     return "";
   }, [programParam]);
 

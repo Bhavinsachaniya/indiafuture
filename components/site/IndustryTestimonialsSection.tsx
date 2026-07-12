@@ -8,12 +8,12 @@ import { HighlightText } from "../ui/HighlightText";
 const testimonials = [
   {
     id: 1,
-    avatar: "https://ui-avatars.com/api/?name=Vishu+Mittal&background=f97316&color=fff",
+    avatar: "/Testimonials/harsh-mittal.png",
     name: "Vishu Mittal",
     role: "Founder, Oakcraft",
     text: "I run Oakcraft, a ₹100 cr ARR furniture business. A lot of my operations & processes at the factory and client dealing had been manual. India Future AI helped me automate these processes saving ₹1 cr+ every year.",
     badgeIcon: <Briefcase className="w-4 h-4" />,
-    badgeText: "Industry Leader",
+    badgeText: "Manufacturing",
     linkedin: "https://www.linkedin.com/in/vishuoakcraft/",
   },
   {
@@ -23,17 +23,17 @@ const testimonials = [
     role: "Founder CEO, Grocery on Wheels",
     text: "I am blown away with the ease of process automations that India Future AI set up for my business. What was otherwise direct cost of ₹3 lac/pm is now reduced to ₹4,000/mo leading to direct savings for the company.",
     badgeIcon: <Briefcase className="w-4 h-4" />,
-    badgeText: "Industry Leader",
+    badgeText: "Retail",
     linkedin: "https://www.linkedin.com/in/keshav-singla-gow/",
   },
   {
     id: 3,
-    avatar: "/Testimonials/harsh-mittal.png",
+    avatar: "https://ui-avatars.com/api/?name=Harsh+Mittal&background=f97316&color=fff",
     name: "Harsh Mittal",
     role: "Director, GoldenKey",
     text: "I run a Proptech business that runs on traditional methods of outreach. I had an idea on how AI can automate lot of my marketing outreach but it is only through India Future AI that I could see the magic of it happening.",
     badgeIcon: <Briefcase className="w-4 h-4" />,
-    badgeText: "Industry Leader",
+    badgeText: "Real Estate",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const testimonials = [
     role: "Director, Growdiesel",
     text: "India Future AI has cracked ease of execution with their automations. A lot of our processes are now running automated without external intervention. Away from costs it save, it gets us direct business.",
     badgeIcon: <Briefcase className="w-4 h-4" />,
-    badgeText: "Industry Leader",
+    badgeText: "MSME",
     linkedin: "https://www.linkedin.com/in/shrenewable",
   },
 ];

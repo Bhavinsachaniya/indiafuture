@@ -1,7 +1,7 @@
 "use client";
 import { programsConfig } from "@/config/programs";
 
-import { ProgramHero } from "@/components/programs/ProgramHero";
+import { ProgramHero } from "@/components/programs/custom/ProgramHero";
 import { PracticalAutomations } from "@/components/programs/custom/PracticalAutomations";
 import { Industries } from "@/components/programs/custom/Industries";
 import { TrustedBy } from "@/components/programs/TrustedBy";
@@ -13,7 +13,7 @@ import { LearningExperience } from "@/components/programs/LearningExperience";
 import { ProgramOutcomes } from "@/components/programs/ProgramOutcomes";
 import { IndustryTestimonialsSection } from "@/components/site/IndustryTestimonialsSection";
 import { FAQ } from "@/components/site/FAQ";
-import { ProgramCTA } from "@/components/programs/ProgramCTA";
+import { ProgramCTA } from "@/components/programs/custom/ProgramCTA";
 import { ExperienceAndOutcomes } from "@/components/programs/custom/ExperienceAndOutcomes";
 
 export default function WorkshopsProgramPage() {

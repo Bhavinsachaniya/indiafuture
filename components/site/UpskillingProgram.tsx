@@ -22,65 +22,65 @@ import { HighlightText } from "../ui/HighlightText";
 const weeks = [
   {
     week: "01",
-    title: "Build Your\nFirst AI Assistant",
-    description: "Ship your first AI assistant.",
-    tags: "ship · assistant · implement",
+    title: "Prompt\nFoundations",
+    description: "Learn to write clear prompts for work, study, and content.",
+    tags: "AI basics · prompt structure · role-task-format · everyday use cases",
     icon: <Bot className="w-5 h-5 text-[#f97316]" />,
     iconBg: "bg-[#fff5ec] border border-[#f97316]/20",
   },
   {
     week: "02",
-    title: "Prompt\nEngineering",
-    description: "Write prompts that work.",
-    tags: "prompt · create · refine",
+    title: "Advanced\nPrompting",
+    description: "Build stronger, more reliable AI outputs.",
+    tags: "prompt chaining · refinement loops · research prompts · image prompts",
     icon: <MessageSquare className="w-5 h-5 text-[#f97316]" />,
     iconBg: "bg-[#fff5ec] border border-[#f97316]/20",
   },
   {
     week: "03",
-    title: "AI\nResearch",
-    description: "Research smarter. Learn faster.",
-    tags: "read · research · synthesize",
+    title: "AI Graphics\n& Design",
+    description: "Create polished graphics faster.",
+    tags: "Canva + AI · social creatives · thumbnails & carousels · brand visuals",
     icon: <Search className="w-5 h-5 text-indigo-500" />,
     iconBg: "bg-indigo-50 border border-indigo-200",
   },
   {
     week: "04",
-    title: "AI Content\nCreation",
-    description: "Create content with AI.",
-    tags: "write · design · publish",
+    title: "AI Audio",
+    description: "Produce clean, engaging audio content.",
+    tags: "voice generation · cleanup tools · dubbing basics · podcast workflows",
     icon: <Pencil className="w-5 h-5 text-purple-500" />,
     iconBg: "bg-purple-50 border border-purple-200",
   },
   {
     week: "05",
-    title: "AI\nProductivity",
-    description: "Save hours every day.",
-    tags: "system · workflow · optimize",
+    title: "AI\nVideo",
+    description: "Create high-quality videos at speed.",
+    tags: "script to video · short-form editing · captions & B-roll · creator workflows",
     icon: <Clock className="w-5 h-5 text-emerald-600" />,
     iconBg: "bg-emerald-50 border border-emerald-200",
   },
   {
     week: "06",
-    title: "AI\nAutomation",
-    description: "Automate repetitive work.",
-    tags: "connect · automate · deploy",
+    title: "Creator\nSystems",
+    description: "Build repeatable content systems that save time.",
+    tags: "content planning · no-code automation · repurposing · workflow setup",
     icon: <Zap className="w-5 h-5 text-amber-500" />,
     iconBg: "bg-amber-50 border border-amber-200",
   },
   {
     week: "07",
-    title: "Projects\n ",
-    description: "Build something real.",
-    tags: "build · iterate · improve",
+    title: "LinkedIn, X\n& Portfolio",
+    description: "Build an online presence that attracts opportunities.",
+    tags: "profile optimization · personal brand · posting strategy · portfolio building",
     icon: <Code className="w-5 h-5 text-emerald-600" />,
     iconBg: "bg-emerald-50 border border-emerald-200",
   },
   {
     week: "08",
-    title: "Showcase & Ship\n ",
-    description: "Launch your first AI project.",
-    tags: "launch · portfolio · career",
+    title: "Freelancing &\nClient Acquisition",
+    description: "Start earning with AI-powered services.",
+    tags: "niche selection · pricing · outreach · proposals",
     badge: "CAPSTONE",
     icon: <Rocket className="w-8 h-8 text-[#f97316]" />,
     iconBg: "transparent",
@@ -104,12 +104,12 @@ export function UpskillingProgram() {
             <p>Eight weeks. Real tools. Real projects.</p>
             <p>Learn AI by building, applying, and shipping practical solutions.</p>
           </div>
-          <Link
+          {/*         <Link
             href="/programs/ai-upskilling"
             className="inline-flex items-center justify-center whitespace-nowrap bg-[#f97316] hover:bg-[#ea580c] text-white rounded-full px-8 py-6 text-base font-medium transition-all shadow-md hover:shadow-lg"
           >
             View Curriculum &rarr;
-          </Link>
+          </Link> */}
         </div>
 
         {/* Grid of Weeks */}
@@ -176,7 +176,7 @@ export function UpskillingProgram() {
         </div>
 
         {/* Footer Note */}
-        <div className="bg-white rounded-2xl p-4 px-6 border border-[#161413]/5 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* <div className="bg-white rounded-2xl p-4 px-6 border border-[#161413]/5 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-[#161413]/70 text-sm">
             <Info className="w-5 h-5 text-[#161413]/40" />
             <span>One program. Endless possibilities.</span>
@@ -188,7 +188,7 @@ export function UpskillingProgram() {
             See all programs
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

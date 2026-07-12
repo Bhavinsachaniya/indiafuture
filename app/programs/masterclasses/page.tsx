@@ -12,7 +12,7 @@ import { ProgramOutcomes } from "@/components/programs/ProgramOutcomes";
 import { IndustryTestimonialsSection } from "@/components/site/IndustryTestimonialsSection";
 import { FAQ } from "@/components/site/FAQ";
 import { ProgramCTA } from "@/components/programs/ProgramCTA";
-import { ExperienceAndOutcomes } from "@/components/programs/upskilling/ExperienceAndOutcomes";
+import { ExperienceAndOutcomes } from "@/components/programs/masterrclasses/ExperienceAndOutcomes";
 import { CareerAndMentors } from "@/components/programs/upskilling/CareerAndMentors";
 
 export default function MasterclassesPage() {

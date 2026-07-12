@@ -11,7 +11,7 @@ import { LearningExperience } from "@/components/programs/LearningExperience";
 import { ProgramOutcomes } from "@/components/programs/ProgramOutcomes";
 import { IndustryTestimonialsSection } from "@/components/site/IndustryTestimonialsSection";
 import { FAQ } from "@/components/site/FAQ";
-import { ProgramCTA } from "@/components/programs/ProgramCTA";
+import { ProgramCTA } from "@/components/programs/workshops/ProgramCTA";
 import { ExperienceAndOutcomes } from "@/components/programs/custom/ExperienceAndOutcomes";
 import { ExperienceAndOutcomes1 } from "@/components/programs/workshops/ExperienceAndOutcomes1";
 
@@ -25,10 +25,10 @@ export default function CustomProgramPage() {
         <ExperienceAndOutcomes />
         {/*  <TrustedBy /> */}
         {/*     <WhyProgramExists data={data} /> */}
-        <WhatYouWillLearn />
-        {/* <CurriculumTimeline data={data} />
-        <LiveProjects data={data} />
-        <LearningExperience data={data} /> */}
+        {/*  <WhatYouWillLearn /> */}
+        {/*  <CurriculumTimeline data={data} />
+        <LiveProjects data={data} /> */}
+        <LearningExperience data={data} />
         {/* <ProgramOutcomes data={data} /> */}
         {/*  <IndustryTestimonialsSection />
         <FAQ /> */}

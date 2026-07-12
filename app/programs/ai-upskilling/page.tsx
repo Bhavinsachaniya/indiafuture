@@ -26,12 +26,12 @@ export default function AIUpskillingPage() {
 
         <div className="relative">
           <WhyProgramExists data={data} />
-          <UpskillingProgram />
+          {/*    <UpskillingProgram /> */}
           {/*     <WhatYouWillLearn data={data} /> */}
           <OverviewAndCurriculum />
           {/*  <ProjectShowcaseSection /> */}
           {/*  <ProjectsAndTools /> */}
-          {/*  <ExperienceAndOutcomes /> */}
+          <ExperienceAndOutcomes />
           {/*  <CareerAndMentors /> */}
           {/*   <CertificateAndFAQ /> */}
           {/*  <FAQ /> */}

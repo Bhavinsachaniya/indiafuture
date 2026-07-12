@@ -8,24 +8,24 @@ import { HighlightText } from "@/components/ui/HighlightText";
 export function ExperienceAndOutcomes() {
   const experiences = [
     {
+      icon: Video,
+      title: "Live Interactive Classes",
+      desc: "Two 90-minute live sessions per week focusing purely on building and debugging.",
+    },
+    {
       icon: Trophy,
-      title: "Certificate of Completion",
-      desc: "Official recognition validating your practical, hands-on mastery of AI tools.",
-    },
-    {
-      icon: Briefcase,
-      title: "Premium AI Toolkit",
-      desc: "Lifetime access to our curated library of cheat sheets, prompt templates, and proven workflows.",
-    },
-    {
-      icon: MessagesSquare,
-      title: "Custom GPT Blueprint",
-      desc: "A step-by-step guide to building, training, and maintaining your own specialized AI assistants.",
+      title: "Weekly Assignments",
+      desc: "Build a specific micro-workflow each week to lock in your muscle memory.",
     },
     {
       icon: Users,
-      title: "Dedicated Placement Support",
-      desc: "Exclusive support from our placement team to land roles paying ₹20k–₹25k/month.",
+      title: "Mentorship & Office Hours",
+      desc: "Stuck on an API error? Jump into office hours and screen-share with instructors.",
+    },
+    {
+      icon: MessagesSquare,
+      title: "Community Support",
+      desc: "A private Discord filled with fellow builders, resources, and job opportunities.",
     },
   ];
 
@@ -52,19 +52,19 @@ export function ExperienceAndOutcomes() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
-                    <span className="w-12 h-[1px] bg-brand/40" /> TAKEAWAYS{" "}
+                <div className="flex items-center gap-4 mb-6">
+                  <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center gap-4">
+                    <span className="w-12 h-[1px] bg-brand/40" /> METHODOLOGY{" "}
                     <span className="w-12 h-[1px] bg-brand/40" />
                   </p>
                 </div>
                 <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05] mb-8">
-                  What every participant <br />
-                  <HighlightText>takes home</HighlightText>
+                  How you will <br />
+                  <HighlightText>learn.</HighlightText>
                 </h2>
                 <p className="text-ink-soft text-lg leading-relaxed mb-8 max-w-md">
-                  Every participant goes home with a sharper brain and full hands. What do we ‘gift’
-                  you from the Masterclass?
+                  We don't do pre-recorded monologues. Our methodology is built entirely around
+                  active building, rapid feedback loops, and community accountability.
                 </p>
               </motion.div>
             </div>

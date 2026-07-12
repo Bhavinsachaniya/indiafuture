@@ -94,7 +94,7 @@ export function PracticalAutomations() {
         {/* CTA */}
         <div className="flex justify-center relative">
           <Link
-            href="/contact?program=workshops"
+            href="/contact?program=custom"
             className="relative z-10 inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-white px-10 py-4 text-base font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20"
           >
             Book a Demo

@@ -33,7 +33,7 @@ export function FinalCTA() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/payment"
+              href="https://pages.razorpay.com/pl_TCX5i1BuJ6T8yV/view"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white px-8 py-4 text-base font-semibold transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-xl shadow-brand/20 w-full sm:w-auto"
             >
               <span className="relative z-10 flex items-center gap-2">

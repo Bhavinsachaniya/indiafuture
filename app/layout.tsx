@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Serif, Work_Sans } from "next/font/google";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <NextTopLoader color="#eb5e28" showSpinner={false} height={3} />
         <Nav />
         {children}
+        <WhatsAppFloat />
         <Footer />
       </body>
     </html>

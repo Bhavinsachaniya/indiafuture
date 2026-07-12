@@ -82,7 +82,7 @@ export function ProgramHero({ data }: { data: ProgramData }) {
           className="flex flex-col sm:flex-row items-center gap-4 mb-20"
         >
           <Link
-            href="https://pages.razorpay.com/pl_TCX5i1BuJ6T8yV/view"
+            href="/contact?program=custom"
             className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white px-8 py-3.5 text-sm font-medium transition-all hover:bg-brand/90 hover:-translate-y-0.5 shadow-lg shadow-brand/20 w-full sm:w-auto"
           >
             <span className="relative z-10 flex items-center gap-2">
