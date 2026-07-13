@@ -44,7 +44,7 @@ export function GalleryCTA() {
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact?program=fellowship"
+              href="/contact?program=upskilling"
               className="group relative flex h-14 w-full items-center justify-center gap-2 rounded-full bg-brand px-8 text-base font-semibold text-white shadow-lg transition-all hover:bg-brand/90 hover:-translate-y-0.5 sm:w-auto"
             >
               Enroll Now
