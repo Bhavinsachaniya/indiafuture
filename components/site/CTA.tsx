@@ -73,12 +73,12 @@ export const CTA = React.memo(function CTA() {
               href="https://pages.razorpay.com/pl_TCX5i1BuJ6T8yV/view"
               className="inline-flex items-center gap-3 rounded-full bg-white text-[#161413] px-8 py-4 text-base font-bold hover:bg-[#f9f8f6] transition-colors shadow-lg"
             >
-              Join the next cohort
+              Join the next Batch
               <ArrowRight className="h-4 w-4" />
             </Link>
 
             <p className="mt-6 text-white/40 text-[13px] font-medium tracking-wide">
-              Next Fellowship Cohort &bull; Seats are limited
+              Next Fellowship Batch &bull; Seats are limited
             </p>
           </div>
         </div>
