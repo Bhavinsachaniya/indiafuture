@@ -76,39 +76,7 @@ export const Footer = React.memo(function Footer() {
                   href="/programs/ai-upskilling"
                   className="text-cream/70 hover:text-brand transition-colors font-medium"
                 >
-                  8-Week AI Upskilling
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/programs/upskilling"
-                  className="text-cream/70 hover:text-brand transition-colors font-medium"
-                >
-                  AI Upskilling
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/programs/masterclasses"
-                  className="text-cream/70 hover:text-brand transition-colors font-medium"
-                >
-                  Masterclasses
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/programs/workshops"
-                  className="text-cream/70 hover:text-brand transition-colors font-medium"
-                >
-                  Automation Labs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/programs/custom"
-                  className="text-cream/70 hover:text-brand transition-colors font-medium"
-                >
-                  Custom Programs
+                  Creator Fellowship
                 </Link>
               </li>
             </ul>
