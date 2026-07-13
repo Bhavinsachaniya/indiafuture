@@ -70,9 +70,7 @@ export function VideoCard({ video, onClick, index = 0 }: VideoCardProps) {
           <h3 className="line-clamp-2 font-display text-xl text-ink group-hover:text-brand transition-colors leading-tight">
             {video.title}
           </h3>
-          <p className="mt-1 text-sm text-ink-soft font-medium">
-            {video.studentName}
-          </p>
+          <p className="mt-1 text-sm text-ink-soft font-medium">{video.studentName}</p>
         </div>
       </div>
     </motion.div>
