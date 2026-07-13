@@ -57,9 +57,9 @@ export function VideoCard({ video, onClick, index = 0 }: VideoCardProps) {
         </div>
       </div>
 
-      <div className="mt-6 px-2 pb-2 flex gap-3.5">
+      <div className="mt-6 px-2 pb-2 flex items-start gap-3.5">
         {/* User Icon (Avatar) */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 mt-1">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/10 text-brand border border-brand/10 transition-all duration-300 group-hover:bg-brand group-hover:text-white">
             <User className="h-5 w-5" />
           </div>
@@ -70,7 +70,7 @@ export function VideoCard({ video, onClick, index = 0 }: VideoCardProps) {
           <h3 className="line-clamp-2 font-display text-xl text-ink group-hover:text-brand transition-colors leading-tight">
             {video.title}
           </h3>
-          <p className="mt-2 text-sm text-ink-soft font-medium">
+          <p className="mt-1 text-sm text-ink-soft font-medium">
             {video.studentName}
           </p>
         </div>
