@@ -73,7 +73,7 @@ export const Footer = React.memo(function Footer() {
             <ul className="space-y-4 text-sm">
               <li>
                 <Link
-                  href="/programs/upskilling"
+                  href="/programs/ai-upskilling"
                   className="text-cream/70 hover:text-brand transition-colors font-medium"
                 >
                   AI Upskilling
