@@ -70,24 +70,32 @@ function ContactForm() {
     setIsSubmitting(true);
     setIsSuccess(false);
     try {
-      // ---------------------------------------------------------
-      // TODO: ATTACH BACKEND LINK HERE
-      // ---------------------------------------------------------
-      // const response = await fetch("https://YOUR_BACKEND_WEBHOOK_OR_API_URL_HERE", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(data),
-      // });
-      // if (!response.ok) throw new Error("Failed to submit");
-      // ---------------------------------------------------------
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+      if (!scriptUrl) {
+        throw new Error("Contact form is not configured. Missing NEXT_PUBLIC_GOOGLE_SCRIPT_URL.");
+      }
 
-      // Simulate API call for now since no backend is attached yet
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // text/plain avoids a CORS preflight; Google Apps Script accepts this reliably.
+      const response = await fetch(scriptUrl, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          ...data,
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+
+      if (!response.ok) throw new Error("Failed to submit");
+
+      const result = await response.json().catch(() => null);
+      if (result && result.result === "error") {
+        throw new Error(result.error || "Failed to submit");
+      }
 
       setIsSuccess(true);
-      reset(); // clear form
+      reset();
 
-      setTimeout(() => setIsSuccess(false), 5000); // hide success message after 5s
+      setTimeout(() => setIsSuccess(false), 5000);
     } catch (error) {
       console.error(error);
       alert("Something went wrong. Please try again.");
