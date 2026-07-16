@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
+import Link from "next/link";
 import { HighlightText } from "@/components/ui/HighlightText";
 
 export function GalleryCTA() {
@@ -42,13 +43,13 @@ export function GalleryCTA() {
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <button className="group relative flex h-14 w-full items-center justify-center gap-2 rounded-full bg-brand px-8 text-base font-semibold text-white shadow-lg transition-all hover:bg-brand/90 hover:-translate-y-0.5 sm:w-auto">
+            <Link
+              href="/contact?program=upskilling"
+              className="group relative flex h-14 w-full items-center justify-center gap-2 rounded-full bg-brand px-8 text-base font-semibold text-white shadow-lg transition-all hover:bg-brand/90 hover:-translate-y-0.5 sm:w-auto"
+            >
               Enroll Now
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
-            <button className="flex h-14 w-full items-center justify-center rounded-full border border-cream/20 bg-cream/10 px-8 text-base font-medium text-cream backdrop-blur-md transition-all hover:bg-cream/20 sm:w-auto hover:-translate-y-0.5">
-              Talk to Mentor
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>

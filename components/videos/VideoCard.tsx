@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play, Clock } from "lucide-react";
+import { Play, Clock, User } from "lucide-react";
 import { StudentVideo } from "@/data/student-videos";
 
 interface VideoCardProps {
