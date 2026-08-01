@@ -15,7 +15,10 @@ export function MethodHeader() {
         whileInView="visible"
         viewport={defaultViewport}
       >
-        <motion.div variants={fadeUpVariant} className="flex items-center justify-center gap-4 mb-6">
+        <motion.div
+          variants={fadeUpVariant}
+          className="flex items-center justify-center gap-4 mb-6"
+        >
           <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold flex items-center justify-center gap-4">
             <span className="w-12 h-[1px] bg-brand/40" /> Fellowship/Masterclass{" "}
             <span className="w-12 h-[1px] bg-brand/40" />

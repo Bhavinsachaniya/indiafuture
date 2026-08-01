@@ -3,12 +3,7 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import { HighlightText } from "@/components/ui/HighlightText";
-import {
-  COHORT_BATCHES,
-  COHORT_FELLOWS,
-  getFellowsByBatch,
-  type CohortBatch,
-} from "@/data/cohort";
+import { COHORT_BATCHES, COHORT_FELLOWS, getFellowsByBatch, type CohortBatch } from "@/data/cohort";
 import { FellowCard } from "./FellowCard";
 import { fadeUpVariant, staggerContainerVariant, defaultViewport } from "@/lib/motion";
 

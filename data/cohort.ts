@@ -28,10 +28,7 @@ type RawFellow = {
   "Remarks (if any)": string;
 };
 
-const BATCH_META: Record<
-  CohortBatch,
-  { label: string; batchNumber: 1 | 2; eyebrow: string }
-> = {
+const BATCH_META: Record<CohortBatch, { label: string; batchNumber: 1 | 2; eyebrow: string }> = {
   Visionaries: { label: "Visionaries", batchNumber: 1, eyebrow: "Batch 1" },
   Innovators: { label: "Innovators", batchNumber: 2, eyebrow: "Batch 2" },
 };
@@ -81,9 +78,7 @@ function normalizeFellow(raw: RawFellow, index: number): CohortFellow | null {
   const name = cleanText(raw.Name);
   if (!name || name.toLowerCase().startsWith("cohort")) return null;
 
-  const descriptions = (raw["Brief Description"] ?? [])
-    .map((d) => cleanText(d))
-    .filter(Boolean);
+  const descriptions = (raw["Brief Description"] ?? []).map((d) => cleanText(d)).filter(Boolean);
 
   const shortBio = descriptions[1] || descriptions[0] || "";
   const fullBio = descriptions[0] || shortBio;

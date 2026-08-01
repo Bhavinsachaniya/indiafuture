@@ -8,12 +8,7 @@ import { STUDENT_VIDEOS, StudentVideo } from "@/data/student-videos";
 import { VideoCard } from "@/components/videos/VideoCard";
 import { VideoModal } from "@/components/videos/VideoModal";
 import { HighlightText } from "../ui/HighlightText";
-import {
-  fadeUpVariant,
-  staggerContainerVariant,
-  defaultViewport,
-  springSoft,
-} from "@/lib/motion";
+import { fadeUpVariant, staggerContainerVariant, defaultViewport, springSoft } from "@/lib/motion";
 
 export function ProjectShowcaseSection() {
   const [selectedVideo, setSelectedVideo] = useState<StudentVideo | null>(null);
@@ -72,7 +67,11 @@ export function ProjectShowcaseSection() {
           transition={{ duration: 0.55, delay: 0.15 }}
           className="flex justify-center"
         >
-          <motion.div whileHover={{ y: -3, scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={springSoft}>
+          <motion.div
+            whileHover={{ y: -3, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={springSoft}
+          >
             <Link
               href="/student-creations"
               className="group flex h-14 items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-8 text-base font-semibold text-brand transition-colors hover:bg-brand hover:text-white"

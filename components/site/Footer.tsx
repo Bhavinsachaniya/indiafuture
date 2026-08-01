@@ -57,7 +57,9 @@ export const Footer = React.memo(function Footer() {
                 unoptimized
                 className="object-contain rounded-full bg-white"
               />
-              <span className="font-display text-2xl font-medium tracking-tight">IndiaFutureAI</span>
+              <span className="font-display text-2xl font-medium tracking-tight">
+                IndiaFutureAI
+              </span>
             </div>
             <p className="mt-6 text-[0.95rem] text-cream/60 leading-relaxed tracking-[-0.01em]">
               India&apos;s AI upskilling partner empowering young Indians; learn with us to win your

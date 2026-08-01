@@ -6,12 +6,7 @@ import Image from "next/image";
 import { Quote, Briefcase, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { HighlightText } from "../ui/HighlightText";
-import {
-  fadeUpVariant,
-  staggerContainerVariant,
-  defaultViewport,
-  springSoft,
-} from "@/lib/motion";
+import { fadeUpVariant, staggerContainerVariant, defaultViewport, springSoft } from "@/lib/motion";
 
 const testimonials = [
   {
@@ -55,11 +50,7 @@ const testimonials = [
   },
 ];
 
-function TestimonialCard({
-  t,
-}: {
-  t: (typeof testimonials)[number];
-}) {
+function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
     <motion.div
       whileHover={{ y: -6, scale: 1.015 }}
@@ -132,7 +123,10 @@ export const IndustryTestimonialsSection = React.memo(function IndustryTestimoni
           whileInView="visible"
           viewport={defaultViewport}
         >
-          <motion.div variants={fadeUpVariant} className="flex items-center justify-center gap-4 mb-6">
+          <motion.div
+            variants={fadeUpVariant}
+            className="flex items-center justify-center gap-4 mb-6"
+          >
             <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
               <span className="w-12 h-[1px] bg-brand/40" /> What Industry says about us{" "}
               <span className="w-12 h-[1px] bg-brand/40" />
