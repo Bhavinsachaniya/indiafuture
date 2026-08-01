@@ -6,11 +6,11 @@ import Image from "next/image";
 
 const links = [
   { label: "Home", href: "/" },
+  { label: "Cohort", href: "/cohort" },
   { label: "Creator Fellowship", href: "/programs/ai-upskilling" },
   { label: "Masterclass", href: "/programs/masterclasses" },
   { label: "Automations", href: "/programs/custom" },
   { label: "AI Labs", href: "/programs/workshops" },
-  { label: "Contact Us", href: "/contact" },
 ];
 
 export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light" | "dark" }) {
