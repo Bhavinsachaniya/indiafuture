@@ -4,7 +4,7 @@ export function LogoCloud() {
   return (
     <section className="border-y border-border bg-surface/60">
       <div className="container-x py-10">
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-ink-soft">Teams from</p>
+        <p className="text-center text-xs uppercase tracking-[0.14em] text-ink-soft">Teams from</p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
           {logos.map((l) => (
             <span

@@ -9,7 +9,7 @@ export default function FUIBentoGrid() {
   return (
     <section className="bg-background py-24 sm:py-32">
       <div className="container-x">
-        <h2 className="text-center text-xs font-medium uppercase tracking-[0.2em] text-brand">
+        <h2 className="text-center text-xs font-medium uppercase tracking-[0.14em] text-brand">
           Sales
         </h2>
         <p className="mx-auto mt-4 max-w-4xl text-center font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-tight text-ink text-balance">

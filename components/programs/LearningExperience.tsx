@@ -37,7 +37,7 @@ export function LearningExperience({ data }: { data?: any }) {
         <div className="mb-16 text-center max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="w-12 h-[1px] bg-[#f97316]/30" />
-            <p className="text-xs uppercase tracking-[0.2em] text-[#f97316] font-semibold">
+            <p className="text-xs uppercase tracking-[0.14em] text-[#f97316] font-semibold">
               BUILT AROUND YOUR INSTITUTION
             </p>
             <span className="w-12 h-[1px] bg-[#f97316]/30" />

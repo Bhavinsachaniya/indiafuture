@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Work_Sans } from "next/font/google";
+import { Newsreader, Plus_Jakarta_Sans } from "next/font/google";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
+const newsreader = Newsreader({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
+  variable: "--font-newsreader",
   display: "swap",
 });
 
-const workSans = Work_Sans({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-work-sans",
+  variable: "--font-plus-jakarta",
   display: "swap",
 });
 
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${workSans.variable}`}>
+    <html lang="en" className={`${newsreader.variable} ${plusJakarta.variable}`}>
       <body>
         <NextTopLoader color="#eb5e28" showSpinner={false} height={3} />
         <Nav />

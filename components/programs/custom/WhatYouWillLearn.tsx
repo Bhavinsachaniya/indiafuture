@@ -32,7 +32,7 @@ export function WhatYouWillLearn() {
         <div className="mb-16 max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="w-12 h-[1px] bg-brand/40" />
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold">
+            <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold">
               BUILT AROUND YOUR INSTITUTION
             </p>
             <span className="w-12 h-[1px] bg-brand/40" />
@@ -46,7 +46,7 @@ export function WhatYouWillLearn() {
 
           {/* SUITABLE FOR Block */}
           <div className="mb-12">
-            <p className="text-xs uppercase tracking-[0.2em] text-ink-soft font-semibold mb-4">
+            <p className="text-xs uppercase tracking-[0.14em] text-ink-soft font-semibold mb-4">
               SUITABLE FOR
             </p>
             <div className="flex flex-wrap justify-center gap-3">

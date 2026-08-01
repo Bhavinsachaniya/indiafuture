@@ -5,30 +5,48 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { GraduationCap, Users, Landmark, Briefcase, ArrowRight } from "lucide-react";
 import { HighlightText } from "@/components/ui/HighlightText";
-import { fadeUpVariant, defaultViewport } from "@/lib/motion";
+import { fadeUpVariant, staggerContainerVariant, defaultViewport } from "@/lib/motion";
 
 export function ProgramOfferingsSection() {
   return (
     <section className="bg-[#faf9f8] py-28 relative overflow-hidden">
       <div className="container-x relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
+        <motion.div
+          className="max-w-3xl mx-auto text-center"
+          variants={staggerContainerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+        >
+          <motion.div variants={fadeUpVariant} className="flex items-center justify-center gap-4 mb-6">
+            <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
               <span className="w-12 h-[1px] bg-brand/40" /> Pick one to help us help you!{" "}
               <span className="w-12 h-[1px] bg-brand/40" />
             </p>
-          </div>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-[#161413] text-balance">
+          </motion.div>
+          <motion.h2
+            variants={fadeUpVariant}
+            className="mt-4 font-display font-medium text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.12] tracking-[-0.02em] text-[#161413] text-balance"
+          >
             Four paths. One outcome <br />
             <HighlightText className="mx-2 inline-block">practical skills</HighlightText>
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#161413]/70">
+          </motion.h2>
+          <motion.p
+            variants={fadeUpVariant}
+            className="mx-auto mt-6 max-w-xl text-lg leading-[1.7] text-[#161413]/70 tracking-[-0.01em]"
+          >
             Pick the program for your goals. Our AI Masterclasses and certification programs are
             curated for audiences of varying Industries.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <motion.div
+          className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto"
+          variants={staggerContainerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+        >
           <ProgramCard
             icon={GraduationCap}
             badge="YOUNG INDIANS"
@@ -69,7 +87,7 @@ export function ProgramOfferingsSection() {
             link="/programs/custom"
             linkText="Explore Solution"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -99,10 +117,9 @@ function ProgramCard({
   return (
     <motion.div
       variants={fadeUpVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={defaultViewport}
-      className="group relative flex flex-col p-6 sm:p-8 rounded-3xl border border-[#f97316]/10 bg-white shadow-sm hover:shadow-[0_10px_40px_-15px_rgba(249,115,22,0.15)] transition-all duration-500 hover:-translate-y-1"
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 320, damping: 28 }}
+      className="group relative flex flex-col p-7 sm:p-9 rounded-3xl border border-[#f97316]/10 bg-white shadow-sm hover:shadow-[0_16px_48px_-16px_rgba(249,115,22,0.2)] transition-shadow duration-500"
     >
       <div className="flex items-start justify-between mb-8">
         <div

@@ -47,7 +47,7 @@ export const Studios = React.memo(function Studios() {
     <section id="studios" className="py-28 bg-[#faf9f8]">
       <div className="container-x">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand">OUR SOLUTIONS</p>
+          <p className="text-xs uppercase tracking-[0.14em] text-brand">OUR SOLUTIONS</p>
           <h2 className="mt-3 font-display text-5xl md:text-6xl leading-[1.05] text-balance">
             Four solutions. One <em className="italic">outcome</em> —
             <HighlightText className="text-ink ml-2 tracking-normal">

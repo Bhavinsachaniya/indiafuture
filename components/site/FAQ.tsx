@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import { Plus, Minus, MessageCircle, Laptop, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { HighlightText } from "@/components/ui/HighlightText";
+import { AnimatePresence, motion } from "framer-motion";
+import { fadeUpVariant, staggerContainerVariant, defaultViewport, springSoft } from "@/lib/motion";
 
 const faqs = [
   {
@@ -53,71 +54,116 @@ export const FAQ = React.memo(function FAQ() {
   return (
     <section id="faq" className="py-24 bg-[#faf9f8]">
       <div className="container-x mx-auto">
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-4 text-[#f97316] font-bold text-[11px] uppercase tracking-[0.2em] mb-4">
+        <motion.div
+          className="text-center mb-12"
+          variants={staggerContainerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="flex items-center justify-center gap-4 text-[#f97316] font-bold text-[11px] uppercase tracking-[0.14em] mb-4"
+          >
             <div className="w-8 h-[1px] bg-[#f97316]"></div>
             QUESTIONS
             <div className="w-8 h-[1px] bg-[#f97316]"></div>
-          </div>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-[#161413] mb-6">
-            Frequently Asked .
-          </h2>
-          <p className="text-lg text-[#161413]/70 max-w-lg mx-auto">
+          </motion.div>
+          <motion.h2
+            variants={fadeUpVariant}
+            className="font-display font-medium text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.12] tracking-[-0.02em] text-[#161413] mb-6"
+          >
+            Frequently Asked
+          </motion.h2>
+          <motion.p
+            variants={fadeUpVariant}
+            className="text-lg text-[#161413]/70 max-w-lg mx-auto tracking-[-0.01em] leading-[1.7]"
+          >
             Answering all your questions to help you become part of India’s Largest AI Community.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="flex flex-col gap-4">
+        <motion.div
+          className="flex flex-col gap-4"
+          variants={staggerContainerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+        >
           {faqs.map((f, i) => {
             const isOpen = open === i;
-            const num = String(i + 1).padStart(2, "0");
             return (
-              <div
+              <motion.div
                 key={f.q}
-                className={`bg-white rounded-2xl border ${isOpen ? "border-[#f97316]/20 shadow-md" : "border-[#161413]/5 shadow-sm"} transition-all duration-300 overflow-hidden`}
+                variants={fadeUpVariant}
+                layout
+                className={`bg-white rounded-2xl border overflow-hidden ${
+                  isOpen
+                    ? "border-[#f97316]/25 shadow-md"
+                    : "border-[#161413]/5 shadow-sm hover:border-[#f97316]/15"
+                }`}
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full flex items-center justify-between gap-6 p-6 text-left group"
                 >
                   <span className="font-display text-xl md:text-2xl text-[#161413]">{f.q}</span>
-                  {isOpen ? (
-                    <Minus className="h-6 w-6 shrink-0 text-[#f97316]" />
-                  ) : (
-                    <Plus className="h-6 w-6 shrink-0 text-[#161413]/60 group-hover:text-[#161413] transition-colors" />
-                  )}
+                  <motion.span
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={springSoft}
+                    className="shrink-0"
+                  >
+                    {isOpen ? (
+                      <Minus className="h-6 w-6 text-[#f97316]" />
+                    ) : (
+                      <Plus className="h-6 w-6 text-[#161413]/60 group-hover:text-[#161413]" />
+                    )}
+                  </motion.span>
                 </button>
 
-                <div
-                  className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="px-6 pb-6 pt-2">
-                      <div className="pt-4 border-t border-[#161413]/10">
-                        <p className="text-[15px] leading-relaxed text-[#161413]/70 font-medium">
-                          {f.a}
-                        </p>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <div className="px-6 pb-6 pt-0">
+                        <div className="pt-4 border-t border-[#161413]/10">
+                          <p className="text-[15px] leading-relaxed text-[#161413]/70 font-medium">
+                            {f.a}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
-        <div className="mt-16 flex flex-col items-center justify-center gap-4 text-center">
+        <motion.div
+          className="mt-16 flex flex-col items-center justify-center gap-4 text-center"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={defaultViewport}
+          transition={{ duration: 0.55 }}
+        >
           <div className="flex items-center gap-3 text-[#161413]/70 font-medium">
             <MessageCircle className="w-6 h-6 text-[#f97316]" />
             Still have questions? We're here to help.
           </div>
           <Link
             href="/contact"
-            className="text-[#f97316] font-bold flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="text-[#f97316] font-bold flex items-center gap-2 hover:opacity-80 transition-opacity group"
           >
-            Contact us <ArrowRight className="w-4 h-4" />
+            Contact us{" "}
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

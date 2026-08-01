@@ -38,7 +38,7 @@ export function WhyIndiaFutureBento() {
 
       <div className="container-x relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#f97316]">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#f97316]">
             WHY INDIAFUTUREAI
           </p>
           <h2 className="mt-4 font-display text-5xl md:text-6xl leading-[1.05] tracking-tight text-[#161413] text-balance">
@@ -129,7 +129,7 @@ function BentoCard({
           />
         </div>
 
-        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f97316]">{eyebrow}</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#f97316]">{eyebrow}</p>
         <h3 className="mt-2 font-display text-2xl leading-tight text-[#161413]">{title}</h3>
         <p className="mt-3 text-[14px] leading-relaxed text-[#161413]/70">{description}</p>
       </div>

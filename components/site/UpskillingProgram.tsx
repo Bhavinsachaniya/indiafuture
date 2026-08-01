@@ -93,7 +93,7 @@ export function UpskillingProgram() {
       <div className="container-x relative z-10 mx-auto">
         {/* Header Area */}
         <div className="flex flex-col items-center text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
+          <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
             <span className="w-12 h-[1px] bg-brand/40" /> FLAGSHIP PROGRAM{" "}
             <span className="w-12 h-[1px] bg-brand/40" />
           </p>
