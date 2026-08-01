@@ -45,13 +45,13 @@ export function SuccessStoriesSection() {
             className="mx-auto mt-5 max-w-2xl text-lg leading-[1.7] tracking-[-0.01em] text-ink-soft"
           >
             Meet the creators who turned AI learning into real portfolios, client work, and
-            cinematic storytelling — across Batch 1 Visionaries and Batch 2 Innovators.
+            cinematic storytelling — across Batch 1 and Batch 2.
           </motion.p>
         </motion.div>
 
         <LayoutGroup>
           <motion.div
-            className="mx-auto mt-10 flex w-full max-w-xl flex-col items-center gap-4 sm:mt-12"
+            className="mx-auto mt-10 flex w-full max-w-md flex-col items-center gap-4 sm:mt-12"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={defaultViewport}
@@ -66,7 +66,7 @@ export function SuccessStoriesSection() {
                     key={batch.id}
                     type="button"
                     onClick={() => setActiveBatch(batch.id)}
-                    className={`relative z-10 flex flex-1 flex-col items-center rounded-full px-3 py-3 transition-colors sm:px-5 ${
+                    className={`relative z-10 flex flex-1 items-center justify-center rounded-full px-3 py-3.5 transition-colors sm:px-5 ${
                       isActive ? "text-cream" : "text-ink-soft hover:text-ink"
                     }`}
                   >
@@ -77,10 +77,7 @@ export function SuccessStoriesSection() {
                         transition={{ type: "spring", stiffness: 380, damping: 32 }}
                       />
                     )}
-                    <span className="relative z-10 text-[10px] font-semibold uppercase tracking-[0.16em] opacity-80">
-                      {batch.eyebrow}
-                    </span>
-                    <span className="relative z-10 mt-0.5 text-sm font-semibold tracking-[-0.01em] sm:text-base">
+                    <span className="relative z-10 text-sm font-semibold tracking-[-0.01em] sm:text-base">
                       {batch.label}
                       <span className="ml-1.5 text-xs font-medium opacity-70">({count})</span>
                     </span>
@@ -98,7 +95,7 @@ export function SuccessStoriesSection() {
                 transition={{ duration: 0.25 }}
                 className="text-sm text-ink-soft"
               >
-                Showing {fellows.length} fellows from {activeMeta.eyebrow} · {activeMeta.label}
+                Showing {fellows.length} fellows from {activeMeta.label}
               </motion.p>
             </AnimatePresence>
           </motion.div>

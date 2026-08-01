@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, MapPin, Sparkles } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import type { CohortFellow } from "@/data/cohort";
 
 type FellowCardProps = {
@@ -60,18 +60,6 @@ export function FellowCard({ fellow, index }: FellowCardProps) {
         )}
 
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent opacity-80" />
-
-        <div className="absolute left-4 top-4 flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-cream/95 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-ink shadow-sm backdrop-blur-sm">
-            {fellow.batchLabel}
-          </span>
-          {fellow.score != null && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-brand px-2.5 py-1 text-[10px] font-bold text-white shadow-sm">
-              <Sparkles className="h-3 w-3" />
-              {fellow.score.toFixed(fellow.score % 1 ? 1 : 0)}/10
-            </span>
-          )}
-        </div>
 
         {fellow.city && (
           <div className="absolute bottom-4 left-4 right-4 flex items-center gap-1.5 text-cream/95">

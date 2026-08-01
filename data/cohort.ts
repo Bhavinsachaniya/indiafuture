@@ -28,9 +28,9 @@ type RawFellow = {
   "Remarks (if any)": string;
 };
 
-const BATCH_META: Record<CohortBatch, { label: string; batchNumber: 1 | 2; eyebrow: string }> = {
-  Visionaries: { label: "Visionaries", batchNumber: 1, eyebrow: "Batch 1" },
-  Innovators: { label: "Innovators", batchNumber: 2, eyebrow: "Batch 2" },
+const BATCH_META: Record<CohortBatch, { label: string; batchNumber: 1 | 2 }> = {
+  Visionaries: { label: "Batch 1", batchNumber: 1 },
+  Innovators: { label: "Batch 2", batchNumber: 2 },
 };
 
 function extractDriveId(url: string): string | null {
@@ -117,12 +117,7 @@ export const COHORT_BATCHES = [
 export const COHORT_FELLOWS: CohortFellow[] = (rawData as RawFellow[])
   .map((item, index) => normalizeFellow(item, index))
   .filter((item): item is CohortFellow => item !== null)
-  .sort((a, b) => {
-    if (a.score != null && b.score != null) return b.score - a.score;
-    if (a.score != null) return -1;
-    if (b.score != null) return 1;
-    return a.id - b.id;
-  });
+  .sort((a, b) => a.id - b.id);
 
 export function getFellowsByBatch(batch: CohortBatch): CohortFellow[] {
   return COHORT_FELLOWS.filter((fellow) => fellow.batch === batch);

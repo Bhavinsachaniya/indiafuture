@@ -56,8 +56,7 @@ export default function CohortPage() {
                 className="mx-auto mt-6 max-w-2xl text-lg leading-[1.7] tracking-[-0.01em] text-ink-soft md:text-xl"
               >
                 Explore portfolios from {COHORT_FELLOWS.length}+ fellows who shipped real AI
-                storytelling work through IndiaFutureAI — switch between Batch 1 Visionaries and
-                Batch 2 Innovators below.
+                storytelling work through IndiaFutureAI — switch between Batch 1 and Batch 2 below.
               </motion.p>
 
               <motion.div
