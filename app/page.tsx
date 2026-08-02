@@ -9,6 +9,7 @@ import { AISolutions } from "@/components/site/AISolutions";
 import { ImpactMetricsSection } from "@/components/site/ImpactMetricsSection";
 import { Stats } from "@/components/site/Stats";
 import { IndustryTestimonialsSection } from "@/components/site/IndustryTestimonialsSection";
+import { WallOfLoveSection } from "@/components/site/WallOfLoveSection";
 import { Community } from "@/components/site/Community";
 import { Pricing } from "@/components/site/Pricing";
 import { FAQ } from "@/components/site/FAQ";
@@ -30,6 +31,7 @@ export default function HomePage() {
         <ImpactMetricsSection />
 
         <IndustryTestimonialsSection />
+        <WallOfLoveSection />
         {/*  <Community /> */}
         {/* <Pricing /> */}
         <FAQ />

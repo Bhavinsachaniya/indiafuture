@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Plus_Jakarta_Sans } from "next/font/google";
-import { Nav } from "@/components/site/Nav";
-import { Footer } from "@/components/site/Footer";
-import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { SiteShell } from "@/components/site/SiteShell";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
@@ -47,10 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${newsreader.variable} ${plusJakarta.variable}`}>
       <body>
         <NextTopLoader color="#eb5e28" showSpinner={false} height={3} />
-        <Nav />
-        {children}
-        <WhatsAppFloat />
-        <Footer />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

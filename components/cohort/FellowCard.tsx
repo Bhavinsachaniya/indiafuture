@@ -24,18 +24,18 @@ export function FellowCard({ fellow, index }: FellowCardProps) {
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, y: 28, scale: 0.97 }}
+      initial={{ opacity: 0, y: 20, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 16, scale: 0.97 }}
+      exit={{ opacity: 0, y: 12, scale: 0.98 }}
       transition={{
-        duration: 0.45,
-        delay: Math.min(index * 0.05, 0.35),
+        duration: 0.4,
+        delay: Math.min(index * 0.04, 0.28),
         ease: [0.22, 1, 0.36, 1],
       }}
-      whileHover={{ y: -8 }}
-      className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/70 bg-white shadow-[0_8px_30px_rgba(22,20,19,0.04)] transition-shadow duration-500 hover:shadow-[0_22px_50px_-18px_rgba(249,115,22,0.28)]"
+      whileHover={{ y: -5 }}
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-white shadow-[0_6px_20px_rgba(22,20,19,0.04)] transition-shadow duration-500 hover:shadow-[0_16px_36px_-16px_rgba(249,115,22,0.25)]"
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-surface">
+      <div className="relative aspect-[5/4] overflow-hidden bg-surface">
         {showPhoto ? (
           <Image
             src={activePhoto!}
@@ -53,7 +53,7 @@ export function FellowCard({ fellow, index }: FellowCardProps) {
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-brand-soft via-surface to-cream">
-            <span className="font-display text-5xl font-medium tracking-tight text-brand/80">
+            <span className="font-display text-3xl font-medium tracking-tight text-brand/80">
               {fellow.initials}
             </span>
           </div>
@@ -62,19 +62,21 @@ export function FellowCard({ fellow, index }: FellowCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent opacity-80" />
 
         {fellow.city && (
-          <div className="absolute bottom-4 left-4 right-4 flex items-center gap-1.5 text-cream/95">
-            <MapPin className="h-3.5 w-3.5 shrink-0 text-brand" />
-            <span className="truncate text-xs font-medium tracking-[-0.01em]">{fellow.city}</span>
+          <div className="absolute bottom-3 left-3 right-3 flex items-center gap-1 text-cream/95">
+            <MapPin className="h-3 w-3 shrink-0 text-brand" />
+            <span className="truncate text-[11px] font-medium tracking-[-0.01em]">
+              {fellow.city}
+            </span>
           </div>
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-5 md:p-6">
-        <h3 className="font-display text-2xl font-medium leading-tight tracking-[-0.02em] text-ink">
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="font-display text-lg font-medium leading-tight tracking-[-0.02em] text-ink">
           {fellow.name}
         </h3>
 
-        <p className="mt-3 line-clamp-4 flex-1 text-sm leading-relaxed text-ink-soft">
+        <p className="mt-2 line-clamp-3 flex-1 text-[13px] leading-relaxed text-ink-soft">
           {fellow.shortBio || fellow.fullBio}
         </p>
 
@@ -83,19 +85,17 @@ export function FellowCard({ fellow, index }: FellowCardProps) {
             href={fellow.portfolioUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-cream transition-all duration-300 hover:bg-brand group-hover:gap-3"
+            className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-ink px-4 py-2 text-xs font-semibold text-cream transition-all duration-300 hover:bg-brand group-hover:gap-2.5"
           >
             View Portfolio
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         ) : (
-          <div className="mt-5 inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-ink-soft">
+          <div className="mt-4 inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-xs font-medium text-ink-soft">
             Portfolio coming soon
           </div>
         )}
       </div>
-
-      <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-brand/10 blur-2xl transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
     </motion.article>
   );
 }

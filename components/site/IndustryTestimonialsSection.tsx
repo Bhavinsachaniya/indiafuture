@@ -107,7 +107,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
 
 export const IndustryTestimonialsSection = React.memo(function IndustryTestimonialsSection() {
   return (
-    <section className="py-24 bg-[#faf9f8] relative overflow-hidden" id="testimonials">
+    <section className="pt-24 pb-10 bg-[#faf9f8] relative overflow-hidden md:pb-12" id="testimonials">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-10 h-64 w-[32rem] -translate-x-1/2 rounded-full bg-brand-soft/40 blur-3xl"
@@ -169,7 +169,7 @@ export const IndustryTestimonialsSection = React.memo(function IndustryTestimoni
       </motion.div>
 
       <motion.div
-        className="container-x relative z-10 mx-auto px-4 md:px-8 mt-16 text-center"
+        className="container-x relative z-10 mx-auto px-4 md:px-8 mt-10 text-center md:mt-12"
         variants={staggerContainerVariant}
         initial="hidden"
         whileInView="visible"

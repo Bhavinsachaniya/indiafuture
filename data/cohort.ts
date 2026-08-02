@@ -1,6 +1,6 @@
 import rawData from "@/cohort-data.json";
 
-export type CohortBatch = "Visionaries" | "Innovators";
+export type CohortBatchId = 1 | 2 | 3;
 
 export type CohortFellow = {
   id: number;
@@ -11,9 +11,8 @@ export type CohortFellow = {
   photoUrl: string | null;
   photoCandidates: string[];
   city: string;
-  batch: CohortBatch;
+  batch: CohortBatchId;
   batchLabel: string;
-  score: number | null;
   initials: string;
 };
 
@@ -28,10 +27,15 @@ type RawFellow = {
   "Remarks (if any)": string;
 };
 
-const BATCH_META: Record<CohortBatch, { label: string; batchNumber: 1 | 2 }> = {
-  Visionaries: { label: "Batch 1", batchNumber: 1 },
-  Innovators: { label: "Batch 2", batchNumber: 2 },
-};
+export const COHORT_BATCHES: {
+  id: CohortBatchId;
+  label: string;
+  href: string;
+}[] = [
+  { id: 1, label: "Batch 1", href: "/cohort?batch=1" },
+  { id: 2, label: "Batch 2", href: "/cohort?batch=2" },
+  { id: 3, label: "Batch 3", href: "/cohort?batch=3" },
+];
 
 function extractDriveId(url: string): string | null {
   if (!url) return null;
@@ -49,17 +53,6 @@ export function drivePhotoCandidates(photo: string, size = 600): string[] {
   ];
 }
 
-export function driveThumbnailUrl(photo: string, size = 600): string | null {
-  return drivePhotoCandidates(photo, size)[0] ?? null;
-}
-
-function parseScore(remarks: string): number | null {
-  const trimmed = remarks.trim();
-  if (!trimmed) return null;
-  const score = Number.parseFloat(trimmed);
-  return Number.isFinite(score) && score >= 0 && score <= 10 ? score : null;
-}
-
 function cleanText(value: string): string {
   return value.replace(/\s+/g, " ").trim();
 }
@@ -71,54 +64,67 @@ function getInitials(name: string): string {
   return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
 }
 
-function normalizeFellow(raw: RawFellow, index: number): CohortFellow | null {
-  const batch = raw["Batch Name"] as CohortBatch;
-  if (batch !== "Visionaries" && batch !== "Innovators") return null;
-
-  const name = cleanText(raw.Name);
-  if (!name || name.toLowerCase().startsWith("cohort")) return null;
-
-  const descriptions = (raw["Brief Description"] ?? []).map((d) => cleanText(d)).filter(Boolean);
-
-  const shortBio = descriptions[1] || descriptions[0] || "";
-  const fullBio = descriptions[0] || shortBio;
-  const portfolio = cleanText(raw["Portfolio Link"]);
-  const city = cleanText(raw.City);
-  const photoCandidates = drivePhotoCandidates(raw.Photo);
-  const photoUrl = photoCandidates[0] ?? null;
-
-  return {
-    id: raw["Sl. No."] ?? index + 1,
-    name,
-    shortBio,
-    fullBio,
-    portfolioUrl: portfolio || null,
-    photoUrl,
-    photoCandidates,
-    city,
-    batch,
-    batchLabel: BATCH_META[batch].label,
-    score: parseScore(raw["Remarks (if any)"] ?? ""),
-    initials: getInitials(name),
-  };
+function isMarkerRow(raw: RawFellow): boolean {
+  const name = cleanText(raw.Name).toLowerCase();
+  return name.startsWith("cohort");
 }
 
-export const COHORT_BATCHES = [
-  {
-    id: "Visionaries" as const,
-    ...BATCH_META.Visionaries,
-  },
-  {
-    id: "Innovators" as const,
-    ...BATCH_META.Innovators,
-  },
-];
+function markerBatch(raw: RawFellow): CohortBatchId | null {
+  const name = cleanText(raw.Name).toLowerCase();
+  if (name.includes("3")) return 3;
+  if (name.includes("2")) return 2;
+  if (name.includes("1")) return 1;
+  return null;
+}
 
-export const COHORT_FELLOWS: CohortFellow[] = (rawData as RawFellow[])
-  .map((item, index) => normalizeFellow(item, index))
-  .filter((item): item is CohortFellow => item !== null)
-  .sort((a, b) => a.id - b.id);
+function buildFellows(): CohortFellow[] {
+  let currentBatch: CohortBatchId = 1;
+  const fellows: CohortFellow[] = [];
 
-export function getFellowsByBatch(batch: CohortBatch): CohortFellow[] {
+  (rawData as RawFellow[]).forEach((raw, index) => {
+    if (isMarkerRow(raw)) {
+      const next = markerBatch(raw);
+      if (next) currentBatch = next;
+      return;
+    }
+
+    const name = cleanText(raw.Name);
+    if (!name) return;
+
+    const descriptions = (raw["Brief Description"] ?? []).map((d) => cleanText(d)).filter(Boolean);
+
+    const shortBio = descriptions[1] || descriptions[0] || "";
+    const fullBio = descriptions[0] || shortBio;
+    const portfolio = cleanText(raw["Portfolio Link"]);
+    const city = cleanText(raw.City);
+    const photoCandidates = drivePhotoCandidates(raw.Photo);
+
+    fellows.push({
+      id: raw["Sl. No."] ?? index + 1,
+      name,
+      shortBio,
+      fullBio,
+      portfolioUrl: portfolio || null,
+      photoUrl: photoCandidates[0] ?? null,
+      photoCandidates,
+      city,
+      batch: currentBatch,
+      batchLabel: `Batch ${currentBatch}`,
+      initials: getInitials(name),
+    });
+  });
+
+  return fellows.sort((a, b) => a.id - b.id);
+}
+
+export const COHORT_FELLOWS: CohortFellow[] = buildFellows();
+
+export function getFellowsByBatch(batch: CohortBatchId): CohortFellow[] {
   return COHORT_FELLOWS.filter((fellow) => fellow.batch === batch);
+}
+
+export function parseBatchParam(value: string | null | undefined): CohortBatchId {
+  const n = Number(value);
+  if (n === 2 || n === 3) return n;
+  return 1;
 }

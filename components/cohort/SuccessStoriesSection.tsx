@@ -1,23 +1,46 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import { HighlightText } from "@/components/ui/HighlightText";
-import { COHORT_BATCHES, COHORT_FELLOWS, getFellowsByBatch, type CohortBatch } from "@/data/cohort";
+import {
+  COHORT_BATCHES,
+  COHORT_FELLOWS,
+  getFellowsByBatch,
+  parseBatchParam,
+  type CohortBatchId,
+} from "@/data/cohort";
 import { FellowCard } from "./FellowCard";
 import { fadeUpVariant, staggerContainerVariant, defaultViewport } from "@/lib/motion";
 
 export function SuccessStoriesSection() {
-  const [activeBatch, setActiveBatch] = useState<CohortBatch>("Visionaries");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const [activeBatch, setActiveBatch] = useState<CohortBatchId>(() =>
+    parseBatchParam(searchParams.get("batch")),
+  );
+
+  useEffect(() => {
+    setActiveBatch(parseBatchParam(searchParams.get("batch")));
+  }, [searchParams]);
 
   const fellows = useMemo(() => getFellowsByBatch(activeBatch), [activeBatch]);
   const activeMeta = COHORT_BATCHES.find((b) => b.id === activeBatch)!;
 
+  const selectBatch = (batch: CohortBatchId) => {
+    setActiveBatch(batch);
+    router.replace(`/cohort?batch=${batch}`, { scroll: false });
+  };
+
   return (
-    <section className="relative overflow-hidden bg-[#faf9f8] py-20 md:py-28" id="success-stories">
+    <section
+      className="relative overflow-hidden bg-[#faf9f8] pt-28 pb-16 md:pt-32 md:pb-24"
+      id="success-stories"
+    >
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-brand-soft/50 blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-0 h-[320px] w-[560px] -translate-x-1/2 rounded-full bg-brand-soft/45 blur-3xl"
       />
 
       <div className="container-x relative z-10">
@@ -36,22 +59,22 @@ export function SuccessStoriesSection() {
           </motion.p>
           <motion.h2
             variants={fadeUpVariant}
-            className="mt-4 font-display text-4xl font-medium leading-[1.12] tracking-[-0.02em] text-ink md:text-5xl lg:text-[3.5rem]"
+            className="mt-3 font-display text-3xl font-medium leading-[1.12] tracking-[-0.02em] text-ink md:text-4xl lg:text-5xl"
           >
             Our <HighlightText>Success Stories</HighlightText>
           </motion.h2>
           <motion.p
             variants={fadeUpVariant}
-            className="mx-auto mt-5 max-w-2xl text-lg leading-[1.7] tracking-[-0.01em] text-ink-soft"
+            className="mx-auto mt-4 max-w-xl text-base leading-[1.7] tracking-[-0.01em] text-ink-soft"
           >
-            Meet the creators who turned AI learning into real portfolios, client work, and
-            cinematic storytelling — across Batch 1 and Batch 2.
+            Explore portfolios from {COHORT_FELLOWS.length}+ fellows across Batch 1, Batch 2, and
+            Batch 3.
           </motion.p>
         </motion.div>
 
         <LayoutGroup>
           <motion.div
-            className="mx-auto mt-10 flex w-full max-w-md flex-col items-center gap-4 sm:mt-12"
+            className="mx-auto mt-8 flex w-full max-w-lg flex-col items-center gap-3 sm:mt-10"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={defaultViewport}
@@ -65,8 +88,8 @@ export function SuccessStoriesSection() {
                   <button
                     key={batch.id}
                     type="button"
-                    onClick={() => setActiveBatch(batch.id)}
-                    className={`relative z-10 flex flex-1 items-center justify-center rounded-full px-3 py-3.5 transition-colors sm:px-5 ${
+                    onClick={() => selectBatch(batch.id)}
+                    className={`relative z-10 flex flex-1 items-center justify-center rounded-full px-2 py-3 transition-colors sm:px-4 ${
                       isActive ? "text-cream" : "text-ink-soft hover:text-ink"
                     }`}
                   >
@@ -77,9 +100,9 @@ export function SuccessStoriesSection() {
                         transition={{ type: "spring", stiffness: 380, damping: 32 }}
                       />
                     )}
-                    <span className="relative z-10 text-sm font-semibold tracking-[-0.01em] sm:text-base">
+                    <span className="relative z-10 text-sm font-semibold tracking-[-0.01em]">
                       {batch.label}
-                      <span className="ml-1.5 text-xs font-medium opacity-70">({count})</span>
+                      <span className="ml-1 text-xs font-medium opacity-70">({count})</span>
                     </span>
                   </button>
                 );
@@ -101,15 +124,15 @@ export function SuccessStoriesSection() {
           </motion.div>
         </LayoutGroup>
 
-        <div className="mt-10 md:mt-14">
+        <div className="mt-8 md:mt-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeBatch}
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4"
             >
               {fellows.map((fellow, index) => (
                 <FellowCard key={`${activeBatch}-${fellow.id}`} fellow={fellow} index={index} />

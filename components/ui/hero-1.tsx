@@ -160,14 +160,14 @@ export function HeroSection() {
         >
           <motion.p
             variants={item}
-            className="text-[0.7rem] sm:text-xs font-semibold tracking-[0.18em] text-brand uppercase"
+            className="text-[13px] sm:text-[14px] font-semibold tracking-[0.18em] text-brand uppercase"
           >
             Learn · Build · Win
           </motion.p>
 
           <motion.h1
             variants={item}
-            className="mt-7 font-display font-medium text-ink text-[clamp(2.75rem,5.5vw,5.75rem)] leading-[1.08] tracking-[-0.025em] text-balance max-w-5xl mx-auto"
+            className="mt-7 font-display font-medium text-ink text-[clamp(2.625rem,5.5vw,5.625rem)] leading-[1.08] tracking-[-0.025em] text-balance max-w-5xl mx-auto"
           >
             India’s AI Upskilling Partner <br className="hidden md:block" />
             For the{" "}
