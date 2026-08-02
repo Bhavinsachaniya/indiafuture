@@ -16,8 +16,6 @@ const links = [
   { label: "AI Labs", href: "/programs/workshops" },
 ];
 
-const isExternalHref = (href: string) => href.startsWith("http");
-
 function isActivePath(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -207,27 +205,16 @@ export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light
               );
             })}
 
-            {isExternalHref(STUDIO_URL) ? (
-              <a
-                href={STUDIO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass(false)}
-              >
-                Studio
-              </a>
-            ) : (
-              <Link href={STUDIO_URL} className={linkClass(pathname.startsWith("/studio"))}>
-                Studio
-                {pathname.startsWith("/studio") && (
-                  <motion.span
-                    layoutId="nav-underline"
-                    className="absolute inset-x-3 bottom-1.5 h-[2.5px] rounded-full bg-brand"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </Link>
-            )}
+            <Link href={STUDIO_URL} className={linkClass(pathname.startsWith("/studio"))}>
+              Studio
+              {pathname.startsWith("/studio") && (
+                <motion.span
+                  layoutId="nav-underline"
+                  className="absolute inset-x-3 bottom-1.5 h-[2.5px] rounded-full bg-brand"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+            </Link>
           </nav>
         </div>
 
@@ -384,37 +371,21 @@ export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light
                   visible: { opacity: 1, x: 0 },
                 }}
               >
-                {isExternalHref(STUDIO_URL) ? (
-                  <a
-                    href={STUDIO_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMobileOpen(false)}
-                    className={`rounded-lg px-3 py-3.5 text-xl font-medium tracking-[-0.01em] transition-colors block ${
-                      isDark
+                <Link
+                  href={STUDIO_URL}
+                  onClick={() => setMobileOpen(false)}
+                  className={`rounded-lg px-3 py-3.5 text-xl font-medium tracking-[-0.01em] transition-colors block ${
+                    pathname.startsWith("/studio")
+                      ? isDark
+                        ? "bg-cream/10 text-cream border-l-2 border-brand"
+                        : "bg-brand-soft/60 text-ink border-l-2 border-brand"
+                      : isDark
                         ? "text-cream/80 hover:bg-cream/5 hover:text-cream"
                         : "text-ink hover:bg-ink/[0.04]"
-                    }`}
-                  >
-                    Studio
-                  </a>
-                ) : (
-                  <Link
-                    href={STUDIO_URL}
-                    onClick={() => setMobileOpen(false)}
-                    className={`rounded-lg px-3 py-3.5 text-xl font-medium tracking-[-0.01em] transition-colors block ${
-                      pathname.startsWith("/studio")
-                        ? isDark
-                          ? "bg-cream/10 text-cream border-l-2 border-brand"
-                          : "bg-brand-soft/60 text-ink border-l-2 border-brand"
-                        : isDark
-                          ? "text-cream/80 hover:bg-cream/5 hover:text-cream"
-                          : "text-ink hover:bg-ink/[0.04]"
-                    }`}
-                  >
-                    Studio
-                  </Link>
-                )}
+                  }`}
+                >
+                  Studio
+                </Link>
               </motion.div>
 
               <motion.div

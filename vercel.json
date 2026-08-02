@@ -1,9 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "studio.indiafutureai.com" }],
-      "destination": "/studio/"
-    }
-  ]
-}

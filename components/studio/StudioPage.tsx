@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import "./studio.css";
 
-const CONTACT_HREF = "https://indiafutureai.com/contact/";
+const CONTACT_HREF = "/contact";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -66,9 +67,9 @@ export function StudioPage() {
             <a href="#capabilities">What We Do</a>
             <a href="#contact">Contact</a>
           </div>
-          <a href={CONTACT_HREF} className="nav-cta">
+          <Link href={CONTACT_HREF} className="nav-cta">
             Start a Conversation
-          </a>
+          </Link>
         </nav>
       </div>
 
@@ -118,16 +119,16 @@ export function StudioPage() {
             IndiaFutureAI Studio is the implementation arm of IndiaFutureAI — a creative team built
             to run your organic content and paid media, end to end, without adding headcount.
           </motion.p>
-          <motion.a
-            href={CONTACT_HREF}
-            className="btn-primary"
+          <motion.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            Start a Conversation <ArrowIcon />
-          </motion.a>
+            <Link href={CONTACT_HREF} className="btn-primary">
+              Start a Conversation <ArrowIcon />
+            </Link>
+          </motion.div>
 
           <motion.div
             className="hero-figure"
@@ -325,9 +326,9 @@ export function StudioPage() {
             <p className="lead">
               For brands ready to stop explaining ideas and start shipping them.
             </p>
-            <a href="https://indiafutureai.com/contact/" className="btn-primary">
+            <Link href={CONTACT_HREF} className="btn-primary">
               Start a Conversation <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </motion.div>
           <footer className="studio-footer">
             <div className="foot-row">
@@ -335,7 +336,7 @@ export function StudioPage() {
               <div className="foot-links">
                 <a href="#work">Work</a>
                 <a href="#capabilities">What We Do</a>
-                <a href="https://indiafutureai.com/">IndiaFutureAI.com</a>
+                <Link href="/">IndiaFutureAI.com</Link>
               </div>
             </div>
           </footer>
