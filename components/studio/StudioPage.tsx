@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { StudioMotionShowcase } from "@/components/studio/StudioMotionShowcase";
 import "./studio.css";
 
 const CONTACT_HREF = "/contact";
@@ -30,14 +31,6 @@ function ArrowIcon() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <svg viewBox="0 0 16 16" fill="white" width="18" height="18" aria-hidden>
-      <path d="M4 2.5v11l10-5.5-10-5.5z" />
     </svg>
   );
 }
@@ -252,41 +245,7 @@ export function StudioPage() {
             whileInView="visible"
             viewport={viewport}
           >
-            <div className="sub-label">Motion</div>
-            <div className="motion-card">
-              <div className="play">
-                <PlayIcon />
-              </div>
-            </div>
-            <div className="work-meta">
-              <span className="name">Brand Alpha</span>
-              <span className="cat">Founder Content — placeholder, replace with your reel</span>
-            </div>
-
-            <div className="motion-grid">
-              <div>
-                <div className="motion-card">
-                  <div className="play">
-                    <PlayIcon />
-                  </div>
-                </div>
-                <div className="work-meta">
-                  <span className="name">Studio Nine</span>
-                  <span className="cat">Paid Ad Film</span>
-                </div>
-              </div>
-              <div>
-                <div className="motion-card">
-                  <div className="play">
-                    <PlayIcon />
-                  </div>
-                </div>
-                <div className="work-meta">
-                  <span className="name">Wheelhouse</span>
-                  <span className="cat">Brand Film</span>
-                </div>
-              </div>
-            </div>
+            <StudioMotionShowcase />
           </motion.div>
 
           <motion.div
