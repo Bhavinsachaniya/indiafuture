@@ -4,13 +4,15 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Heart, MapPin, ArrowRight } from "lucide-react";
+import { Heart, MapPin, ArrowRight, Users } from "lucide-react";
 import { HighlightText } from "@/components/ui/HighlightText";
+import { FellowDetailDialog } from "@/components/cohort/FellowDetailDialog";
 import { COHORT_FELLOWS, type CohortFellow } from "@/data/cohort";
 import { fadeUpVariant, staggerContainerVariant, defaultViewport } from "@/lib/motion";
 
 function LoveCard({ fellow }: { fellow: CohortFellow }) {
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [open, setOpen] = useState(false);
   const candidates = fellow.photoCandidates?.length
     ? fellow.photoCandidates
     : fellow.photoUrl
@@ -18,54 +20,56 @@ function LoveCard({ fellow }: { fellow: CohortFellow }) {
       : [];
   const activePhoto = candidates[photoIndex] ?? null;
   const showPhoto = Boolean(activePhoto);
-  const blurb = (fellow.shortBio || fellow.fullBio).slice(0, 72);
 
   return (
-    <article className="group flex w-[280px] shrink-0 items-center gap-3.5 rounded-2xl border border-[#161413]/06 bg-white/90 p-3 pr-4 shadow-[0_8px_24px_-16px_rgba(22,20,19,0.18)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/25 hover:shadow-[0_18px_36px_-18px_rgba(249,115,22,0.35)] md:w-[300px]">
-      <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-surface ring-2 ring-brand/15">
-        {showPhoto ? (
-          <Image
-            src={activePhoto!}
-            alt={fellow.name}
-            fill
-            unoptimized
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            onError={() => {
-              if (photoIndex < candidates.length - 1) {
-                setPhotoIndex((i) => i + 1);
-              } else {
-                setPhotoIndex(candidates.length);
-              }
-            }}
-          />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-brand-soft to-cream">
-            <span className="font-display text-lg font-medium text-brand/80">
-              {fellow.initials}
-            </span>
-          </div>
-        )}
-      </div>
+    <>
+      <article className="group w-[168px] shrink-0 overflow-hidden rounded-2xl border border-[#161413]/06 bg-white/90 shadow-[0_8px_24px_-16px_rgba(22,20,19,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/25 hover:shadow-[0_18px_36px_-18px_rgba(249,115,22,0.35)] md:w-[184px]">
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="relative aspect-[4/5] w-full cursor-pointer overflow-hidden bg-surface text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+          aria-label={`View ${fellow.name}'s story`}
+        >
+          {showPhoto ? (
+            <Image
+              src={activePhoto!}
+              alt={fellow.name}
+              fill
+              unoptimized
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              onError={() => {
+                if (photoIndex < candidates.length - 1) {
+                  setPhotoIndex((i) => i + 1);
+                } else {
+                  setPhotoIndex(candidates.length);
+                }
+              }}
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-brand-soft to-cream">
+              <span className="font-display text-3xl font-medium text-brand/80">
+                {fellow.initials}
+              </span>
+            </div>
+          )}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent opacity-80" />
+        </button>
 
-      <div className="min-w-0 flex-1">
-        <div className="flex items-start justify-between gap-2">
-          <h3 className="truncate font-display text-[1.05rem] font-medium leading-tight tracking-[-0.02em] text-ink">
+        <div className="px-3 py-3">
+          <h3 className="truncate font-display text-[0.95rem] font-medium leading-tight tracking-[-0.02em] text-ink md:text-[1.05rem]">
             {fellow.name}
           </h3>
-          <Heart className="mt-0.5 h-3.5 w-3.5 shrink-0 fill-brand/20 text-brand transition-colors group-hover:fill-brand/50" />
+          {fellow.city ? (
+            <p className="mt-1.5 flex items-center gap-1 text-[11px] font-medium text-ink-soft">
+              <MapPin className="h-3 w-3 shrink-0 text-brand" />
+              <span className="truncate">{fellow.city}</span>
+            </p>
+          ) : null}
         </div>
-        {fellow.city && (
-          <p className="mt-1 flex items-center gap-1 text-[11px] font-medium text-ink-soft">
-            <MapPin className="h-3 w-3 shrink-0 text-brand" />
-            <span className="truncate">{fellow.city}</span>
-          </p>
-        )}
-        <p className="mt-1.5 line-clamp-2 text-[12px] leading-snug text-ink-soft/90">
-          {blurb}
-          {(fellow.shortBio || fellow.fullBio).length > 72 ? "…" : ""}
-        </p>
-      </div>
-    </article>
+      </article>
+
+      <FellowDetailDialog fellow={fellow} open={open} onOpenChange={setOpen} />
+    </>
   );
 }
 
@@ -125,32 +129,24 @@ export function WallOfLoveSection() {
           whileInView="visible"
           viewport={defaultViewport}
         >
-          <motion.div
+          <motion.p
             variants={fadeUpVariant}
-            className="mb-5 flex items-center justify-center gap-3"
+            className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand"
           >
             <span className="h-px w-10 bg-brand/40" />
-            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+            <span className="inline-flex items-center gap-2">
               <Heart className="h-3.5 w-3.5 fill-brand/30" />
-              Wall of Love
-              <Heart className="h-3.5 w-3.5 fill-brand/30" />
-            </p>
+              Fellows
+            </span>
             <span className="h-px w-10 bg-brand/40" />
-          </motion.div>
+          </motion.p>
 
           <motion.h2
             variants={fadeUpVariant}
             className="font-display text-3xl font-medium leading-[1.12] tracking-[-0.02em] text-ink md:text-4xl lg:text-[2.75rem]"
           >
-            Faces behind the <HighlightText>stories</HighlightText>
+            Wall of <HighlightText>Love</HighlightText>
           </motion.h2>
-          <motion.p
-            variants={fadeUpVariant}
-            className="mx-auto mt-4 max-w-xl text-base leading-[1.7] text-ink-soft"
-          >
-            A living wall of our fellows — creators who learned, built, and shipped with
-            IndiaFutureAI.
-          </motion.p>
         </motion.div>
       </div>
 
@@ -179,6 +175,35 @@ export function WallOfLoveSection() {
           Meet all fellows
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Link>
+      </motion.div>
+
+      <motion.div
+        className="container-x relative z-10 mx-auto mt-10 px-4 pb-2 text-center md:mt-12 md:px-8"
+        variants={staggerContainerVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={defaultViewport}
+      >
+        <motion.div
+          variants={fadeUpVariant}
+          className="mb-4 flex flex-col items-center justify-center gap-3 text-sm font-medium text-[#161413]/70 sm:flex-row md:text-base"
+        >
+          <Users className="h-5 w-5 text-[#f97316]" />
+          <span>
+            Join a community of <HighlightText className="text-brand">2,000+</HighlightText>{" "}
+            learners, <HighlightText className="text-brand"> 20+ </HighlightText> institutions!
+          </span>
+        </motion.div>
+
+        <motion.div variants={fadeUpVariant}>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 font-bold text-[#f97316] transition-opacity hover:opacity-80"
+          >
+            Join the Journey
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </motion.div>
       </motion.div>
     </section>
   );

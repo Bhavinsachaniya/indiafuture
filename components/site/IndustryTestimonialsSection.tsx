@@ -3,8 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Quote, Briefcase, Users, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Quote, Briefcase } from "lucide-react";
 import { HighlightText } from "../ui/HighlightText";
 import { fadeUpVariant, staggerContainerVariant, defaultViewport, springSoft } from "@/lib/motion";
 
@@ -120,34 +119,31 @@ export const IndustryTestimonialsSection = React.memo(function IndustryTestimoni
 
       <div className="container-x relative z-10 mx-auto px-4 md:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="mb-12 text-center md:mb-14"
           variants={staggerContainerVariant}
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
         >
-          <motion.div
+          <motion.p
             variants={fadeUpVariant}
-            className="flex items-center justify-center gap-4 mb-6"
+            className="mb-5 flex items-center justify-center gap-4 text-xs font-semibold uppercase tracking-[0.14em] text-brand"
           >
-            <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
-              <span className="w-12 h-[1px] bg-brand/40" /> What Industry says about us{" "}
-              <span className="w-12 h-[1px] bg-brand/40" />
-            </p>
-          </motion.div>
+            <span className="h-px w-12 bg-brand/40" />
+            What Industry says about us
+            <span className="h-px w-12 bg-brand/40" />
+          </motion.p>
 
           <motion.h2
             variants={fadeUpVariant}
-            className="text-4xl md:text-5xl lg:text-[3.5rem] text-[#161413] tracking-[-0.02em] leading-[1.12] mb-6 font-display font-medium"
+            className="mb-5 font-display text-4xl font-medium leading-[1.12] tracking-[-0.02em] text-[#161413] md:text-5xl lg:text-[3.5rem]"
           >
-            Built with <HighlightText className="text-brand">Learners</HighlightText>.{" "}
-            <br className="md:hidden" />
-            Trusted by <HighlightText className="text-brand">Leaders</HighlightText>.
+            Trusted by <HighlightText className="text-brand">Leaders</HighlightText>
           </motion.h2>
 
           <motion.p
             variants={fadeUpVariant}
-            className="text-[#161413]/70 text-lg max-w-2xl mx-auto font-normal tracking-[-0.01em] leading-[1.7]"
+            className="mx-auto max-w-2xl text-lg font-normal leading-[1.7] tracking-[-0.01em] text-[#161413]/70"
           >
             Hear directly from Leaders building India who trust IndiaFutureAI.
           </motion.p>
@@ -169,35 +165,6 @@ export const IndustryTestimonialsSection = React.memo(function IndustryTestimoni
             <TestimonialCard key={`${t.id}-${idx}`} t={t} />
           ))}
         </div>
-      </motion.div>
-
-      <motion.div
-        className="container-x relative z-10 mx-auto px-4 md:px-8 mt-10 text-center md:mt-12"
-        variants={staggerContainerVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={defaultViewport}
-      >
-        <motion.div
-          variants={fadeUpVariant}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 text-[#161413]/70 font-medium mb-4 text-sm md:text-base"
-        >
-          <Users className="w-5 h-5 text-[#f97316]" />
-          <span>
-            Join a community of <HighlightText className="text-brand">2,000+</HighlightText>{" "}
-            learners, <HighlightText className="text-brand"> 20+ </HighlightText> institutions!
-          </span>
-        </motion.div>
-
-        <motion.div variants={fadeUpVariant}>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 text-[#f97316] font-bold hover:opacity-80 transition-opacity group"
-          >
-            Join the Journey{" "}
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </motion.div>
       </motion.div>
     </section>
   );
