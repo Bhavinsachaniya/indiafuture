@@ -119,12 +119,7 @@ export function StudioPage() {
             IndiaFutureAI Studio is the implementation arm of IndiaFutureAI — a creative team built
             to run your organic content and paid media, end to end, without adding headcount.
           </motion.p>
-          <motion.div
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
+          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={viewport}>
             <Link href={CONTACT_HREF} className="btn-primary">
               Start a Conversation <ArrowIcon />
             </Link>
