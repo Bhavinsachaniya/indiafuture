@@ -43,8 +43,8 @@ export default function CohortPage() {
                   Want to hire any of these?
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft md:text-[15px]">
-                  Looking for AI creators who already ship? Tell us who you need — we&apos;ll connect
-                  you.
+                  Looking for AI creators who already ship? Tell us who you need — we&apos;ll
+                  connect you.
                 </p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand">
                   Talk to us
