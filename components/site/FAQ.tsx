@@ -52,7 +52,7 @@ const faqs = [
 export const FAQ = React.memo(function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-24 bg-[#faf9f8]">
+    <section id="faq" className="bg-[#faf9f8] pb-24 pt-4 md:pt-6">
       <div className="container-x mx-auto">
         <motion.div
           className="text-center mb-12"

@@ -68,7 +68,8 @@ export function StudioPage() {
             <a href="#contact">Contact</a>
           </div>
           <Link href={CONTACT_HREF} className="nav-cta">
-            Start a Conversation
+            <span className="nav-cta-full">Start a Conversation</span>
+            <span className="nav-cta-short">Talk to us</span>
           </Link>
         </nav>
       </div>
@@ -162,7 +163,10 @@ export function StudioPage() {
               <span className="label">The Idea</span>
             </div>
             <div className="gap-track">
-              <span className="gap-callout">Most teams stall here</span>
+              <span className="gap-callout">
+                <span className="gap-callout-full">Most teams stall here</span>
+                <span className="gap-callout-short">Stall here</span>
+              </span>
             </div>
             <div className="gap-node end">
               <span className="dot" />
@@ -286,7 +290,7 @@ export function StudioPage() {
           </motion.div>
 
           <motion.div
-            style={{ marginTop: 90 }}
+            className="still-block"
             variants={reveal}
             initial="hidden"
             whileInView="visible"

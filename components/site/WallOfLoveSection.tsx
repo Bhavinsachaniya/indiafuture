@@ -112,7 +112,7 @@ export function WallOfLoveSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#faf9f8] pb-12 pt-2 md:pb-14 md:pt-4"
+      className="relative overflow-hidden bg-[#faf9f8] pb-4 pt-2 md:pb-6 md:pt-4"
       id="wall-of-love"
     >
       <motion.div
@@ -178,7 +178,7 @@ export function WallOfLoveSection() {
       </motion.div>
 
       <motion.div
-        className="container-x relative z-10 mx-auto mt-10 px-4 pb-2 text-center md:mt-12 md:px-8"
+        className="container-x relative z-10 mx-auto mt-6 px-4 pb-0 text-center md:mt-8 md:px-8"
         variants={staggerContainerVariant}
         initial="hidden"
         whileInView="visible"

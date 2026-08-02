@@ -35,7 +35,7 @@ export function SuccessStoriesSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#faf9f8] pt-28 pb-16 md:pt-32 md:pb-24"
+      className="relative overflow-hidden bg-[#faf9f8] pt-28 pb-10 md:pt-32 md:pb-12"
       id="success-stories"
     >
       <div
