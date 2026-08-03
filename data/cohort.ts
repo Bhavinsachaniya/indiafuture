@@ -57,6 +57,15 @@ function cleanText(value: string): string {
   return value.replace(/\s+/g, " ").trim();
 }
 
+/** Ensure portfolio links open externally (e.g. surajmishra.io → https://surajmishra.io). */
+function normalizePortfolioUrl(value: string): string | null {
+  const raw = cleanText(value);
+  if (!raw) return null;
+  if (/^(https?:|mailto:|tel:)/i.test(raw)) return raw;
+  if (raw.startsWith("//")) return `https:${raw}`;
+  return `https://${raw}`;
+}
+
 function getInitials(name: string): string {
   const parts = name.split(" ").filter(Boolean);
   if (parts.length === 0) return "?";
@@ -95,7 +104,7 @@ function buildFellows(): CohortFellow[] {
 
     const shortBio = descriptions[1] || descriptions[0] || "";
     const fullBio = descriptions[0] || shortBio;
-    const portfolio = cleanText(raw["Portfolio Link"]);
+    const portfolioUrl = normalizePortfolioUrl(raw["Portfolio Link"]);
     const city = cleanText(raw.City);
     const photoCandidates = drivePhotoCandidates(raw.Photo);
 
@@ -104,7 +113,7 @@ function buildFellows(): CohortFellow[] {
       name,
       shortBio,
       fullBio,
-      portfolioUrl: portfolio || null,
+      portfolioUrl,
       photoUrl: photoCandidates[0] ?? null,
       photoCandidates,
       city,
