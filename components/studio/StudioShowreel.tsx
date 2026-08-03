@@ -75,7 +75,13 @@ export function StudioShowreel() {
                 className={`st-thumb${index === active ? " is-active" : ""}`}
                 onClick={() => select(index)}
               >
-                <Image src={reel.image} alt={reel.title} fill unoptimized className="object-cover" />
+                <Image
+                  src={reel.image}
+                  alt={reel.title}
+                  fill
+                  unoptimized
+                  className="object-cover"
+                />
               </button>
             ))}
           </div>
