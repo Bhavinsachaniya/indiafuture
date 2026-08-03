@@ -7,40 +7,24 @@ const PLAYLIST_URL = "https://youtube.com/playlist?list=PLWxuGuwEp0ek&si=6_3Shbc
 
 const REELS = [
   {
-    id: "xMy4HEQOC44",
+    id: "studio1",
+    image: "/Studio/studio1.png",
     label: "Founder Story",
     title: "Building what matters.",
-    duration: "0:32",
   },
   {
-    id: "_-ZmXDGXg-Y",
+    id: "studio2",
+    image: "/Studio/studio2.png",
     label: "Paid Campaign",
     title: "Ideas that move markets.",
-    duration: "0:45",
   },
   {
-    id: "TBNPwe2oXFI",
+    id: "studio3",
+    image: "/Studio/studio3.png",
     label: "Brand Film",
     title: "Branding with depth.",
-    duration: "0:28",
-  },
-  {
-    id: "AMAk9m7ft1k",
-    label: "Social Spot",
-    title: "Content that converts.",
-    duration: "0:36",
-  },
-  {
-    id: "nA4ZHB1OhGo",
-    label: "Campaign Cut",
-    title: "Stories that stick.",
-    duration: "0:40",
   },
 ] as const;
-
-function thumb(id: string) {
-  return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
-}
 
 function PlaySvg({ size = 14 }: { size?: number }) {
   return (
@@ -81,7 +65,7 @@ export function StudioShowreel() {
             View with sound ↗
           </a>
 
-          <div className="st-thumb-strip" role="tablist" aria-label="Showreel clips">
+          <div className="st-thumb-strip" role="tablist" aria-label="Showreel stills">
             {REELS.map((reel, index) => (
               <button
                 key={reel.id}
@@ -91,13 +75,7 @@ export function StudioShowreel() {
                 className={`st-thumb${index === active ? " is-active" : ""}`}
                 onClick={() => select(index)}
               >
-                <Image
-                  src={thumb(reel.id)}
-                  alt={reel.title}
-                  fill
-                  unoptimized
-                  className="object-cover"
-                />
+                <Image src={reel.image} alt={reel.title} fill unoptimized className="object-cover" />
               </button>
             ))}
           </div>
@@ -140,8 +118,7 @@ export function StudioShowreel() {
                   <span className="st-landing-top">Landing Page</span>
                   <h3>
                     A better way
-                    <br />
-                    to work with <em>AI.</em>
+                    <br className="st-landing-break" /> to work with <em>AI.</em>
                   </h3>
                   <p>IndiaFutureAI Studio helps founders and enterprises build what&apos;s next.</p>
                   <span className="st-cta-pill">Book a Consultation ↗</span>
@@ -182,7 +159,7 @@ function ReelCard({
       onClick={onSelect}
     >
       <Image
-        src={thumb(reel.id)}
+        src={reel.image}
         alt=""
         fill
         unoptimized
@@ -195,17 +172,12 @@ function ReelCard({
         <h3>{reel.title}</h3>
       </div>
       {featured ? (
-        <>
-          <span className="st-play-btn st-play-btn-center" aria-hidden>
-            <PlaySvg size={18} />
-          </span>
-          <div className="st-card-bottom">
-            <span className="st-duration">{reel.duration}</span>
-          </div>
-        </>
+        <span className="st-play-btn st-play-btn-center" aria-hidden>
+          <PlaySvg size={18} />
+        </span>
       ) : (
         <div className="st-card-bottom">
-          <span className="st-duration">{reel.duration}</span>
+          <span />
           <span className="st-play-btn" aria-hidden>
             <PlaySvg />
           </span>
