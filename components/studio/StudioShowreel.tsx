@@ -104,7 +104,7 @@ export function StudioShowreel() {
             className="st-reel-cards-row"
             onScroll={(event) => {
               const el = event.currentTarget;
-              const cardWidth = el.scrollWidth / (REELS.length + 1);
+              const cardWidth = el.scrollWidth / REELS.length;
               const next = Math.round(el.scrollLeft / Math.max(cardWidth, 1));
               const clamped = Math.min(Math.max(next, 0), REELS.length - 1);
               if (clamped !== active) setActive(clamped);
@@ -118,30 +118,6 @@ export function StudioShowreel() {
                 onSelect={() => select(index)}
               />
             ))}
-            <div className="st-reel-card st-bg-landing">
-              <div className="st-landing-inner">
-                <div>
-                  <span className="st-landing-top">Landing Page</span>
-                  <h3>
-                    A better way
-                    <br className="st-landing-break" /> to work with <em>AI.</em>
-                  </h3>
-                  <p>IndiaFutureAI Studio helps founders and enterprises build what&apos;s next.</p>
-                  <span className="st-cta-pill">Book a Consultation ↗</span>
-                </div>
-                <div>
-                  <div className="st-logos-row">
-                    <span>Trusted by innovative teams</span>
-                  </div>
-                  <div className="st-logos-row st-logos-brands">
-                    <span>Zerodha</span>
-                    <span>ramp⚡</span>
-                    <span>◎CRED</span>
-                    <span>slice</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
