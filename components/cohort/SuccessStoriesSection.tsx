@@ -102,25 +102,11 @@ export function SuccessStoriesSection() {
                     )}
                     <span className="relative z-10 text-sm font-semibold tracking-[-0.01em]">
                       {batch.label}
-                      <span className="ml-1 text-xs font-medium opacity-70">({count})</span>
                     </span>
                   </button>
                 );
               })}
             </div>
-
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={activeBatch}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.25 }}
-                className="text-sm text-ink-soft"
-              >
-                Showing {fellows.length} fellows from {activeMeta.label}
-              </motion.p>
-            </AnimatePresence>
           </motion.div>
         </LayoutGroup>
 
