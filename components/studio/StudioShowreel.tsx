@@ -177,18 +177,6 @@ function ReelCard({
         <span className="st-card-label">{reel.label}</span>
         <h3>{reel.title}</h3>
       </div>
-      {featured ? (
-        <span className="st-play-btn st-play-btn-center" aria-hidden>
-          <PlaySvg size={18} />
-        </span>
-      ) : (
-        <div className="st-card-bottom">
-          <span />
-          <span className="st-play-btn" aria-hidden>
-            <PlaySvg />
-          </span>
-        </div>
-      )}
     </button>
   );
 }

@@ -30,7 +30,7 @@ export default function CohortPage() {
 
             <div className="grid gap-4 md:grid-cols-2 md:gap-6">
               <Link
-                href="/contact"
+                href="/contact?program=hiring"
                 className="group relative overflow-hidden rounded-[1.75rem] border border-border/70 bg-white p-7 shadow-[0_8px_28px_-18px_rgba(22,20,19,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_40px_-22px_rgba(249,115,22,0.35)] md:p-8"
               >
                 <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft text-brand">

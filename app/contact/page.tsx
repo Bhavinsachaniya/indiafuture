@@ -9,26 +9,34 @@ import * as z from "zod";
 import { useSearchParams } from "next/navigation";
 
 // --- Form Validation Schema (Zod) ---
-const contactSchema = z
-  .object({
-    firstName: z.string().min(2, "First name must be at least 2 characters."),
-    lastName: z.string().min(2, "Last name must be at least 2 characters."),
-    email: z.string().email("Please enter a valid email address."),
-    interest: z.string().min(1, "Please select an interest."),
-    otherContext: z.string().optional(),
-    message: z.string().min(10, "Message must be at least 10 characters."),
-  })
-  .superRefine((val, ctx) => {
-    if (val.interest === "other" && (!val.otherContext || val.otherContext.trim().length === 0)) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Please provide a brief context.",
-        path: ["otherContext"],
-      });
-    }
-  });
+const INTEREST_OPTIONS = [
+  { value: "upskilling-ai", label: "Upskilling with AI" },
+  { value: "ai-automations", label: "AI Automations for my company" },
+  { value: "hiring-ai-creators", label: "Hiring AI Creators" },
+  { value: "upskill-employees", label: "Upskill my employees with AI" },
+  { value: "ai-lab-campus", label: "Setting up AI Lab on my college campus" },
+] as const;
+
+const contactSchema = z.object({
+  firstName: z.string().min(2, "First name must be at least 2 characters."),
+  lastName: z.string().min(2, "Last name must be at least 2 characters."),
+  email: z.string().email("Please enter a valid email address."),
+  phone: z
+    .string()
+    .min(1, "Please enter your phone number.")
+    .refine((value) => {
+      const digits = value.replace(/\D/g, "");
+      return digits.length >= 10 && digits.length <= 15;
+    }, "Please enter a valid phone number."),
+  interest: z.string().min(1, "Please select an interest."),
+  message: z.string().min(10, "Message must be at least 10 characters."),
+});
 
 type ContactFormValues = z.infer<typeof contactSchema>;
+
+function interestLabel(value: string) {
+  return INTEREST_OPTIONS.find((option) => option.value === value)?.label ?? value;
+}
 
 // --- Form Component ---
 function ContactForm() {
@@ -40,18 +48,18 @@ function ContactForm() {
 
   // Map URL parameter to dropdown value
   const defaultInterest = React.useMemo(() => {
-    if (programParam === "ai-upskilling" || programParam === "upskilling") return "ai-upskilling";
-    if (programParam === "masterclasses") return "masterclasses";
-    if (programParam === "custom") return "custom";
-    if (programParam === "workshops") return "workshops";
-    if (programParam === "ai-lab") return "ai-lab";
+    if (programParam === "ai-upskilling" || programParam === "upskilling") return "upskilling-ai";
+    if (programParam === "custom") return "ai-automations";
+    if (programParam === "masterclasses" || programParam === "workshops")
+      return "upskill-employees";
+    if (programParam === "ai-lab") return "ai-lab-campus";
+    if (programParam === "hiring") return "hiring-ai-creators";
     return "";
   }, [programParam]);
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
     reset,
   } = useForm<ContactFormValues>({
@@ -60,8 +68,8 @@ function ContactForm() {
       firstName: "",
       lastName: "",
       email: "",
+      phone: "",
       interest: defaultInterest,
-      otherContext: "",
       message: "",
     },
   });
@@ -81,6 +89,8 @@ function ContactForm() {
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({
           ...data,
+          interest: interestLabel(data.interest),
+          otherContext: "",
           submittedAt: new Date().toISOString(),
         }),
       });
@@ -103,8 +113,6 @@ function ContactForm() {
       setIsSubmitting(false);
     }
   };
-
-  const selectedInterest = watch("interest");
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -160,6 +168,22 @@ function ContactForm() {
       </div>
 
       <div className="space-y-2">
+        <label htmlFor="phone" className="text-sm font-medium text-ink/90">
+          Phone Number
+        </label>
+        <input
+          {...register("phone")}
+          type="tel"
+          id="phone"
+          inputMode="tel"
+          autoComplete="tel"
+          className={`w-full bg-surface border ${errors.phone ? "border-red-500 focus:ring-red-500" : "border-ink/10 focus:ring-brand"} rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 transition-all placeholder:text-ink/30`}
+          placeholder="+91 98765 43210"
+        />
+        {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
+      </div>
+
+      <div className="space-y-2">
         <label htmlFor="interest" className="text-sm font-medium text-ink/90">
           I&apos;m interested in...
         </label>
@@ -171,33 +195,14 @@ function ContactForm() {
           <option value="" disabled>
             Select an option
           </option>
-          <option value="ai-upskilling">8 Week AI Fellowship</option>
-          <option value="masterclasses">Masterclasses & Certification</option>
-          <option value="workshops">Corporate Masterclasses</option>
-          <option value="custom">Automation for my company</option>
-          <option value="ai-lab">Setting up an AI Lab/Studio</option>
-          <option value="other">Other</option>
+          {INTEREST_OPTIONS.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </select>
         {errors.interest && <p className="text-red-500 text-xs mt-1">{errors.interest.message}</p>}
       </div>
-
-      {selectedInterest === "other" && (
-        <div className="space-y-2">
-          <label htmlFor="otherContext" className="text-sm font-medium text-ink/90">
-            Please specify <span className="text-red-500">*</span>
-          </label>
-          <input
-            {...register("otherContext")}
-            type="text"
-            id="otherContext"
-            className={`w-full bg-surface border ${errors.otherContext ? "border-red-500 focus:ring-red-500" : "border-ink/10 focus:ring-brand"} rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-brand focus:ring-1 transition-all placeholder:text-ink/30`}
-            placeholder="E.g., Looking for a custom AI workshop"
-          />
-          {errors.otherContext && (
-            <p className="text-red-500 text-xs mt-1">{errors.otherContext.message}</p>
-          )}
-        </div>
-      )}
 
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium text-ink/90">

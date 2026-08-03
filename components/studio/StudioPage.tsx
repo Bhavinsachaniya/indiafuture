@@ -39,36 +39,7 @@ function ArrowIcon() {
 
 export function StudioPage() {
   return (
-    <div className="studio-page">
-      <div className="nav-outer">
-        <nav className="studio-nav">
-          <a href="#top" className="brand" id="top">
-            <svg className="h-[26px] w-[26px] shrink-0" viewBox="0 0 40 40" fill="none" aria-hidden>
-              <path
-                d="M6 6 L22 6 L10 20 L26 20 L8 34"
-                stroke="#E8752E"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-              <circle cx="31" cy="10" r="3.2" fill="#1B1714" />
-            </svg>
-            <span className="brand-word">IndiaFutureAI</span>
-            <span className="brand-tag">Studio</span>
-          </a>
-          <div className="nav-links">
-            <a href="#work">Work</a>
-            <a href="#capabilities">What We Do</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <Link href={CONTACT_HREF} className="nav-cta">
-            <span className="nav-cta-full">Start a Conversation</span>
-            <span className="nav-cta-short">Talk to us</span>
-          </Link>
-        </nav>
-      </div>
-
+    <div className="studio-page" id="top">
       <section className="hero hero-compact">
         <div className="grid-mark gm-tl" aria-hidden>
           <span className="v" />
@@ -103,7 +74,7 @@ export function StudioPage() {
             whileInView="visible"
             viewport={viewport}
           >
-            Your brand deserves your vision. We handle the execution.
+            Where your vision finds momentum
           </motion.p>
           <motion.p
             className="hero-copy"

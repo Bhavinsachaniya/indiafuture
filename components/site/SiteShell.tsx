@@ -10,7 +10,12 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const isStudio = pathname === "/studio" || pathname.startsWith("/studio/");
 
   if (isStudio) {
-    return <>{children}</>;
+    return (
+      <>
+        <Nav />
+        {children}
+      </>
+    );
   }
 
   return (
