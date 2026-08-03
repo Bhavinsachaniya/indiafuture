@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { StudioShowreel } from "@/components/studio/StudioShowreel";
+import { StudioProcess } from "@/components/studio/StudioProcess";
 import { StudioMotionShowcase } from "@/components/studio/StudioMotionShowcase";
 import "./studio.css";
 
@@ -67,7 +69,7 @@ export function StudioPage() {
         </nav>
       </div>
 
-      <section className="hero">
+      <section className="hero hero-compact">
         <div className="grid-mark gm-tl" aria-hidden>
           <span className="v" />
           <span className="h" />
@@ -118,58 +120,14 @@ export function StudioPage() {
               Start a Conversation <ArrowIcon />
             </Link>
           </motion.div>
-
-          <motion.div
-            className="hero-figure"
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            <div className="hero-canvas">
-              <div className="tag">
-                <div className="k">Now Shipping</div>
-                <div className="t">
-                  Founder content, paid creative, brand design — one team, one thread.
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
-
-        <motion.div
-          className="problem"
-          variants={reveal}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-        >
-          <p className="problem-lead">
-            Great brands don&apos;t struggle with ideas.
-            <br />
-            They struggle with <span className="hl">execution</span>.
-          </p>
-
-          <div className="gap-diagram">
-            <div className="gap-node">
-              <span className="dot" />
-              <span className="label">The Idea</span>
-            </div>
-            <div className="gap-track">
-              <span className="gap-callout">
-                <span className="gap-callout-full">Most teams stall here</span>
-                <span className="gap-callout-short">Stall here</span>
-              </span>
-            </div>
-            <div className="gap-node end">
-              <span className="dot" />
-              <span className="label">Shipped</span>
-            </div>
-          </div>
-
-          <p className="problem-close">IndiaFutureAI Studio is the team built to close that gap.</p>
-        </motion.div>
       </section>
+
+      <div className="wrap st-sections-pad">
+        <StudioShowreel />
+      </div>
+
+      <StudioProcess />
 
       <section className="capabilities" id="capabilities">
         <div className="wrap">
@@ -246,33 +204,6 @@ export function StudioPage() {
             viewport={viewport}
           >
             <StudioMotionShowcase />
-          </motion.div>
-
-          <motion.div
-            className="still-block"
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            <div className="sub-label">Still</div>
-            <div className="still-grid">
-              {[
-                ["Campaign Creative", "Meridian"],
-                ["Product Visual", "Halcyon"],
-                ["Social Campaign", "Norse & Co."],
-                ["Landing Page", "Elevate"],
-              ].map(([ph, name]) => (
-                <div key={name}>
-                  <div className="still-card">
-                    <span className="ph">{ph}</span>
-                  </div>
-                  <div className="work-meta">
-                    <span className="name">{name}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>

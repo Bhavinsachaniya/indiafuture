@@ -167,14 +167,16 @@ export function HeroSection() {
 
           <motion.h1
             variants={item}
-            className="mt-7 font-display font-medium text-ink text-[clamp(2.625rem,5.5vw,5.625rem)] leading-[1.08] tracking-[-0.025em] text-balance max-w-5xl mx-auto"
+            className="mt-7 mx-auto max-w-5xl font-display font-medium text-ink text-[clamp(1.25rem,calc(0.55rem+4.2vw),5.625rem)] leading-[1.12] tracking-[-0.025em]"
           >
-            India’s AI Upskilling Partner <br className="hidden md:block" />
-            For the{" "}
-            <HighlightText className="text-ink font-medium tracking-[-0.025em]">
-              Future
-            </HighlightText>{" "}
-            , that is Today!
+            <span className="block whitespace-nowrap">India&apos;s AI Upskilling Partner</span>
+            <span className="block whitespace-nowrap">
+              For the{" "}
+              <HighlightText className="text-ink font-medium tracking-[-0.025em]">
+                Future
+              </HighlightText>
+              , that is Today!
+            </span>
           </motion.h1>
 
           <motion.p
