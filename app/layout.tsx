@@ -19,7 +19,10 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const siteUrl = "https://www.indiafutureai.com"
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Indiafuture — AI Learning & Implementation Studio",
     template: "%s | IndiaFutureAI",
@@ -29,24 +32,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: "IndiaFutureAI",
     description: "India's AI Upskilling Partner. Learn • Build • Win",
-    url: "https://indiafutureai.com",
+    url: siteUrl,
     siteName: "IndiaFutureAI",
     images: [
       {
-        url: "/og-image.jpg",
+        url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "IndiaFutureAI",
+        type: "image/jpeg",
       },
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "IndiaFutureAI",
     description: "India's AI Upskilling Partner. Learn • Build • Win",
-    images: ["/og-image.jpg"],
+    images: [`${siteUrl}/og-image.jpg`],
   },
 };
 
