@@ -27,16 +27,26 @@ export const metadata: Metadata = {
   description:
     "Indiafuture helps builders, teams and founders implement AI in real workflows. Learn by shipping, not by watching.",
   openGraph: {
-    title: "Indiafuture — AI Learning & Implementation Studio",
-    description:
-      "Learn AI by building. Cohort studios, live implementations, and a community of practitioners.",
+    title: "IndiaFutureAI",
+    description: "India's AI Upskilling Partner. Learn • Build • Win",
+    url: "https://indiafutureai.com",
+    siteName: "IndiaFutureAI",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "IndiaFutureAI",
+      },
+    ],
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-  },
-  icons: {
-    icon: "/favicon1.png",
+    title: "IndiaFutureAI",
+    description: "India's AI Upskilling Partner. Learn • Build • Win",
+    images: ["/og-image.jpg"],
   },
 };
 
