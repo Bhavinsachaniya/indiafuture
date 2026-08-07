@@ -19,7 +19,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const siteUrl = "https://www.indiafutureai.com"
+const siteUrl = "https://www.indiafutureai.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
