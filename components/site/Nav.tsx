@@ -215,6 +215,17 @@ export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light
                 />
               )}
             </Link>
+
+            <Link href="/blog" className={linkClass(pathname.startsWith("/blog"))}>
+              Blog
+              {pathname.startsWith("/blog") && (
+                <motion.span
+                  layoutId="nav-underline"
+                  className="absolute inset-x-3 bottom-1.5 h-[2.5px] rounded-full bg-brand"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+            </Link>
           </nav>
         </div>
 
@@ -385,6 +396,29 @@ export const Nav = React.memo(function Nav({ theme = "light" }: { theme?: "light
                   }`}
                 >
                   Studio
+                </Link>
+              </motion.div>
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: -12 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+              >
+                <Link
+                  href="/blog"
+                  onClick={() => setMobileOpen(false)}
+                  className={`rounded-lg px-3 py-3.5 text-xl font-medium tracking-[-0.01em] transition-colors block ${
+                    pathname.startsWith("/blog")
+                      ? isDark
+                        ? "bg-cream/10 text-cream border-l-2 border-brand"
+                        : "bg-brand-soft/60 text-ink border-l-2 border-brand"
+                      : isDark
+                        ? "text-cream/80 hover:bg-cream/5 hover:text-cream"
+                        : "text-ink hover:bg-ink/[0.04]"
+                  }`}
+                >
+                  Blog
                 </Link>
               </motion.div>
 

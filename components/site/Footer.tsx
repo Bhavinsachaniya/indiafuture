@@ -154,6 +154,14 @@ export const Footer = React.memo(function Footer() {
               </li>
               <li>
                 <Link
+                  href="/blog"
+                  className="text-cream/70 hover:text-brand transition-colors font-medium"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-cream/70 hover:text-brand transition-colors font-medium"
                 >

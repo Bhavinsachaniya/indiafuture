@@ -1,13 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
   trailingSlash: true,
-  /* Performance: use Turbopack in dev for faster HMR */
-  /* Image optimization: allow external domains if needed */
   images: {
+    // Thumbnails come from the blog CDN as absolute URLs; keep unoptimized for flexibility.
     unoptimized: true,
-    formats: ["image/avif", "image/webp"],
   },
 };
 

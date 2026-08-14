@@ -209,3 +209,117 @@
 @utility animate-marquee-slow {
   animation: marquee 45s linear infinite;
 }
+
+/* Blog article body — HTML is sanitized upstream by the blog API */
+.blog-prose {
+  color: var(--color-ink-soft);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.blog-prose > * + * {
+  margin-top: 1.15em;
+}
+
+.blog-prose h2,
+.blog-prose h3,
+.blog-prose h4 {
+  color: var(--color-ink);
+  margin-top: 2em;
+  margin-bottom: 0.55em;
+}
+
+.blog-prose h2 {
+  font-size: 1.65rem;
+}
+
+.blog-prose h3 {
+  font-size: 1.3rem;
+}
+
+.blog-prose a {
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-prose a:hover {
+  opacity: 0.85;
+}
+
+.blog-prose ul,
+.blog-prose ol {
+  padding-left: 1.35rem;
+}
+
+.blog-prose ul {
+  list-style: disc;
+}
+
+.blog-prose ol {
+  list-style: decimal;
+}
+
+.blog-prose li + li {
+  margin-top: 0.4em;
+}
+
+.blog-prose blockquote {
+  border-left: 3px solid var(--color-brand);
+  padding-left: 1rem;
+  color: var(--color-ink);
+  font-style: italic;
+}
+
+.blog-prose pre,
+.blog-prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.92em;
+}
+
+.blog-prose pre {
+  overflow-x: auto;
+  border-radius: 1rem;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: 1rem 1.15rem;
+}
+
+.blog-prose :not(pre) > code {
+  border-radius: 0.35rem;
+  background: color-mix(in oklab, var(--brand-soft) 55%, white);
+  padding: 0.12em 0.4em;
+}
+
+.blog-prose img {
+  border-radius: 1rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.blog-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.blog-prose th,
+.blog-prose td {
+  border: 1px solid var(--color-border);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+}
+
+.blog-prose th {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.blog-prose nav,
+.blog-prose .table-of-contents {
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: color-mix(in oklab, white 70%, var(--surface));
+  padding: 1rem 1.25rem;
+}
+
