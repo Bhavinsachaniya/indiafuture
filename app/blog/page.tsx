@@ -21,7 +21,7 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#faf8f5]">
+    <div className="min-h-screen bg-background text-foreground grain-bg">
       <main className="container-x mx-auto pb-24 pt-28 md:pt-36">
         <header className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">Blog</p>

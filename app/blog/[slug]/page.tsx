@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   if (!blog) notFound();
 
   return (
-    <div className="min-h-screen grain-bg">
+    <div className="min-h-screen bg-background text-foreground grain-bg">
       <main className="container-x mx-auto pb-24 pt-28 md:pt-36">
         <BlogArticle blog={blog} />
       </main>

@@ -29,6 +29,11 @@ export const metadata: Metadata = {
   },
   description:
     "Indiafuture helps builders, teams and founders implement AI in real workflows. Learn by shipping, not by watching.",
+  icons: {
+    icon: [{ url: "/favicon.ico", type: "image/png" }],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   openGraph: {
     title: "IndiaFutureAI",
     description: "India's AI Upskilling Partner. Learn • Build • Win",
