@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Search } from "lucide-react";
-import type { BlogListItem } from "@/lib/server/blogApi";
+import type { BlogListItem } from "@/lib/blog";
 import { BlogCard } from "@/components/blog/BlogCard";
 
 type Props = {

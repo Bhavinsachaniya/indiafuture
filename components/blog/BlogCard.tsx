@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { BlogListItem } from "@/lib/server/blogApi";
+import type { BlogListItem } from "@/lib/blog";
 
 export function BlogCard({ blog }: { blog: BlogListItem }) {
   return (

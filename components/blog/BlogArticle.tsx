@@ -1,6 +1,5 @@
-import type { BlogPost } from "@/lib/server/blogApi";
-import { formatBlogDate, jsonLdToScript } from "@/lib/blog";
 import Link from "next/link";
+import { formatBlogDate, jsonLdToScript, type BlogPost } from "@/lib/blog";
 
 export function BlogArticle({ blog }: { blog: BlogPost }) {
   const ld = jsonLdToScript(blog.jsonLd);
