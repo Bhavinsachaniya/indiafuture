@@ -1,6 +1,6 @@
 import rawData from "@/cohort-data.json";
 
-export type CohortBatchId = 1 | 2 | 3;
+export type CohortBatchId = 1 | 2 | 3 | 4;
 
 export type CohortFellow = {
   id: number;
@@ -35,6 +35,7 @@ export const COHORT_BATCHES: {
   { id: 1, label: "Batch 1", href: "/cohort?batch=1" },
   { id: 2, label: "Batch 2", href: "/cohort?batch=2" },
   { id: 3, label: "Batch 3", href: "/cohort?batch=3" },
+  { id: 4, label: "Batch 4", href: "/cohort?batch=4" },
 ];
 
 function extractDriveId(url: string): string | null {
@@ -80,6 +81,7 @@ function isMarkerRow(raw: RawFellow): boolean {
 
 function markerBatch(raw: RawFellow): CohortBatchId | null {
   const name = cleanText(raw.Name).toLowerCase();
+  if (name.includes("4")) return 4;
   if (name.includes("3")) return 3;
   if (name.includes("2")) return 2;
   if (name.includes("1")) return 1;
@@ -134,6 +136,6 @@ export function getFellowsByBatch(batch: CohortBatchId): CohortFellow[] {
 
 export function parseBatchParam(value: string | null | undefined): CohortBatchId {
   const n = Number(value);
-  if (n === 2 || n === 3) return n;
+  if (n === 2 || n === 3 || n === 4) return n;
   return 1;
 }
