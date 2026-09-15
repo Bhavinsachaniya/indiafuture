@@ -54,7 +54,7 @@ export function CareerAndMentors() {
         <div className="container-x">
           <div className="max-w-3xl mx-auto mb-20 text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold flex items-center justify-center gap-4">
                 <span className="w-12 h-[1px] bg-brand/40" /> THE ROI{" "}
                 <span className="w-12 h-[1px] bg-brand/40" />
               </p>
@@ -96,7 +96,7 @@ export function CareerAndMentors() {
         <div className="container-x">
           <div className="max-w-3xl mx-auto mb-20 text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+              <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold flex items-center justify-center gap-4">
                 <span className="w-12 h-[1px] bg-brand/40" /> LEARN FROM THE BEST{" "}
                 <span className="w-12 h-[1px] bg-brand/40" />
               </p>

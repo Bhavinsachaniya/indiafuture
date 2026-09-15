@@ -72,7 +72,7 @@ export const AISolutions = React.memo(function AISolutions() {
       <div className="container-x relative z-0">
         {/* Header */}
         <div className="max-w-4xl mx-auto mb-16 relative z-10 text-center flex flex-col items-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
+          <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
             <span className="w-12 h-[1px] bg-brand/40" /> Solutions{" "}
             <span className="w-12 h-[1px] bg-brand/40" />
           </p>

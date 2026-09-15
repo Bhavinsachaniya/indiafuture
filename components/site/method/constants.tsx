@@ -4,21 +4,21 @@ export const steps = [
   {
     icon: BookOpen,
     t: "Learn",
-    d: "Understand the Fundamentals.",
+    d: "Empower yourself with future-ready AI knowledge designed for tomorrow's innovators.",
   },
   {
     icon: CodeXml,
     t: "Build",
-    d: "Create with AI.",
+    d: "Experiment, prototype, and create intelligent solutions that solve meaningful problems.",
   },
   {
     icon: Rocket,
     t: "Implement",
-    d: "Live Projects & Applications.",
+    d: "Apply your expertise to real challenges and generate measurable impact through AI.",
   },
   {
     icon: Briefcase,
     t: "Launch",
-    d: "Freelance. Products. Make Money.",
+    d: "Join a growing community of AI creators, entrepreneurs, and changemakers shaping the future.",
   },
 ];

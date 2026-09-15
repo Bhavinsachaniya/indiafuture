@@ -13,7 +13,7 @@ export function ProgramFAQ({ data }: { data: ProgramData }) {
     <section id="faq" className="py-28 bg-[#fdfaf5]">
       <div className="container-x max-w-3xl">
         <div className="text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand">Questions</p>
+          <p className="text-xs uppercase tracking-[0.14em] text-brand">Questions</p>
           <h2 className="mt-3 font-display text-5xl md:text-6xl leading-[1.05]">
             Frequently asked.
           </h2>

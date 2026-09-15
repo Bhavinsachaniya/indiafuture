@@ -14,7 +14,7 @@ export function ProgramOutcomes({ data }: { data: ProgramData }) {
       <div className="container-x">
         <div className="max-w-3xl mx-auto text-center mb-20">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold flex items-center justify-center gap-4">
+            <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold flex items-center justify-center gap-4">
               <span className="w-12 h-[1px] bg-brand/40" /> THE TRANSFORMATION{" "}
               <span className="w-12 h-[1px] bg-brand/40" />
             </p>

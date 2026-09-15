@@ -53,7 +53,7 @@ export function PracticalAutomations() {
         {/* Section Header */}
         <div className="mb-16 text-center max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold">
+            <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold">
               AI AUTOMATIONS
             </p>
           </div>

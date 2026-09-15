@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && node -e \"const fs = require('fs'); fs.rmSync('dist', { recursive: true, force: true }); fs.renameSync('out', 'dist');\"",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
@@ -55,6 +55,7 @@
     "react-resizable-panels": "^4.6.5",
     "react-use-measure": "^2.1.7",
     "recharts": "^2.15.4",
+    "server-only": "^0.0.1",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.2.1",

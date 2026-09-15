@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { clsx } from "clsx";
 import { motion } from "framer-motion";
 import { fadeUpVariant, defaultViewport } from "@/lib/motion";
@@ -9,7 +10,7 @@ export default function FUIBentoGrid() {
   return (
     <section className="bg-background py-24 sm:py-32">
       <div className="container-x">
-        <h2 className="text-center text-xs font-medium uppercase tracking-[0.2em] text-brand">
+        <h2 className="text-center text-xs font-medium uppercase tracking-[0.14em] text-brand">
           Sales
         </h2>
         <p className="mx-auto mt-4 max-w-4xl text-center font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-tight text-ink text-balance">
@@ -212,9 +213,12 @@ function SourceGraphic() {
           />
         ))}
         <div className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-card shadow-lg bg-ink">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces"
             alt="Avatar"
+            width={56}
+            height={56}
+            unoptimized
             className="h-full w-full object-cover"
           />
         </div>
@@ -245,7 +249,14 @@ function SourceGraphic() {
             className="absolute h-8 w-8 overflow-hidden rounded-full shadow"
             style={{ top: pos.top, left: pos.left, right: pos.right, bottom: pos.bottom }}
           >
-            <img src={pos.img} alt="Orbiting Face" className="h-full w-full object-cover" />
+            <Image
+              src={pos.img}
+              alt="Orbiting Face"
+              width={32}
+              height={32}
+              unoptimized
+              className="h-full w-full object-cover"
+            />
           </div>
         ))}
       </div>

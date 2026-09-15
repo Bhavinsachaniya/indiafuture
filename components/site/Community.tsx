@@ -11,7 +11,7 @@ export const Community = React.memo(function Community() {
     <section id="community" className="py-24 bg-[#faf9f8] relative overflow-hidden">
       <div className="container-x relative z-10 mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
+          <p className="text-xs uppercase tracking-[0.14em] text-brand font-semibold mb-4 flex items-center justify-center gap-4">
             <span className="w-12 h-[1px] bg-brand/40" /> THE COMMUNITY{" "}
             <span className="w-12 h-[1px] bg-brand/40" />
           </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { clsx } from "clsx";
 import { motion } from "framer-motion";
 import { fadeUpVariant, defaultViewport } from "@/lib/motion";
@@ -38,7 +39,7 @@ export function WhyIndiaFutureBento() {
 
       <div className="container-x relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#f97316]">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#f97316]">
             WHY INDIAFUTUREAI
           </p>
           <h2 className="mt-4 font-display text-5xl md:text-6xl leading-[1.05] tracking-tight text-[#161413] text-balance">
@@ -129,7 +130,9 @@ function BentoCard({
           />
         </div>
 
-        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f97316]">{eyebrow}</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#f97316]">
+          {eyebrow}
+        </p>
         <h3 className="mt-2 font-display text-2xl leading-tight text-[#161413]">{title}</h3>
         <p className="mt-3 text-[14px] leading-relaxed text-[#161413]/70">{description}</p>
       </div>
@@ -146,9 +149,12 @@ function BentoCard({
 function HandsOnGraphic() {
   return (
     <div className="relative w-full h-full flex items-center justify-center p-2 transform group-hover:scale-105 transition-transform duration-700">
-      <img
+      <Image
         src="/Bento/img3.jpg"
         alt="Hands-on Learning"
+        width={400}
+        height={300}
+        unoptimized
         className="max-w-full max-h-full object-contain mix-blend-multiply"
       />
     </div>
@@ -158,9 +164,12 @@ function HandsOnGraphic() {
 function ApplicationGraphic() {
   return (
     <div className="relative w-full h-full flex items-center justify-center p-2 transform group-hover:scale-105 transition-transform duration-700">
-      <img
+      <Image
         src="/Bento/img4.jpg"
         alt="Real-world Application"
+        width={400}
+        height={300}
+        unoptimized
         className="max-w-full max-h-full object-contain mix-blend-multiply"
       />
     </div>
@@ -170,9 +179,12 @@ function ApplicationGraphic() {
 function InstitutionGraphic() {
   return (
     <div className="relative w-full h-full flex items-center justify-center p-2 transform group-hover:scale-105 transition-transform duration-700">
-      <img
+      <Image
         src="/Bento/img1.jpg"
         alt="Institutional Impact"
+        width={400}
+        height={300}
+        unoptimized
         className="max-w-full max-h-full object-contain mix-blend-multiply"
       />
     </div>
@@ -182,9 +194,12 @@ function InstitutionGraphic() {
 function ImplementationGraphic() {
   return (
     <div className="relative w-full h-full flex items-center justify-center p-2 transform group-hover:scale-105 transition-transform duration-700">
-      <img
+      <Image
         src="/Bento/img2.jpg"
         alt="Implementation"
+        width={400}
+        height={300}
+        unoptimized
         className="max-w-full max-h-full object-contain mix-blend-multiply"
       />
     </div>
